@@ -1,0 +1,17 @@
+{
+  "_comment": "Add the f1-analytics block into your Claude Desktop config file.",
+  "_config_location_mac": "~/Library/Application Support/Claude/claude_desktop_config.json",
+  "_config_location_win": "%APPDATA%\\Claude\\claude_desktop_config.json",
+
+  "mcpServers": {
+    "f1-analytics": {
+      "command": "/Users/bochunyuan/Downloads/CWK/Web_service_and_web_data/f1-analytics-api/venv/bin/python",
+      "args": [
+        "/Users/bochunyuan/Downloads/CWK/Web_service_and_web_data/f1-analytics-api/mcp_server/server.py"
+      ],
+      "env": {
+        "F1_API_BASE_URL": "http://127.0.0.1:8000"
+      }
+    }
+  }
+}
