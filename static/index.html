@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F1 Analytics API</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────────── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">F1 <span class="logo-accent">Analytics</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#explore" class="nav-link">Explore</a>
+        <a href="#analytics" class="nav-link">Analytics</a>
+        <a href="/docs" target="_blank" class="nav-link">API Docs</a>
+        <a href="/docs" target="_blank" class="btn btn-sm">Try API →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">1950 – 2024 · 74 Seasons of Data</div>
+      <h1 class="hero-title">
+        Formula 1<br />
+        <span class="gradient-text">Analytics API</span>
+      </h1>
+      <p class="hero-sub">
+        Query race results, driver careers, team championships and head-to-head
+        records across the entire history of Formula 1.
+      </p>
+      <div class="hero-actions">
+        <a href="#explore" class="btn btn-primary">Start Exploring</a>
+        <a href="/docs" target="_blank" class="btn btn-ghost">API Reference →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-n">861</span><span class="stat-l">Drivers</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-n">212</span><span class="stat-l">Teams</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-n">77</span><span class="stat-l">Circuits</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-n">26,759</span><span class="stat-l">Results</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── EXPLORE SECTION ─────────────────────────────── -->
+  <section id="explore" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Explore the Data</h2>
+        <p class="section-sub">Search drivers, browse race results, or dive into full season histories.</p>
+      </div>
+
+      <!-- Search bar -->
+      <div class="search-bar">
+        <div class="search-input-wrap">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="text" placeholder="Search a driver — e.g. Hamilton, Verstappen, Senna …" class="search-input" />
+        </div>
+        <button id="searchBtn" class="btn btn-primary">Search</button>
+      </div>
+
+      <!-- Driver results grid -->
+      <div id="driverGrid" class="card-grid hidden"></div>
+
+      <!-- Empty / loading state -->
+      <div id="searchEmpty" class="empty-state hidden">
+        <span class="empty-icon">◎</span>
+        <p>No drivers found. Try a different name.</p>
+      </div>
+      <div id="searchLoading" class="loading-state hidden">
+        <div class="spinner"></div>
+        <p>Searching…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DRIVER DETAIL PANEL ─────────────────────────── -->
+  <section id="driverDetail" class="section section-detail hidden">
+    <div class="container">
+      <button id="backBtn" class="btn btn-ghost back-btn">← Back to search</button>
+
+      <div id="detailHeader" class="detail-header"></div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active" data-tab="performance">Career Performance</button>
+        <button class="tab" data-tab="results">Recent Results</button>
+      </div>
+
+      <div id="tabPerformance" class="tab-panel">
+        <div id="performanceGrid" class="perf-grid"></div>
+      </div>
+      <div id="tabResults" class="tab-panel hidden">
+        <div id="resultsTable"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ANALYTICS SECTION ───────────────────────────── -->
+  <section id="analytics" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Analytics Tools</h2>
+        <p class="section-sub">Six analytical endpoints that answer questions the raw data can't.</p>
+      </div>
+
+      <div class="analytics-grid">
+
+        <!-- Season Highlights -->
+        <div class="analytics-card" id="card-season">
+          <div class="ac-icon">🏆</div>
+          <h3 class="ac-title">Season Highlights</h3>
+          <p class="ac-desc">Champion driver, champion constructor, most wins and season statistics for any year.</p>
+          <div class="ac-controls">
+            <input id="seasonYear" type="number" min="1950" max="2024" value="2023" class="ac-input" placeholder="Year" />
+            <button class="btn btn-accent" onclick="loadSeasonHighlights()">Load</button>
+          </div>
+          <div id="seasonResult" class="ac-result hidden"></div>
+        </div>
+
+        <!-- Team Standings -->
+        <div class="analytics-card" id="card-standings">
+          <div class="ac-icon">📊</div>
+          <h3 class="ac-title">Constructor Standings</h3>
+          <p class="ac-desc">Full constructor championship table for any season, ranked by total points.</p>
+          <div class="ac-controls">
+            <input id="standingsYear" type="number" min="1950" max="2024" value="2023" class="ac-input" placeholder="Year" />
+            <button class="btn btn-accent" onclick="loadStandings()">Load</button>
+          </div>
+          <div id="standingsResult" class="ac-result hidden"></div>
+        </div>
+
+        <!-- Driver Compare -->
+        <div class="analytics-card" id="card-compare">
+          <div class="ac-icon">⚡</div>
+          <h3 class="ac-title">Driver Comparison</h3>
+          <p class="ac-desc">Side-by-side career stats for 2–5 drivers. Enter driver IDs separated by commas.</p>
+          <div class="ac-controls">
+            <input id="compareIds" type="text" value="1,20,4" class="ac-input" placeholder="e.g. 1,20,4" />
+            <button class="btn btn-accent" onclick="loadComparison()">Compare</button>
+          </div>
+          <p class="ac-hint">Hamilton=1 · Vettel=20 · Alonso=4 · Verstappen=830</p>
+          <div id="compareResult" class="ac-result hidden"></div>
+        </div>
+
+        <!-- Head to Head -->
+        <div class="analytics-card" id="card-h2h">
+          <div class="ac-icon">🆚</div>
+          <h3 class="ac-title">Head-to-Head</h3>
+          <p class="ac-desc">Direct record between two drivers in every race they both competed in.</p>
+          <div class="ac-controls ac-controls-two">
+            <input id="h2hDriver" type="number" value="1" class="ac-input" placeholder="Driver ID" />
+            <span class="ac-vs">vs</span>
+            <input id="h2hRival" type="number" value="3" class="ac-input" placeholder="Rival ID" />
+            <button class="btn btn-accent" onclick="loadH2H()">Go</button>
+          </div>
+          <p class="ac-hint">Hamilton=1 · Rosberg=3 · Verstappen=830</p>
+          <div id="h2hResult" class="ac-result hidden"></div>
+        </div>
+
+        <!-- Circuit Stats -->
+        <div class="analytics-card" id="card-circuit">
+          <div class="ac-icon">🏁</div>
+          <h3 class="ac-title">Circuit Records</h3>
+          <p class="ac-desc">All-time win records, hosting history and most successful constructor at any circuit.</p>
+          <div class="ac-controls">
+            <input id="circuitId" type="number" value="6" class="ac-input" placeholder="Circuit ID" />
+            <button class="btn btn-accent" onclick="loadCircuit()">Load</button>
+          </div>
+          <p class="ac-hint">Monaco=6 · Silverstone=9 · Monza=14 · Spa=13</p>
+          <div id="circuitResult" class="ac-result hidden"></div>
+        </div>
+
+        <!-- Driver Performance -->
+        <div class="analytics-card" id="card-perf">
+          <div class="ac-icon">📈</div>
+          <h3 class="ac-title">Driver Performance</h3>
+          <p class="ac-desc">Season-by-season points, wins, podiums and DNFs for any driver and year range.</p>
+          <div class="ac-controls ac-controls-two">
+            <input id="perfDriver" type="number" value="1" class="ac-input" placeholder="Driver ID" />
+            <input id="perfStart" type="number" value="2010" class="ac-input" placeholder="From" />
+            <input id="perfEnd" type="number" value="2023" class="ac-input" placeholder="To" />
+            <button class="btn btn-accent" onclick="loadPerformance()">Load</button>
+          </div>
+          <div id="perfResult" class="ac-result hidden"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ENDPOINT OVERVIEW ────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">API Endpoints</h2>
+        <p class="section-sub">35 endpoints across 7 resource groups. Full documentation at <a href="/docs" class="link">/docs</a>.</p>
+      </div>
+      <div class="endpoint-groups">
+        <div class="ep-group">
+          <div class="ep-group-title"><span class="ep-tag tag-get">GET</span><span class="ep-tag tag-post">POST</span> Authentication</div>
+          <div class="ep-list">
+            <span class="ep-item"><code>/auth/register</code> · <code>/auth/login</code> · <code>/auth/refresh</code> · <code>/auth/me</code></span>
+          </div>
+        </div>
+        <div class="ep-group">
+          <div class="ep-group-title"><span class="ep-tag tag-get">GET</span><span class="ep-tag tag-post">POST</span><span class="ep-tag tag-put">PUT</span><span class="ep-tag tag-del">DEL</span> CRUD Resources</div>
+          <div class="ep-list">
+            <span class="ep-item"><code>/drivers</code> · <code>/teams</code> · <code>/circuits</code> · <code>/races</code> · <code>/results</code></span>
+          </div>
+        </div>
+        <div class="ep-group">
+          <div class="ep-group-title"><span class="ep-tag tag-get">GET</span> Analytics</div>
+          <div class="ep-list">
+            <span class="ep-item"><code>/analytics/drivers/{id}/performance</code></span>
+            <span class="ep-item"><code>/analytics/drivers/compare</code></span>
+            <span class="ep-item"><code>/analytics/teams/standings/{year}</code></span>
+            <span class="ep-item"><code>/analytics/seasons/{year}/highlights</code></span>
+            <span class="ep-item"><code>/analytics/circuits/{id}/stats</code></span>
+            <span class="ep-item"><code>/analytics/drivers/{id}/head-to-head/{rival}</code></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ───────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="logo-icon">⬡</span>
+        <span class="footer-name">F1 Analytics API</span>
+        <span class="footer-version">v1.0.0</span>
+      </div>
+      <div class="footer-links">
+        <a href="/docs" target="_blank" class="footer-link">Swagger UI</a>
+        <a href="/redoc" target="_blank" class="footer-link">ReDoc</a>
+        <a href="/health" target="_blank" class="footer-link">Health</a>
+      </div>
+      <div class="footer-right">
+        Data: Ergast F1 · 1950–2024
+      </div>
+    </div>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
