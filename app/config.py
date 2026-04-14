@@ -1,0 +1,73 @@
+from pydantic_settings import BaseSettings
+from pydantic import field_validator
+from typing import List
+
+
+class Settings(BaseSettings):
+    """
+    Application settings loaded from environment variables / .env file.
+
+    Using pydantic-settings means:
+    1. All values are type-validated automatically
+    2. Values come from .env file or real environment variables
+    3. If a required value is missing, the app fails loudly at startup
+       (not silently mid-request)
+    """
+
+    # Environment
+    ENVIRONMENT: str = "development"
+
+    # Security
+    SECRET_KEY: str
+    ALGORITHM: str = "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    REFRESH_TOKEN_EXPIRE_DAYS: int = 7
+
+    # Database
+    DATABASE_URL: str = "sqlite+aiosqlite:///./f1_analytics.db"
+
+    # API metadata
+    API_V1_PREFIX: str = "/api/v1"
+    PROJECT_NAME: str = "F1 Analytics API"
+    PROJECT_VERSION: str = "1.0.0"
+    PROJECT_DESCRIPTION: str = (
+        "A RESTful API for Formula 1 World Championship data analysis. "
+        "Provides CRUD operations for drivers, teams, circuits and races, "
+        "plus advanced analytics endpoints for performance trends and comparisons."
+    )
+
+    # Rate limiting
+    RATE_LIMIT_PER_MINUTE: int = 60
+
+    # CORS
+    ALLOWED_ORIGINS: str = "http://localhost:3000,http://localhost:8000"
+
+    @field_validator("ALLOWED_ORIGINS", mode="before")
+    @classmethod
+    def parse_origins(cls, v: str) -> str:
+        # Keep as string; we parse it into a list in the property below
+        return v
+
+    @property
+    def allowed_origins_list(self) -> List[str]:
+        """Parse comma-separated ALLOWED_ORIGINS into a Python list."""
+        return [origin.strip() for origin in self.ALLOWED_ORIGINS.split(",")]
+
+    @property
+    def is_development(self) -> bool:
+        return self.ENVIRONMENT == "development"
+
+    @property
+    def is_sqlite(self) -> bool:
+        return "sqlite" in self.DATABASE_URL
+
+    class Config:
+        # Tells pydantic-settings to load from .env file
+        env_file = ".env"
+        env_file_encoding = "utf-8"
+        # Case-insensitive matching for env var names
+        case_sensitive = False
+
+
+# Single global instance - imported everywhere in the app
+settings = Settings()
