@@ -18,12 +18,21 @@ from typing import List
 
 from app.database import get_db
 from app.services import analytics_service
+from app.schemas.analytics import (
+    DriverPerformanceResponse,
+    DriverComparisonResponse,
+    TeamStandingsResponse,
+    SeasonHighlightsResponse,
+    CircuitStatsResult,
+    HeadToHeadResult,
+)
 
 router = APIRouter()
 
 
 @router.get(
     "/drivers/{driver_id}/performance",
+    response_model=DriverPerformanceResponse,
     summary="Driver season-by-season performance",
     description="""
 Retrieve a complete career breakdown for a Formula 1 driver, season by season.
@@ -56,6 +65,7 @@ async def driver_performance(
 
 @router.get(
     "/drivers/compare",
+    response_model=DriverComparisonResponse,
     summary="Compare multiple drivers head-to-head (career stats)",
     description="""
 Compare 2–5 drivers across their entire careers.
@@ -83,6 +93,7 @@ async def compare_drivers(
 
 @router.get(
     "/teams/standings/{year}",
+    response_model=TeamStandingsResponse,
     summary="Constructor championship standings for a season",
     description="""
 Full constructor (team) championship standings for the given season.
@@ -108,6 +119,7 @@ async def team_standings(
 
 @router.get(
     "/seasons/{year}/highlights",
+    response_model=SeasonHighlightsResponse,
     summary="Season highlights and champion summary",
     description="""
 Executive summary of a complete Formula 1 season.
@@ -137,6 +149,7 @@ async def season_highlights(
 
 @router.get(
     "/circuits/{circuit_id}/stats",
+    response_model=CircuitStatsResult,
     summary="Circuit historical statistics",
     description="""
 Historical race data for a specific circuit.
@@ -162,6 +175,7 @@ async def circuit_stats(
 
 @router.get(
     "/drivers/{driver_id}/head-to-head/{rival_id}",
+    response_model=HeadToHeadResult,
     summary="Head-to-head record between two drivers",
     description="""
 Direct comparison between two drivers in races where **both participated**.
