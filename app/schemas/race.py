@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field, model_validator
 from typing import Optional, Any
-from datetime import date
+from datetime import date, time
 
 
 class CircuitSummary(BaseModel):
@@ -19,16 +19,16 @@ class RaceCreate(BaseModel):
     round: int = Field(ge=1, le=30)
     circuit_id: Optional[int] = None
     name: str = Field(min_length=1, max_length=100)
-    race_date: Optional[str] = Field(default=None, max_length=20, description="Date in YYYY-MM-DD format")
-    race_time: Optional[str] = Field(default=None, max_length=20, description="Time in HH:MM:SS format")
+    race_date: Optional[date] = Field(default=None, description="Date in YYYY-MM-DD format")
+    race_time: Optional[time] = Field(default=None, description="Time in HH:MM:SS format")
     url: Optional[str] = Field(default=None, max_length=255)
 
 
 class RaceUpdate(BaseModel):
     circuit_id: Optional[int] = None
     name: Optional[str] = Field(default=None, min_length=1, max_length=100)
-    race_date: Optional[str] = Field(default=None, max_length=20)
-    race_time: Optional[str] = Field(default=None, max_length=20)
+    race_date: Optional[date] = Field(default=None)
+    race_time: Optional[time] = Field(default=None)
     url: Optional[str] = Field(default=None, max_length=255)
 
 
@@ -40,6 +40,7 @@ class RaceResponse(BaseModel):
     name: str
     # Store date as ISO string to avoid Pydantic v2 date serialization issues
     date: Optional[str] = None
+    time: Optional[str] = None
     url: Optional[str] = None
     circuit: Optional[CircuitSummary] = None
 
@@ -48,17 +49,27 @@ class RaceResponse(BaseModel):
     @model_validator(mode="before")
     @classmethod
     def coerce_date(cls, data: Any) -> Any:
-        """Convert datetime.date → ISO string before Pydantic validates the field."""
+        """Convert date/time objects to ISO strings before Pydantic validates."""
         # data may be an ORM object (has __dict__) or a plain dict
         if hasattr(data, "__dict__"):
-            raw = getattr(data, "date", None)
-            if isinstance(raw, date):
+            raw_date = getattr(data, "date", None)
+            raw_time = getattr(data, "time", None)
+            if isinstance(raw_date, date) or isinstance(raw_time, time):
                 # Return a dict copy so Pydantic can work with it
                 d = {c.key: getattr(data, c.key) for c in data.__class__.__table__.columns}
-                d["date"] = raw.isoformat()
+                if isinstance(raw_date, date):
+                    d["date"] = raw_date.isoformat()
+                if isinstance(raw_time, time):
+                    d["time"] = raw_time.isoformat()
                 d["circuit"] = getattr(data, "circuit", None)
                 return d
-        elif isinstance(data, dict) and isinstance(data.get("date"), date):
-            data = dict(data)
-            data["date"] = data["date"].isoformat()
+        elif isinstance(data, dict):
+            raw_date = data.get("date")
+            raw_time = data.get("time")
+            if isinstance(raw_date, date) or isinstance(raw_time, time):
+                data = dict(data)
+                if isinstance(raw_date, date):
+                    data["date"] = raw_date.isoformat()
+                if isinstance(raw_time, time):
+                    data["time"] = raw_time.isoformat()
         return data
