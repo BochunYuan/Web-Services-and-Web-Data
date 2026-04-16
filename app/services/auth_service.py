@@ -25,6 +25,7 @@ from app.models.user import User
 from app.schemas.user import UserRegister
 from app.core.security import hash_password, verify_password, create_access_token, create_refresh_token
 from app.config import settings
+from app.utils.db_errors import commit_or_raise_conflict
 
 
 async def register_user(db: AsyncSession, data: UserRegister) -> User:
@@ -65,7 +66,7 @@ async def register_user(db: AsyncSession, data: UserRegister) -> User:
         hashed_password=hash_password(data.password),
     )
     db.add(new_user)
-    await db.commit()          # commit so the row is persisted
+    await commit_or_raise_conflict(db, detail="Username or email already registered")
     await db.refresh(new_user) # reload from DB to get server-generated fields (id, created_at)
     return new_user
 
