@@ -15,7 +15,7 @@ from app.database import get_db
 from app.models.race import Race
 from app.schemas.race import RaceCreate, RaceUpdate, RaceResponse
 from app.utils.pagination import PaginationParams, PagedResponse
-from app.utils.db_errors import commit_or_raise_conflict
+from app.utils.db_errors import flush_or_raise_conflict
 from app.core.dependencies import get_current_active_user
 from app.models.user import User
 
@@ -97,7 +97,7 @@ async def create_race(
     d["time"] = d.pop("race_time", None)
     race = Race(**d)
     db.add(race)
-    await commit_or_raise_conflict(
+    await flush_or_raise_conflict(
         db,
         detail=f"Race already exists for year={data.year}, round={data.round}",
     )
@@ -125,7 +125,7 @@ async def update_race(
     for field, value in update_data.items():
         setattr(race, field, value)
 
-    await db.commit()
+    await db.flush()
     result = await db.execute(select(Race).options(selectinload(Race.circuit)).where(Race.id == race_id))
     return result.scalar_one()
 
@@ -140,4 +140,4 @@ async def delete_race(
     if race is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Race {race_id} not found")
     await db.delete(race)
-    await db.commit()
+    await db.flush()
