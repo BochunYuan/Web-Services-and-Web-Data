@@ -20,12 +20,16 @@ def is_unique_constraint_error(exc: IntegrityError) -> bool:
     return any(marker in message for marker in markers)
 
 
-async def commit_or_raise_conflict(db: AsyncSession, detail: str) -> None:
+async def flush_or_raise_conflict(db: AsyncSession, detail: str) -> None:
     """
-    Commit a session, converting unique-key violations into HTTP 409 responses.
+    Flush pending SQL, converting unique-key violations into HTTP 409 responses.
+
+    Request-scoped dependencies own the final transaction commit. Write handlers
+    use this helper when they need database-generated values or integrity errors
+    before returning the response.
     """
     try:
-        await db.commit()
+        await db.flush()
     except IntegrityError as exc:
         await db.rollback()
         if is_unique_constraint_error(exc):
