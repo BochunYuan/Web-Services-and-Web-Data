@@ -57,8 +57,13 @@ class Base(DeclarativeBase):
 #
 # The `async with` / `yield` pattern guarantees:
 #   1. A fresh session is created for every request
-#   2. The session is always closed when the request finishes,
+#   2. The request has a single, consistent transaction boundary
+#   3. The session is always closed when the request finishes,
 #      even if an exception is raised (the finally block in __aexit__)
+#
+# Route handlers should generally `flush()` when they need database-generated
+# values immediately or want constraint violations to surface before sending the
+# response. The actual `commit()` happens exactly once here at the end.
 #
 # Usage in a router:
 #   async def get_drivers(db: AsyncSession = Depends(get_db)):
