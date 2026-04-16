@@ -17,6 +17,7 @@ from app.database import get_db
 from app.models.driver import Driver
 from app.schemas.driver import DriverCreate, DriverUpdate, DriverResponse
 from app.utils.pagination import PaginationParams, PagedResponse
+from app.utils.db_errors import commit_or_raise_conflict
 from app.core.dependencies import get_current_active_user
 from app.models.user import User
 
@@ -109,7 +110,7 @@ async def create_driver(
 
     driver = Driver(**data.model_dump())
     db.add(driver)
-    await db.commit()
+    await commit_or_raise_conflict(db, detail=f"driver_ref '{data.driver_ref}' already exists")
     await db.refresh(driver)
     return driver
 
