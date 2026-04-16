@@ -35,6 +35,7 @@ from sqlalchemy import text
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from app.database import engine, Base
+from app.database_constraints import create_schema_with_constraints
 from app.models import Driver, Team, Circuit, Race, Result  # noqa: F401 — needed for Base.metadata
 
 
@@ -344,7 +345,7 @@ async def main(reset: bool = False, tables: list[str] = None):
             print("   Tables dropped.\n")
 
         print("Creating tables (if not exist)...")
-        await conn.run_sync(Base.metadata.create_all)
+        await create_schema_with_constraints(conn)
         print("   Tables ready.\n")
 
         for table_name in IMPORT_ORDER:
