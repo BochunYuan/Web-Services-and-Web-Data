@@ -11,7 +11,7 @@ from app.database import get_db
 from app.models.circuit import Circuit
 from app.schemas.circuit import CircuitCreate, CircuitUpdate, CircuitResponse
 from app.utils.pagination import PaginationParams, PagedResponse
-from app.utils.db_errors import commit_or_raise_conflict
+from app.utils.db_errors import flush_or_raise_conflict
 from app.core.dependencies import get_current_active_user
 from app.models.user import User
 
@@ -72,7 +72,7 @@ async def create_circuit(
 
     circuit = Circuit(**data.model_dump())
     db.add(circuit)
-    await commit_or_raise_conflict(db, detail=f"circuit_ref '{data.circuit_ref}' already exists")
+    await flush_or_raise_conflict(db, detail=f"circuit_ref '{data.circuit_ref}' already exists")
     await db.refresh(circuit)
     return circuit
 
@@ -91,7 +91,7 @@ async def update_circuit(
     for field, value in data.model_dump(exclude_unset=True).items():
         setattr(circuit, field, value)
 
-    await db.commit()
+    await db.flush()
     await db.refresh(circuit)
     return circuit
 
@@ -106,4 +106,4 @@ async def delete_circuit(
     if circuit is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Circuit {circuit_id} not found")
     await db.delete(circuit)
-    await db.commit()
+    await db.flush()
