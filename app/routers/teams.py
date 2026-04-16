@@ -12,6 +12,7 @@ from app.database import get_db
 from app.models.team import Team
 from app.schemas.team import TeamCreate, TeamUpdate, TeamResponse
 from app.utils.pagination import PaginationParams, PagedResponse
+from app.utils.db_errors import commit_or_raise_conflict
 from app.core.dependencies import get_current_active_user
 from app.models.user import User
 
@@ -72,7 +73,7 @@ async def create_team(
 
     team = Team(**data.model_dump())
     db.add(team)
-    await db.commit()
+    await commit_or_raise_conflict(db, detail=f"constructor_ref '{data.constructor_ref}' already exists")
     await db.refresh(team)
     return team
 
