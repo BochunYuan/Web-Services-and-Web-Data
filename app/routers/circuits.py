@@ -11,6 +11,7 @@ from app.database import get_db
 from app.models.circuit import Circuit
 from app.schemas.circuit import CircuitCreate, CircuitUpdate, CircuitResponse
 from app.utils.pagination import PaginationParams, PagedResponse
+from app.utils.db_errors import commit_or_raise_conflict
 from app.core.dependencies import get_current_active_user
 from app.models.user import User
 
@@ -71,7 +72,7 @@ async def create_circuit(
 
     circuit = Circuit(**data.model_dump())
     db.add(circuit)
-    await db.commit()
+    await commit_or_raise_conflict(db, detail=f"circuit_ref '{data.circuit_ref}' already exists")
     await db.refresh(circuit)
     return circuit
 
