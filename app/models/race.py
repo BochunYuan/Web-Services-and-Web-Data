@@ -1,4 +1,4 @@
-from sqlalchemy import Integer, String, Date, Time, ForeignKey
+from sqlalchemy import Integer, String, Date, Time, ForeignKey, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from typing import Optional, List
 from app.database import Base
@@ -17,6 +17,9 @@ class Race(Base):
     """
 
     __tablename__ = "races"
+    __table_args__ = (
+        UniqueConstraint("year", "round", name="uq_races_year_round"),
+    )
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     year: Mapped[int] = mapped_column(Integer, nullable=False, index=True)
