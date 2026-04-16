@@ -1,39 +1,109 @@
-from sqlalchemy import Integer, String, Float
-from sqlalchemy.orm import Mapped, mapped_column, relationship
-from typing import Optional, List
-from app.database import Base
+"""
+Circuit CRUD endpoints — /api/v1/circuits
+"""
+
+from fastapi import APIRouter, Depends, HTTPException, Query, status
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select, func
+from typing import Optional
+
+from app.database import get_db
+from app.models.circuit import Circuit
+from app.schemas.circuit import CircuitCreate, CircuitUpdate, CircuitResponse
+from app.utils.pagination import PaginationParams, PagedResponse
+from app.utils.db_errors import commit_or_raise_conflict
+from app.core.dependencies import get_current_active_user
+from app.models.user import User
+
+router = APIRouter()
 
 
-class Circuit(Base):
-    """
-    Formula 1 race circuit (track).
+@router.get(
+    "",
+    response_model=PagedResponse[CircuitResponse],
+    summary="List all circuits",
+    description="Paginated list of F1 circuits. Filter by `country` or search by circuit `name`.",
+)
+async def list_circuits(
+    pagination: PaginationParams = Depends(),
+    country: Optional[str] = Query(default=None, description="Filter by country"),
+    search: Optional[str] = Query(default=None, description="Search by circuit name"),
+    db: AsyncSession = Depends(get_db),
+) -> PagedResponse[CircuitResponse]:
+    query = select(Circuit)
+    count_query = select(func.count()).select_from(Circuit)
 
-    Maps to Ergast 'circuits.csv'.
-    Includes geographic coordinates (lat/lng) which enable
-    location-based queries and are interesting for visualisation.
+    if country:
+        query = query.where(Circuit.country.ilike(f"%{country}%"))
+        count_query = count_query.where(Circuit.country.ilike(f"%{country}%"))
+    if search:
+        query = query.where(Circuit.name.ilike(f"%{search}%"))
+        count_query = count_query.where(Circuit.name.ilike(f"%{search}%"))
 
-    Examples: monza (Italy), silverstone (UK), spa (Belgium)
-    """
+    total = (await db.execute(count_query)).scalar_one()
+    query = query.order_by(Circuit.name).offset(pagination.offset).limit(pagination.limit)
+    circuits = (await db.execute(query)).scalars().all()
 
-    __tablename__ = "circuits"
+    return PagedResponse.create(items=list(circuits), total=total, pagination=pagination)
 
-    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
-    circuit_ref: Mapped[str] = mapped_column(String(50), unique=True, nullable=False, index=True)
-    name: Mapped[str] = mapped_column(String(100), nullable=False)
-    location: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)  # city
-    country: Mapped[Optional[str]] = mapped_column(String(50), nullable=True, index=True)
 
-    # Geographic coordinates — useful for analytics/visualisation
-    lat: Mapped[Optional[float]] = mapped_column(Float, nullable=True)
-    lng: Mapped[Optional[float]] = mapped_column(Float, nullable=True)
-    alt: Mapped[Optional[float]] = mapped_column(Float, nullable=True)  # altitude in metres
+@router.get("/{circuit_id}", response_model=CircuitResponse, summary="Get a circuit by ID")
+async def get_circuit(circuit_id: int, db: AsyncSession = Depends(get_db)) -> CircuitResponse:
+    circuit = (await db.execute(select(Circuit).where(Circuit.id == circuit_id))).scalar_one_or_none()
+    if circuit is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Circuit {circuit_id} not found")
+    return circuit
 
-    url: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
 
-    # One circuit hosts many races over the years
-    races: Mapped[List["Race"]] = relationship(  # type: ignore[name-defined]
-        "Race", back_populates="circuit", lazy="select"
-    )
+@router.post(
+    "",
+    response_model=CircuitResponse,
+    status_code=status.HTTP_201_CREATED,
+    summary="Create a new circuit",
+)
+async def create_circuit(
+    data: CircuitCreate,
+    db: AsyncSession = Depends(get_db),
+    _: User = Depends(get_current_active_user),
+) -> CircuitResponse:
+    existing = (await db.execute(select(Circuit).where(Circuit.circuit_ref == data.circuit_ref))).scalar_one_or_none()
+    if existing:
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f"circuit_ref '{data.circuit_ref}' already exists")
 
-    def __repr__(self) -> str:
-        return f"<Circuit {self.name} ({self.country})>"
+    circuit = Circuit(**data.model_dump())
+    db.add(circuit)
+    await commit_or_raise_conflict(db, detail=f"circuit_ref '{data.circuit_ref}' already exists")
+    await db.refresh(circuit)
+    return circuit
+
+
+@router.put("/{circuit_id}", response_model=CircuitResponse, summary="Update a circuit")
+async def update_circuit(
+    circuit_id: int,
+    data: CircuitUpdate,
+    db: AsyncSession = Depends(get_db),
+    _: User = Depends(get_current_active_user),
+) -> CircuitResponse:
+    circuit = (await db.execute(select(Circuit).where(Circuit.id == circuit_id))).scalar_one_or_none()
+    if circuit is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Circuit {circuit_id} not found")
+
+    for field, value in data.model_dump(exclude_unset=True).items():
+        setattr(circuit, field, value)
+
+    await db.commit()
+    await db.refresh(circuit)
+    return circuit
+
+
+@router.delete("/{circuit_id}", status_code=status.HTTP_204_NO_CONTENT, summary="Delete a circuit")
+async def delete_circuit(
+    circuit_id: int,
+    db: AsyncSession = Depends(get_db),
+    _: User = Depends(get_current_active_user),
+) -> None:
+    circuit = (await db.execute(select(Circuit).where(Circuit.id == circuit_id))).scalar_one_or_none()
+    if circuit is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Circuit {circuit_id} not found")
+    await db.delete(circuit)
+    await db.commit()
