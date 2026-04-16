@@ -46,6 +46,7 @@ os.environ["ENVIRONMENT"] = "test"   # disables rate limiting during tests
 # Now import the app (which reads settings at import time)
 from app.main import app
 from app.database import Base, get_db
+from app.database_constraints import create_schema_with_constraints
 from app.models import Driver, Team, Circuit, Race, Result  # ensure models are registered
 
 
@@ -85,7 +86,7 @@ async def setup_test_db():
     """
     async with test_engine.begin() as conn:
         await conn.run_sync(Base.metadata.drop_all)   # clean slate
-        await conn.run_sync(Base.metadata.create_all)
+        await create_schema_with_constraints(conn)
 
     yield  # all tests run here
 
@@ -213,6 +214,18 @@ async def client(setup_test_db) -> AsyncGenerator[AsyncClient, None]:
 
     # Clean up dependency override after each test
     app.dependency_overrides.clear()
+
+
+@pytest_asyncio.fixture
+async def db_session(setup_test_db):
+    """
+    Direct AsyncSession access for tests that need to assert database constraints.
+    """
+    async with TestSessionLocal() as session:
+        try:
+            yield session
+        finally:
+            await session.rollback()
 
 
 @pytest_asyncio.fixture
