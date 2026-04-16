@@ -1,15 +1,21 @@
 """
-Circuit CRUD endpoints — /api/v1/circuits
+Driver CRUD endpoints — /api/v1/drivers
+
+Demonstrates all four CRUD operations plus:
+  - Pagination (page/limit query params)
+  - Filtering (by nationality and surname search)
+  - JWT-protected write operations
+  - Proper HTTP status codes: 200, 201, 204, 404, 409, 422
 """
 
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, func
+from sqlalchemy import select, func, or_
 from typing import Optional
 
 from app.database import get_db
-from app.models.circuit import Circuit
-from app.schemas.circuit import CircuitCreate, CircuitUpdate, CircuitResponse
+from app.models.driver import Driver
+from app.schemas.driver import DriverCreate, DriverUpdate, DriverResponse
 from app.utils.pagination import PaginationParams, PagedResponse
 from app.utils.db_errors import commit_or_raise_conflict
 from app.core.dependencies import get_current_active_user
@@ -20,90 +26,141 @@ router = APIRouter()
 
 @router.get(
     "",
-    response_model=PagedResponse[CircuitResponse],
-    summary="List all circuits",
-    description="Paginated list of F1 circuits. Filter by `country` or search by circuit `name`.",
+    response_model=PagedResponse[DriverResponse],
+    summary="List all drivers",
+    description="""
+Retrieve a paginated list of Formula 1 drivers.
+
+**Filters:**
+- `nationality`: filter by nationality (e.g. `British`, `German`)
+- `search`: search by surname (case-insensitive, partial match)
+
+**Pagination:**
+- `page`: page number (default: 1)
+- `limit`: items per page (default: 20, max: 100)
+    """,
 )
-async def list_circuits(
+async def list_drivers(
     pagination: PaginationParams = Depends(),
-    country: Optional[str] = Query(default=None, description="Filter by country"),
-    search: Optional[str] = Query(default=None, description="Search by circuit name"),
+    nationality: Optional[str] = Query(default=None, description="Filter by nationality"),
+    search: Optional[str] = Query(default=None, description="Search by surname (partial match)"),
     db: AsyncSession = Depends(get_db),
-) -> PagedResponse[CircuitResponse]:
-    query = select(Circuit)
-    count_query = select(func.count()).select_from(Circuit)
+) -> PagedResponse[DriverResponse]:
+    # Build base query — we apply filters progressively
+    query = select(Driver)
+    count_query = select(func.count()).select_from(Driver)
 
-    if country:
-        query = query.where(Circuit.country.ilike(f"%{country}%"))
-        count_query = count_query.where(Circuit.country.ilike(f"%{country}%"))
+    # Apply filters if provided
+    # ilike = case-insensitive LIKE (works in both SQLite and MySQL)
+    if nationality:
+        query = query.where(Driver.nationality.ilike(f"%{nationality}%"))
+        count_query = count_query.where(Driver.nationality.ilike(f"%{nationality}%"))
     if search:
-        query = query.where(Circuit.name.ilike(f"%{search}%"))
-        count_query = count_query.where(Circuit.name.ilike(f"%{search}%"))
+        query = query.where(Driver.surname.ilike(f"%{search}%"))
+        count_query = count_query.where(Driver.surname.ilike(f"%{search}%"))
 
-    total = (await db.execute(count_query)).scalar_one()
-    query = query.order_by(Circuit.name).offset(pagination.offset).limit(pagination.limit)
-    circuits = (await db.execute(query)).scalars().all()
+    # Get total count (for pagination metadata)
+    total_result = await db.execute(count_query)
+    total = total_result.scalar_one()
 
-    return PagedResponse.create(items=list(circuits), total=total, pagination=pagination)
+    # Apply ordering, offset, limit — order by surname for consistent results
+    query = query.order_by(Driver.surname).offset(pagination.offset).limit(pagination.limit)
+    result = await db.execute(query)
+    drivers = result.scalars().all()
+
+    return PagedResponse.create(items=list(drivers), total=total, pagination=pagination)
 
 
-@router.get("/{circuit_id}", response_model=CircuitResponse, summary="Get a circuit by ID")
-async def get_circuit(circuit_id: int, db: AsyncSession = Depends(get_db)) -> CircuitResponse:
-    circuit = (await db.execute(select(Circuit).where(Circuit.id == circuit_id))).scalar_one_or_none()
-    if circuit is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Circuit {circuit_id} not found")
-    return circuit
+@router.get(
+    "/{driver_id}",
+    response_model=DriverResponse,
+    summary="Get a driver by ID",
+)
+async def get_driver(
+    driver_id: int,
+    db: AsyncSession = Depends(get_db),
+) -> DriverResponse:
+    result = await db.execute(select(Driver).where(Driver.id == driver_id))
+    driver = result.scalar_one_or_none()
+    if driver is None:
+        # 404 Not Found — the standard response when a resource doesn't exist
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Driver {driver_id} not found")
+    return driver
 
 
 @router.post(
     "",
-    response_model=CircuitResponse,
+    response_model=DriverResponse,
     status_code=status.HTTP_201_CREATED,
-    summary="Create a new circuit",
+    summary="Create a new driver",
+    description="Requires authentication. Returns 409 if driver_ref already exists.",
 )
-async def create_circuit(
-    data: CircuitCreate,
+async def create_driver(
+    data: DriverCreate,
+    db: AsyncSession = Depends(get_db),
+    # Depends(get_current_active_user): FastAPI calls this before our handler.
+    # If the token is missing/invalid, it returns 401 automatically.
+    # The underscore prefix (_) signals we don't use the value — just need the auth check.
+    _: User = Depends(get_current_active_user),
+) -> DriverResponse:
+    # Check for duplicate driver_ref
+    existing = await db.execute(select(Driver).where(Driver.driver_ref == data.driver_ref))
+    if existing.scalar_one_or_none():
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f"driver_ref '{data.driver_ref}' already exists")
+
+    driver = Driver(**data.model_dump())
+    db.add(driver)
+    await commit_or_raise_conflict(db, detail=f"driver_ref '{data.driver_ref}' already exists")
+    await db.refresh(driver)
+    return driver
+
+
+@router.put(
+    "/{driver_id}",
+    response_model=DriverResponse,
+    summary="Update a driver",
+    description="Requires authentication. Only provided fields are updated (partial update).",
+)
+async def update_driver(
+    driver_id: int,
+    data: DriverUpdate,
     db: AsyncSession = Depends(get_db),
     _: User = Depends(get_current_active_user),
-) -> CircuitResponse:
-    existing = (await db.execute(select(Circuit).where(Circuit.circuit_ref == data.circuit_ref))).scalar_one_or_none()
-    if existing:
-        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f"circuit_ref '{data.circuit_ref}' already exists")
+) -> DriverResponse:
+    result = await db.execute(select(Driver).where(Driver.id == driver_id))
+    driver = result.scalar_one_or_none()
+    if driver is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Driver {driver_id} not found")
 
-    circuit = Circuit(**data.model_dump())
-    db.add(circuit)
-    await commit_or_raise_conflict(db, detail=f"circuit_ref '{data.circuit_ref}' already exists")
-    await db.refresh(circuit)
-    return circuit
-
-
-@router.put("/{circuit_id}", response_model=CircuitResponse, summary="Update a circuit")
-async def update_circuit(
-    circuit_id: int,
-    data: CircuitUpdate,
-    db: AsyncSession = Depends(get_db),
-    _: User = Depends(get_current_active_user),
-) -> CircuitResponse:
-    circuit = (await db.execute(select(Circuit).where(Circuit.id == circuit_id))).scalar_one_or_none()
-    if circuit is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Circuit {circuit_id} not found")
-
-    for field, value in data.model_dump(exclude_unset=True).items():
-        setattr(circuit, field, value)
+    # model_dump(exclude_unset=True): only returns fields the client explicitly sent.
+    # This means PATCH-style partial updates: sending {"nationality": "British"}
+    # only changes nationality, leaving all other fields untouched.
+    update_data = data.model_dump(exclude_unset=True)
+    for field, value in update_data.items():
+        setattr(driver, field, value)
 
     await db.commit()
-    await db.refresh(circuit)
-    return circuit
+    await db.refresh(driver)
+    return driver
 
 
-@router.delete("/{circuit_id}", status_code=status.HTTP_204_NO_CONTENT, summary="Delete a circuit")
-async def delete_circuit(
-    circuit_id: int,
+@router.delete(
+    "/{driver_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+    summary="Delete a driver",
+    description="Requires authentication. Returns 204 No Content on success (no response body).",
+)
+async def delete_driver(
+    driver_id: int,
     db: AsyncSession = Depends(get_db),
     _: User = Depends(get_current_active_user),
 ) -> None:
-    circuit = (await db.execute(select(Circuit).where(Circuit.id == circuit_id))).scalar_one_or_none()
-    if circuit is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Circuit {circuit_id} not found")
-    await db.delete(circuit)
+    result = await db.execute(select(Driver).where(Driver.id == driver_id))
+    driver = result.scalar_one_or_none()
+    if driver is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Driver {driver_id} not found")
+
+    await db.delete(driver)
     await db.commit()
+    # 204 No Content: success but no body — the standard for DELETE operations
+    return None
