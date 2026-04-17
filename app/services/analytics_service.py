@@ -18,7 +18,7 @@ prevents SQL injection by design.
 """
 
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, func, case, and_, or_, distinct
+from sqlalchemy import select, func, and_, distinct
 from sqlalchemy.orm import aliased
 from fastapi import HTTPException, status
 from typing import Optional
@@ -29,6 +29,13 @@ from app.models.race import Race
 from app.models.result import Result
 from app.models.circuit import Circuit
 from app.services import cache_service
+from app.services.analytics_expressions import (
+    distinct_driver_count,
+    driver_result_summary_columns,
+    result_count,
+    total_points,
+    win_count,
+)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -75,20 +82,10 @@ async def get_driver_performance(
     if driver is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Driver {driver_id} not found")
 
-    # Build the aggregation query
-    # case(): SQLAlchemy equivalent of SQL CASE WHEN ... THEN 1 ELSE NULL END
-    wins_expr = func.count(case((Result.position == 1, 1)))
-    podiums_expr = func.count(case((Result.position <= 3, 1)))
-    dnf_expr = func.count(case((and_(Result.position.is_(None), Result.status != "Finished"), 1)))
-
     query = (
         select(
             Race.year,
-            func.sum(Result.points).label("total_points"),
-            wins_expr.label("wins"),
-            podiums_expr.label("podiums"),
-            func.count(Result.id).label("races_entered"),
-            dnf_expr.label("dnfs"),
+            *driver_result_summary_columns(),
         )
         .join(Race, Result.race_id == Race.id)
         .where(Result.driver_id == driver_id)
@@ -171,20 +168,11 @@ async def compare_drivers(db: AsyncSession, driver_ids: list[int]) -> dict:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f"Driver IDs not found: {sorted(missing)}")
 
-    wins_expr = func.count(case((Result.position == 1, 1)))
-    podiums_expr = func.count(case((Result.position <= 3, 1)))
-    dnf_expr = func.count(case((and_(Result.position.is_(None), Result.status != "Finished"), 1)))
-
     # Single query returns one row per driver
     query = (
         select(
             Result.driver_id,
-            func.sum(Result.points).label("total_points"),
-            wins_expr.label("wins"),
-            podiums_expr.label("podiums"),
-            func.count(Result.id).label("races_entered"),
-            dnf_expr.label("dnfs"),
-            func.count(distinct(Race.year)).label("seasons"),
+            *driver_result_summary_columns(include_seasons=True),
         )
         .join(Race, Result.race_id == Race.id)
         .where(Result.driver_id.in_(driver_ids))
@@ -258,23 +246,21 @@ async def get_team_standings(db: AsyncSession, year: int) -> dict:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f"No races found for season {year}")
 
-    wins_expr = func.count(case((Result.position == 1, 1)))
-
     query = (
         select(
             Result.constructor_id,
             Team.name.label("team_name"),
             Team.nationality.label("team_nationality"),
-            func.sum(Result.points).label("total_points"),
-            wins_expr.label("wins"),
-            func.count(Result.id).label("race_entries"),
-            func.count(distinct(Result.driver_id)).label("drivers_used"),
+            total_points().label("total_points"),
+            win_count().label("wins"),
+            result_count().label("race_entries"),
+            distinct_driver_count().label("drivers_used"),
         )
         .join(Race, Result.race_id == Race.id)
         .join(Team, Result.constructor_id == Team.id)
         .where(Race.year == year, Result.constructor_id.isnot(None))
         .group_by(Result.constructor_id, Team.name, Team.nationality)
-        .order_by(func.sum(Result.points).desc())
+        .order_by(total_points().desc())
     )
     rows = (await db.execute(query)).fetchall()
 
@@ -337,12 +323,12 @@ async def get_season_highlights(db: AsyncSession, year: int) -> dict:
     driver_points_query = (
         select(
             Result.driver_id,
-            func.sum(Result.points).label("total_points"),
+            total_points().label("total_points"),
         )
         .join(Race, Result.race_id == Race.id)
         .where(Race.year == year)
         .group_by(Result.driver_id)
-        .order_by(func.sum(Result.points).desc())
+        .order_by(total_points().desc())
         .limit(1)
     )
     champ_row = (await db.execute(driver_points_query)).fetchone()
@@ -360,12 +346,12 @@ async def get_season_highlights(db: AsyncSession, year: int) -> dict:
     team_points_query = (
         select(
             Result.constructor_id,
-            func.sum(Result.points).label("total_points"),
+            total_points().label("total_points"),
         )
         .join(Race, Result.race_id == Race.id)
         .where(Race.year == year, Result.constructor_id.isnot(None))
         .group_by(Result.constructor_id)
-        .order_by(func.sum(Result.points).desc())
+        .order_by(total_points().desc())
         .limit(1)
     )
     team_row = (await db.execute(team_points_query)).fetchone()
@@ -383,12 +369,12 @@ async def get_season_highlights(db: AsyncSession, year: int) -> dict:
     wins_query = (
         select(
             Result.driver_id,
-            func.count(Result.id).label("wins"),
+            result_count().label("wins"),
         )
         .join(Race, Result.race_id == Race.id)
         .where(Race.year == year, Result.position == 1)
         .group_by(Result.driver_id)
-        .order_by(func.count(Result.id).desc())
+        .order_by(result_count().desc())
         .limit(1)
     )
     wins_row = (await db.execute(wins_query)).fetchone()
@@ -409,8 +395,8 @@ async def get_season_highlights(db: AsyncSession, year: int) -> dict:
     )).scalar_one()
 
     # ── Total points scored across the whole season ──
-    total_points = (await db.execute(
-        select(func.sum(Result.points))
+    season_total_points = (await db.execute(
+        select(total_points())
         .join(Race, Result.race_id == Race.id)
         .where(Race.year == year)
     )).scalar_one()
@@ -422,7 +408,7 @@ async def get_season_highlights(db: AsyncSession, year: int) -> dict:
         "champion_constructor": champion_team,
         "most_race_wins": most_wins,
         "unique_race_winners": unique_winners,
-        "total_points_scored": round(float(total_points or 0), 1),
+        "total_points_scored": round(float(season_total_points or 0), 1),
     }
     cache_service.set_season(cache_key, result)
     return result
@@ -479,12 +465,12 @@ async def get_circuit_stats(db: AsyncSession, circuit_id: int) -> dict:
     top_winners_query = (
         select(
             Result.driver_id,
-            func.count(Result.id).label("wins"),
+            result_count().label("wins"),
         )
         .join(Race, Result.race_id == Race.id)
         .where(Race.circuit_id == circuit_id, Result.position == 1)
         .group_by(Result.driver_id)
-        .order_by(func.count(Result.id).desc())
+        .order_by(result_count().desc())
         .limit(5)
     )
     winner_rows = (await db.execute(top_winners_query)).fetchall()
@@ -506,14 +492,14 @@ async def get_circuit_stats(db: AsyncSession, circuit_id: int) -> dict:
         select(
             Result.constructor_id,
             Team.name.label("team_name"),
-            func.count(case((Result.position == 1, 1))).label("wins"),
-            func.sum(Result.points).label("total_points"),
+            win_count().label("wins"),
+            total_points().label("total_points"),
         )
         .join(Race, Result.race_id == Race.id)
         .join(Team, Result.constructor_id == Team.id)
         .where(Race.circuit_id == circuit_id, Result.constructor_id.isnot(None))
         .group_by(Result.constructor_id, Team.name)
-        .order_by(func.count(case((Result.position == 1, 1))).desc())
+        .order_by(win_count().desc())
         .limit(1)
     )
     best_team_row = (await db.execute(best_team_query)).fetchone()
