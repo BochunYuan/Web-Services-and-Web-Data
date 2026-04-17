@@ -15,7 +15,7 @@ from app.database import get_db
 from app.models.race import Race
 from app.schemas.race import RaceCreate, RaceUpdate, RaceResponse
 from app.utils.pagination import PaginationParams, PagedResponse
-from app.utils.db_errors import flush_or_raise_conflict
+from app.utils.crud import add_and_flush_or_409, apply_update_data, delete_and_flush, get_or_404
 from app.core.dependencies import get_current_active_user
 from app.models.user import User
 
@@ -62,13 +62,13 @@ async def list_races(
 
 @router.get("/{race_id}", response_model=RaceResponse, summary="Get a race by ID")
 async def get_race(race_id: int, db: AsyncSession = Depends(get_db)) -> RaceResponse:
-    result = await db.execute(
-        select(Race).options(selectinload(Race.circuit)).where(Race.id == race_id)
+    return await get_or_404(
+        db,
+        Race,
+        race_id,
+        resource_name="Race",
+        options=(selectinload(Race.circuit),),
     )
-    race = result.scalar_one_or_none()
-    if race is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Race {race_id} not found")
-    return race
 
 
 @router.post(
@@ -96,10 +96,10 @@ async def create_race(
     d["date"] = d.pop("race_date", None)
     d["time"] = d.pop("race_time", None)
     race = Race(**d)
-    db.add(race)
-    await flush_or_raise_conflict(
+    await add_and_flush_or_409(
         db,
-        detail=f"Race already exists for year={data.year}, round={data.round}",
+        race,
+        conflict_detail=f"Race already exists for year={data.year}, round={data.round}",
     )
     # Re-fetch with circuit loaded
     result = await db.execute(select(Race).options(selectinload(Race.circuit)).where(Race.id == race.id))
@@ -113,17 +113,14 @@ async def update_race(
     db: AsyncSession = Depends(get_db),
     _: User = Depends(get_current_active_user),
 ) -> RaceResponse:
-    race = (await db.execute(select(Race).where(Race.id == race_id))).scalar_one_or_none()
-    if race is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Race {race_id} not found")
+    race = await get_or_404(db, Race, race_id, resource_name="Race")
 
     update_data = data.model_dump(exclude_unset=True)
     if "race_date" in update_data:
         update_data["date"] = update_data.pop("race_date")
     if "race_time" in update_data:
         update_data["time"] = update_data.pop("race_time")
-    for field, value in update_data.items():
-        setattr(race, field, value)
+    apply_update_data(race, update_data)
 
     await db.flush()
     result = await db.execute(select(Race).options(selectinload(Race.circuit)).where(Race.id == race_id))
@@ -136,8 +133,5 @@ async def delete_race(
     db: AsyncSession = Depends(get_db),
     _: User = Depends(get_current_active_user),
 ) -> None:
-    race = (await db.execute(select(Race).where(Race.id == race_id))).scalar_one_or_none()
-    if race is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Race {race_id} not found")
-    await db.delete(race)
-    await db.flush()
+    race = await get_or_404(db, Race, race_id, resource_name="Race")
+    await delete_and_flush(db, race)
