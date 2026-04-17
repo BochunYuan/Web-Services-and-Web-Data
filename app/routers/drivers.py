@@ -10,14 +10,20 @@ Demonstrates all four CRUD operations plus:
 
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, func, or_
+from sqlalchemy import select, func
 from typing import Optional
 
 from app.database import get_db
 from app.models.driver import Driver
 from app.schemas.driver import DriverCreate, DriverUpdate, DriverResponse
 from app.utils.pagination import PaginationParams, PagedResponse
-from app.utils.db_errors import flush_or_raise_conflict
+from app.utils.crud import (
+    add_flush_refresh_or_409,
+    apply_partial_update,
+    delete_and_flush,
+    flush_and_refresh,
+    get_or_404,
+)
 from app.core.dependencies import get_current_active_user
 from app.models.user import User
 
@@ -80,12 +86,7 @@ async def get_driver(
     driver_id: int,
     db: AsyncSession = Depends(get_db),
 ) -> DriverResponse:
-    result = await db.execute(select(Driver).where(Driver.id == driver_id))
-    driver = result.scalar_one_or_none()
-    if driver is None:
-        # 404 Not Found — the standard response when a resource doesn't exist
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Driver {driver_id} not found")
-    return driver
+    return await get_or_404(db, Driver, driver_id, resource_name="Driver")
 
 
 @router.post(
@@ -109,10 +110,11 @@ async def create_driver(
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f"driver_ref '{data.driver_ref}' already exists")
 
     driver = Driver(**data.model_dump())
-    db.add(driver)
-    await flush_or_raise_conflict(db, detail=f"driver_ref '{data.driver_ref}' already exists")
-    await db.refresh(driver)
-    return driver
+    return await add_flush_refresh_or_409(
+        db,
+        driver,
+        conflict_detail=f"driver_ref '{data.driver_ref}' already exists",
+    )
 
 
 @router.put(
@@ -127,21 +129,14 @@ async def update_driver(
     db: AsyncSession = Depends(get_db),
     _: User = Depends(get_current_active_user),
 ) -> DriverResponse:
-    result = await db.execute(select(Driver).where(Driver.id == driver_id))
-    driver = result.scalar_one_or_none()
-    if driver is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Driver {driver_id} not found")
+    driver = await get_or_404(db, Driver, driver_id, resource_name="Driver")
 
     # model_dump(exclude_unset=True): only returns fields the client explicitly sent.
     # This means PATCH-style partial updates: sending {"nationality": "British"}
     # only changes nationality, leaving all other fields untouched.
-    update_data = data.model_dump(exclude_unset=True)
-    for field, value in update_data.items():
-        setattr(driver, field, value)
+    apply_partial_update(driver, data)
 
-    await db.flush()
-    await db.refresh(driver)
-    return driver
+    return await flush_and_refresh(db, driver)
 
 
 @router.delete(
@@ -155,12 +150,8 @@ async def delete_driver(
     db: AsyncSession = Depends(get_db),
     _: User = Depends(get_current_active_user),
 ) -> None:
-    result = await db.execute(select(Driver).where(Driver.id == driver_id))
-    driver = result.scalar_one_or_none()
-    if driver is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Driver {driver_id} not found")
+    driver = await get_or_404(db, Driver, driver_id, resource_name="Driver")
 
-    await db.delete(driver)
-    await db.flush()
+    await delete_and_flush(db, driver)
     # 204 No Content: success but no body — the standard for DELETE operations
     return None
