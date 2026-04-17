@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import field_validator
 from typing import List
 
@@ -13,6 +13,12 @@ class Settings(BaseSettings):
     3. If a required value is missing, the app fails loudly at startup
        (not silently mid-request)
     """
+
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+    )
 
     # Environment
     ENVIRONMENT: str = "development"
@@ -60,14 +66,6 @@ class Settings(BaseSettings):
     @property
     def is_sqlite(self) -> bool:
         return "sqlite" in self.DATABASE_URL
-
-    class Config:
-        # Tells pydantic-settings to load from .env file
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-        # Case-insensitive matching for env var names
-        case_sensitive = False
-
 
 # Single global instance - imported everywhere in the app
 settings = Settings()
