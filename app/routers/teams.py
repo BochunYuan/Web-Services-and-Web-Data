@@ -12,7 +12,13 @@ from app.database import get_db
 from app.models.team import Team
 from app.schemas.team import TeamCreate, TeamUpdate, TeamResponse
 from app.utils.pagination import PaginationParams, PagedResponse
-from app.utils.db_errors import flush_or_raise_conflict
+from app.utils.crud import (
+    add_flush_refresh_or_409,
+    apply_partial_update,
+    delete_and_flush,
+    flush_and_refresh,
+    get_or_404,
+)
 from app.core.dependencies import get_current_active_user
 from app.models.user import User
 
@@ -50,10 +56,7 @@ async def list_teams(
 
 @router.get("/{team_id}", response_model=TeamResponse, summary="Get a team by ID")
 async def get_team(team_id: int, db: AsyncSession = Depends(get_db)) -> TeamResponse:
-    team = (await db.execute(select(Team).where(Team.id == team_id))).scalar_one_or_none()
-    if team is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Team {team_id} not found")
-    return team
+    return await get_or_404(db, Team, team_id, resource_name="Team")
 
 
 @router.post(
@@ -72,10 +75,11 @@ async def create_team(
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f"constructor_ref '{data.constructor_ref}' already exists")
 
     team = Team(**data.model_dump())
-    db.add(team)
-    await flush_or_raise_conflict(db, detail=f"constructor_ref '{data.constructor_ref}' already exists")
-    await db.refresh(team)
-    return team
+    return await add_flush_refresh_or_409(
+        db,
+        team,
+        conflict_detail=f"constructor_ref '{data.constructor_ref}' already exists",
+    )
 
 
 @router.put("/{team_id}", response_model=TeamResponse, summary="Update a team")
@@ -85,16 +89,11 @@ async def update_team(
     db: AsyncSession = Depends(get_db),
     _: User = Depends(get_current_active_user),
 ) -> TeamResponse:
-    team = (await db.execute(select(Team).where(Team.id == team_id))).scalar_one_or_none()
-    if team is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Team {team_id} not found")
+    team = await get_or_404(db, Team, team_id, resource_name="Team")
 
-    for field, value in data.model_dump(exclude_unset=True).items():
-        setattr(team, field, value)
+    apply_partial_update(team, data)
 
-    await db.flush()
-    await db.refresh(team)
-    return team
+    return await flush_and_refresh(db, team)
 
 
 @router.delete("/{team_id}", status_code=status.HTTP_204_NO_CONTENT, summary="Delete a team")
@@ -103,8 +102,5 @@ async def delete_team(
     db: AsyncSession = Depends(get_db),
     _: User = Depends(get_current_active_user),
 ) -> None:
-    team = (await db.execute(select(Team).where(Team.id == team_id))).scalar_one_or_none()
-    if team is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Team {team_id} not found")
-    await db.delete(team)
-    await db.flush()
+    team = await get_or_404(db, Team, team_id, resource_name="Team")
+    await delete_and_flush(db, team)
