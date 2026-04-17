@@ -11,7 +11,13 @@ from app.database import get_db
 from app.models.circuit import Circuit
 from app.schemas.circuit import CircuitCreate, CircuitUpdate, CircuitResponse
 from app.utils.pagination import PaginationParams, PagedResponse
-from app.utils.db_errors import flush_or_raise_conflict
+from app.utils.crud import (
+    add_flush_refresh_or_409,
+    apply_partial_update,
+    delete_and_flush,
+    flush_and_refresh,
+    get_or_404,
+)
 from app.core.dependencies import get_current_active_user
 from app.models.user import User
 
@@ -49,10 +55,7 @@ async def list_circuits(
 
 @router.get("/{circuit_id}", response_model=CircuitResponse, summary="Get a circuit by ID")
 async def get_circuit(circuit_id: int, db: AsyncSession = Depends(get_db)) -> CircuitResponse:
-    circuit = (await db.execute(select(Circuit).where(Circuit.id == circuit_id))).scalar_one_or_none()
-    if circuit is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Circuit {circuit_id} not found")
-    return circuit
+    return await get_or_404(db, Circuit, circuit_id, resource_name="Circuit")
 
 
 @router.post(
@@ -71,10 +74,11 @@ async def create_circuit(
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f"circuit_ref '{data.circuit_ref}' already exists")
 
     circuit = Circuit(**data.model_dump())
-    db.add(circuit)
-    await flush_or_raise_conflict(db, detail=f"circuit_ref '{data.circuit_ref}' already exists")
-    await db.refresh(circuit)
-    return circuit
+    return await add_flush_refresh_or_409(
+        db,
+        circuit,
+        conflict_detail=f"circuit_ref '{data.circuit_ref}' already exists",
+    )
 
 
 @router.put("/{circuit_id}", response_model=CircuitResponse, summary="Update a circuit")
@@ -84,16 +88,11 @@ async def update_circuit(
     db: AsyncSession = Depends(get_db),
     _: User = Depends(get_current_active_user),
 ) -> CircuitResponse:
-    circuit = (await db.execute(select(Circuit).where(Circuit.id == circuit_id))).scalar_one_or_none()
-    if circuit is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Circuit {circuit_id} not found")
+    circuit = await get_or_404(db, Circuit, circuit_id, resource_name="Circuit")
 
-    for field, value in data.model_dump(exclude_unset=True).items():
-        setattr(circuit, field, value)
+    apply_partial_update(circuit, data)
 
-    await db.flush()
-    await db.refresh(circuit)
-    return circuit
+    return await flush_and_refresh(db, circuit)
 
 
 @router.delete("/{circuit_id}", status_code=status.HTTP_204_NO_CONTENT, summary="Delete a circuit")
@@ -102,8 +101,5 @@ async def delete_circuit(
     db: AsyncSession = Depends(get_db),
     _: User = Depends(get_current_active_user),
 ) -> None:
-    circuit = (await db.execute(select(Circuit).where(Circuit.id == circuit_id))).scalar_one_or_none()
-    if circuit is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Circuit {circuit_id} not found")
-    await db.delete(circuit)
-    await db.flush()
+    circuit = await get_or_404(db, Circuit, circuit_id, resource_name="Circuit")
+    await delete_and_flush(db, circuit)
