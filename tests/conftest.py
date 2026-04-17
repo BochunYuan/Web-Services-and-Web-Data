@@ -75,7 +75,7 @@ TestSessionLocal = async_sessionmaker(
 # Session-scoped fixtures — run ONCE for all tests
 # ─────────────────────────────────────────────────────────────────────────────
 
-@pytest_asyncio.fixture(scope="session")
+@pytest_asyncio.fixture(scope="session", loop_scope="session")
 async def setup_test_db():
     """
     Create all database tables in the test database.
@@ -100,7 +100,7 @@ async def setup_test_db():
         os.remove("test_f1.db")
 
 
-@pytest_asyncio.fixture(scope="session")
+@pytest_asyncio.fixture(scope="session", loop_scope="session")
 async def seed_f1_data(setup_test_db):
     """
     Insert a minimal but realistic F1 dataset for testing.
