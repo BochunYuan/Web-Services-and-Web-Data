@@ -33,7 +33,8 @@ Cache key strategy:
 from cachetools import TTLCache
 from threading import Lock
 from typing import Any, Optional
-import json
+
+from sqlalchemy.ext.asyncio import AsyncSession
 
 # One cache per analytics category — different TTLs reflect how "stale" each can be
 # driver/team aggregations change only when new races are imported → 10 min TTL
@@ -41,6 +42,10 @@ import json
 _analytics_cache: TTLCache = TTLCache(maxsize=256, ttl=600)   # 10 minutes
 _season_cache: TTLCache = TTLCache(maxsize=100, ttl=1800)     # 30 minutes
 _lock = Lock()
+
+ANALYTICS_SCOPE = "analytics"
+SEASON_SCOPE = "season"
+_PENDING_INVALIDATIONS_KEY = "pending_cache_invalidations"
 
 
 def _make_key(*args) -> str:
@@ -80,3 +85,62 @@ def get_season(key: str) -> Optional[Any]:
 
 def set_season(key: str, value: Any) -> None:
     cache_set(_season_cache, value, key)
+
+
+def clear_analytics() -> None:
+    """Clear all cached analytics entries."""
+    with _lock:
+        _analytics_cache.clear()
+
+
+def clear_season() -> None:
+    """Clear all cached season-highlight entries."""
+    with _lock:
+        _season_cache.clear()
+
+
+def clear_all() -> None:
+    """Clear every in-memory analytics cache."""
+    with _lock:
+        _analytics_cache.clear()
+        _season_cache.clear()
+
+
+def _session_info(db: AsyncSession) -> dict[str, Any]:
+    """Return the mutable info dict attached to the current SQLAlchemy session."""
+    return db.info
+
+
+def mark_for_invalidation(db: AsyncSession, *scopes: str) -> None:
+    """
+    Register cache scopes to clear after the surrounding transaction commits.
+
+    We defer invalidation until commit succeeds so failed writes do not evict
+    otherwise-valid cached analytics responses.
+    """
+    pending = _session_info(db).setdefault(_PENDING_INVALIDATIONS_KEY, set())
+    pending.update(scopes)
+
+
+def mark_domain_data_changed(db: AsyncSession) -> None:
+    """
+    Mark all analytics caches dirty after a successful domain-data write.
+
+    Driver/team/circuit/race mutations can change names, metadata, counts, and
+    season summaries, so the safest strategy is to clear both caches.
+    """
+    mark_for_invalidation(db, ANALYTICS_SCOPE, SEASON_SCOPE)
+
+
+def run_pending_invalidations(db: AsyncSession) -> None:
+    """Execute any cache clears queued on the session after commit succeeds."""
+    pending = _session_info(db).pop(_PENDING_INVALIDATIONS_KEY, set())
+    if ANALYTICS_SCOPE in pending:
+        clear_analytics()
+    if SEASON_SCOPE in pending:
+        clear_season()
+
+
+def discard_pending_invalidations(db: AsyncSession) -> None:
+    """Drop queued invalidations after rollback or failed writes."""
+    _session_info(db).pop(_PENDING_INVALIDATIONS_KEY, None)
