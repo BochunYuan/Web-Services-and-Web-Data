@@ -14,6 +14,7 @@ from typing import Optional
 from app.database import get_db
 from app.models.race import Race
 from app.schemas.race import RaceCreate, RaceUpdate, RaceResponse
+from app.services import cache_service
 from app.utils.pagination import PaginationParams, PagedResponse
 from app.utils.crud import add_and_flush_or_409, apply_update_data, delete_and_flush, get_or_404
 from app.core.dependencies import get_current_active_user
@@ -96,6 +97,7 @@ async def create_race(
     d["date"] = d.pop("race_date", None)
     d["time"] = d.pop("race_time", None)
     race = Race(**d)
+    cache_service.mark_domain_data_changed(db)
     await add_and_flush_or_409(
         db,
         race,
@@ -121,6 +123,7 @@ async def update_race(
     if "race_time" in update_data:
         update_data["time"] = update_data.pop("race_time")
     apply_update_data(race, update_data)
+    cache_service.mark_domain_data_changed(db)
 
     await db.flush()
     result = await db.execute(select(Race).options(selectinload(Race.circuit)).where(Race.id == race_id))
@@ -134,4 +137,5 @@ async def delete_race(
     _: User = Depends(get_current_active_user),
 ) -> None:
     race = await get_or_404(db, Race, race_id, resource_name="Race")
+    cache_service.mark_domain_data_changed(db)
     await delete_and_flush(db, race)
