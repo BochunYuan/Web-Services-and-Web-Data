@@ -11,6 +11,7 @@ from typing import Optional
 from app.database import get_db
 from app.models.team import Team
 from app.schemas.team import TeamCreate, TeamUpdate, TeamResponse
+from app.services import cache_service
 from app.utils.pagination import PaginationParams, PagedResponse
 from app.utils.crud import (
     add_flush_refresh_or_409,
@@ -75,6 +76,7 @@ async def create_team(
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f"constructor_ref '{data.constructor_ref}' already exists")
 
     team = Team(**data.model_dump())
+    cache_service.mark_domain_data_changed(db)
     return await add_flush_refresh_or_409(
         db,
         team,
@@ -92,6 +94,7 @@ async def update_team(
     team = await get_or_404(db, Team, team_id, resource_name="Team")
 
     apply_partial_update(team, data)
+    cache_service.mark_domain_data_changed(db)
 
     return await flush_and_refresh(db, team)
 
@@ -103,4 +106,5 @@ async def delete_team(
     _: User = Depends(get_current_active_user),
 ) -> None:
     team = await get_or_404(db, Team, team_id, resource_name="Team")
+    cache_service.mark_domain_data_changed(db)
     await delete_and_flush(db, team)
