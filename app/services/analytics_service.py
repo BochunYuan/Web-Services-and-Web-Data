@@ -18,7 +18,7 @@ prevents SQL injection by design.
 """
 
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, func, and_, distinct
+from sqlalchemy import select, func, and_, case, distinct
 from sqlalchemy.orm import aliased
 from fastapi import HTTPException, status
 from typing import Optional
@@ -312,9 +312,17 @@ async def get_season_highlights(db: AsyncSession, year: int) -> dict:
     if cached is not None:
         return cached
 
-    race_count = (await db.execute(
-        select(func.count()).select_from(Race).where(Race.year == year)
-    )).scalar_one()
+    season_totals = (await db.execute(
+        select(
+            func.count(distinct(Race.id)).label("race_count"),
+            total_points().label("total_points"),
+            func.count(distinct(case((Result.position == 1, Result.driver_id)))).label("unique_winners"),
+        )
+        .select_from(Race)
+        .outerjoin(Result, Result.race_id == Race.id)
+        .where(Race.year == year)
+    )).fetchone()
+    race_count = season_totals.race_count if season_totals else 0
     if race_count == 0:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f"No data for season {year}")
@@ -323,83 +331,71 @@ async def get_season_highlights(db: AsyncSession, year: int) -> dict:
     driver_points_query = (
         select(
             Result.driver_id,
+            Driver.forename.label("driver_forename"),
+            Driver.surname.label("driver_surname"),
             total_points().label("total_points"),
         )
         .join(Race, Result.race_id == Race.id)
+        .join(Driver, Result.driver_id == Driver.id)
         .where(Race.year == year)
-        .group_by(Result.driver_id)
+        .group_by(Result.driver_id, Driver.forename, Driver.surname)
         .order_by(total_points().desc())
         .limit(1)
     )
     champ_row = (await db.execute(driver_points_query)).fetchone()
     champion_driver = None
     if champ_row:
-        driver = (await db.execute(select(Driver).where(Driver.id == champ_row.driver_id))).scalar_one_or_none()
-        if driver:
-            champion_driver = {
-                "id": driver.id,
-                "name": f"{driver.forename} {driver.surname}",
-                "points": round(float(champ_row.total_points), 1),
-            }
+        champion_driver = {
+            "id": champ_row.driver_id,
+            "name": f"{champ_row.driver_forename} {champ_row.driver_surname}",
+            "points": round(float(champ_row.total_points), 1),
+        }
 
     # ── Champion constructor ──
     team_points_query = (
         select(
             Result.constructor_id,
+            Team.name.label("team_name"),
             total_points().label("total_points"),
         )
         .join(Race, Result.race_id == Race.id)
+        .join(Team, Result.constructor_id == Team.id)
         .where(Race.year == year, Result.constructor_id.isnot(None))
-        .group_by(Result.constructor_id)
+        .group_by(Result.constructor_id, Team.name)
         .order_by(total_points().desc())
         .limit(1)
     )
     team_row = (await db.execute(team_points_query)).fetchone()
     champion_team = None
     if team_row:
-        team = (await db.execute(select(Team).where(Team.id == team_row.constructor_id))).scalar_one_or_none()
-        if team:
-            champion_team = {
-                "id": team.id,
-                "name": team.name,
-                "points": round(float(team_row.total_points), 1),
-            }
+        champion_team = {
+            "id": team_row.constructor_id,
+            "name": team_row.team_name,
+            "points": round(float(team_row.total_points), 1),
+        }
 
     # ── Most race wins by a single driver ──
     wins_query = (
         select(
             Result.driver_id,
+            Driver.forename.label("driver_forename"),
+            Driver.surname.label("driver_surname"),
             result_count().label("wins"),
         )
         .join(Race, Result.race_id == Race.id)
+        .join(Driver, Result.driver_id == Driver.id)
         .where(Race.year == year, Result.position == 1)
-        .group_by(Result.driver_id)
+        .group_by(Result.driver_id, Driver.forename, Driver.surname)
         .order_by(result_count().desc())
         .limit(1)
     )
     wins_row = (await db.execute(wins_query)).fetchone()
     most_wins = None
     if wins_row:
-        driver = (await db.execute(select(Driver).where(Driver.id == wins_row.driver_id))).scalar_one_or_none()
-        if driver:
-            most_wins = {
-                "driver": f"{driver.forename} {driver.surname}",
-                "wins": wins_row.wins,
-            }
-
-    # ── Number of unique race winners (season competitiveness metric) ──
-    unique_winners = (await db.execute(
-        select(func.count(distinct(Result.driver_id)))
-        .join(Race, Result.race_id == Race.id)
-        .where(Race.year == year, Result.position == 1)
-    )).scalar_one()
-
-    # ── Total points scored across the whole season ──
-    season_total_points = (await db.execute(
-        select(total_points())
-        .join(Race, Result.race_id == Race.id)
-        .where(Race.year == year)
-    )).scalar_one()
+        most_wins = {
+            "driver": f"{wins_row.driver_forename} {wins_row.driver_surname}",
+            "wins": wins_row.wins,
+        }
 
     result = {
         "season": year,
@@ -407,8 +403,8 @@ async def get_season_highlights(db: AsyncSession, year: int) -> dict:
         "champion_driver": champion_driver,
         "champion_constructor": champion_team,
         "most_race_wins": most_wins,
-        "unique_race_winners": unique_winners,
-        "total_points_scored": round(float(season_total_points or 0), 1),
+        "unique_race_winners": season_totals.unique_winners,
+        "total_points_scored": round(float(season_totals.total_points or 0), 1),
     }
     cache_service.set_season(cache_key, result)
     return result
@@ -438,25 +434,53 @@ async def get_circuit_stats(db: AsyncSession, circuit_id: int) -> dict:
     if cached is not None:
         return cached
 
-    circuit = (await db.execute(select(Circuit).where(Circuit.id == circuit_id))).scalar_one_or_none()
-    if circuit is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f"Circuit {circuit_id} not found")
-
-    # ── Basic race history ──
+    # ── Circuit metadata + basic race history ──
     history = (await db.execute(
         select(
+            Circuit.id.label("circuit_id"),
+            Circuit.name.label("circuit_name"),
+            Circuit.location.label("circuit_location"),
+            Circuit.country.label("circuit_country"),
+            Circuit.lat.label("circuit_lat"),
+            Circuit.lng.label("circuit_lng"),
             func.count(Race.id).label("total_races"),
             func.min(Race.year).label("first_year"),
             func.max(Race.year).label("last_year"),
         )
-        .where(Race.circuit_id == circuit_id)
+        .select_from(Circuit)
+        .outerjoin(Race, Race.circuit_id == Circuit.id)
+        .where(Circuit.id == circuit_id)
+        .group_by(
+            Circuit.id,
+            Circuit.name,
+            Circuit.location,
+            Circuit.country,
+            Circuit.lat,
+            Circuit.lng,
+        )
     )).fetchone()
 
-    if not history or history.total_races == 0:
+    if history is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail=f"Circuit {circuit_id} not found")
+
+    circuit_data = {
+        "id": history.circuit_id,
+        "name": history.circuit_name,
+        "location": history.circuit_location,
+        "country": history.circuit_country,
+        "lat": history.circuit_lat,
+        "lng": history.circuit_lng,
+    }
+
+    if history.total_races == 0:
         return {
-            "circuit": {"id": circuit.id, "name": circuit.name,
-                        "location": circuit.location, "country": circuit.country},
+            "circuit": {
+                "id": circuit_data["id"],
+                "name": circuit_data["name"],
+                "location": circuit_data["location"],
+                "country": circuit_data["country"],
+            },
             "total_races_hosted": 0,
             "message": "No race data available for this circuit",
         }
@@ -465,25 +489,21 @@ async def get_circuit_stats(db: AsyncSession, circuit_id: int) -> dict:
     top_winners_query = (
         select(
             Result.driver_id,
+            Driver.forename.label("driver_forename"),
+            Driver.surname.label("driver_surname"),
             result_count().label("wins"),
         )
         .join(Race, Result.race_id == Race.id)
+        .join(Driver, Result.driver_id == Driver.id)
         .where(Race.circuit_id == circuit_id, Result.position == 1)
-        .group_by(Result.driver_id)
+        .group_by(Result.driver_id, Driver.forename, Driver.surname)
         .order_by(result_count().desc())
         .limit(5)
     )
     winner_rows = (await db.execute(top_winners_query)).fetchall()
 
-    # Batch-load driver names (one query instead of N)
-    winner_ids = [r.driver_id for r in winner_rows]
-    driver_map = {}
-    if winner_ids:
-        drivers = (await db.execute(select(Driver).where(Driver.id.in_(winner_ids)))).scalars().all()
-        driver_map = {d.id: f"{d.forename} {d.surname}" for d in drivers}
-
     top_winners = [
-        {"driver": driver_map.get(r.driver_id, "Unknown"), "wins": r.wins}
+        {"driver": f"{r.driver_forename} {r.driver_surname}", "wins": r.wins}
         for r in winner_rows
     ]
 
@@ -505,14 +525,7 @@ async def get_circuit_stats(db: AsyncSession, circuit_id: int) -> dict:
     best_team_row = (await db.execute(best_team_query)).fetchone()
 
     result = {
-        "circuit": {
-            "id": circuit.id,
-            "name": circuit.name,
-            "location": circuit.location,
-            "country": circuit.country,
-            "lat": circuit.lat,
-            "lng": circuit.lng,
-        },
+        "circuit": circuit_data,
         "total_races_hosted": history.total_races,
         "first_race_year": history.first_year,
         "last_race_year": history.last_year,
@@ -560,10 +573,10 @@ async def get_head_to_head(db: AsyncSession, driver_id: int, rival_id: int) -> d
     if cached is not None:
         return cached
 
-    # Verify both drivers exist
-    for did, label in [(driver_id, "driver_id"), (rival_id, "rival_id")]:
-        exists = (await db.execute(select(Driver).where(Driver.id == did))).scalar_one_or_none()
-        if exists is None:
+    drivers = (await db.execute(select(Driver).where(Driver.id.in_([driver_id, rival_id])))).scalars().all()
+    driver_map = {driver.id: driver for driver in drivers}
+    for did in [driver_id, rival_id]:
+        if did not in driver_map:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                                 detail=f"Driver {did} not found")
 
@@ -586,10 +599,10 @@ async def get_head_to_head(db: AsyncSession, driver_id: int, rival_id: int) -> d
     rows = (await db.execute(shared_races_query)).fetchall()
 
     total_shared = len(rows)
+    d1 = driver_map[driver_id]
+    d2 = driver_map[rival_id]
     if total_shared == 0:
         # Drivers may have raced in different eras
-        d1 = (await db.execute(select(Driver).where(Driver.id == driver_id))).scalar_one()
-        d2 = (await db.execute(select(Driver).where(Driver.id == rival_id))).scalar_one()
         return {
             "driver": {"id": d1.id, "name": f"{d1.forename} {d1.surname}"},
             "rival": {"id": d2.id, "name": f"{d2.forename} {d2.surname}"},
@@ -604,9 +617,6 @@ async def get_head_to_head(db: AsyncSession, driver_id: int, rival_id: int) -> d
 
     driver_total_points = sum(float(r.a_points or 0) for r in rows)
     rival_total_points = sum(float(r.b_points or 0) for r in rows)
-
-    d1 = (await db.execute(select(Driver).where(Driver.id == driver_id))).scalar_one()
-    d2 = (await db.execute(select(Driver).where(Driver.id == rival_id))).scalar_one()
 
     result = {
         "driver": {"id": d1.id, "name": f"{d1.forename} {d1.surname}", "nationality": d1.nationality},
