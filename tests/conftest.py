@@ -48,6 +48,7 @@ from app.main import app
 from app.database import Base, get_db
 from app.database_constraints import create_schema_with_constraints
 from app.models import Driver, Team, Circuit, Race, Result  # ensure models are registered
+from app.services import cache_service
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -203,8 +204,10 @@ async def client(setup_test_db) -> AsyncGenerator[AsyncClient, None]:
             try:
                 yield session
                 await session.commit()
+                cache_service.run_pending_invalidations(session)
             except Exception:
                 await session.rollback()
+                cache_service.discard_pending_invalidations(session)
                 raise
 
     app.dependency_overrides[get_db] = override_get_db
