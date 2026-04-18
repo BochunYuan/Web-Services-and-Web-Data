@@ -1,6 +1,7 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase
 from app.config import settings
+from app.services import cache_service
 
 
 # ---------------------------------------------------------------------------
@@ -74,6 +75,8 @@ async def get_db():
         try:
             yield session
             await session.commit()
+            cache_service.run_pending_invalidations(session)
         except Exception:
             await session.rollback()
+            cache_service.discard_pending_invalidations(session)
             raise
