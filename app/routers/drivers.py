@@ -16,6 +16,7 @@ from typing import Optional
 from app.database import get_db
 from app.models.driver import Driver
 from app.schemas.driver import DriverCreate, DriverUpdate, DriverResponse
+from app.services import cache_service
 from app.utils.pagination import PaginationParams, PagedResponse
 from app.utils.crud import (
     add_flush_refresh_or_409,
@@ -110,6 +111,7 @@ async def create_driver(
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f"driver_ref '{data.driver_ref}' already exists")
 
     driver = Driver(**data.model_dump())
+    cache_service.mark_domain_data_changed(db)
     return await add_flush_refresh_or_409(
         db,
         driver,
@@ -135,6 +137,7 @@ async def update_driver(
     # This means PATCH-style partial updates: sending {"nationality": "British"}
     # only changes nationality, leaving all other fields untouched.
     apply_partial_update(driver, data)
+    cache_service.mark_domain_data_changed(db)
 
     return await flush_and_refresh(db, driver)
 
@@ -152,6 +155,7 @@ async def delete_driver(
 ) -> None:
     driver = await get_or_404(db, Driver, driver_id, resource_name="Driver")
 
+    cache_service.mark_domain_data_changed(db)
     await delete_and_flush(db, driver)
     # 204 No Content: success but no body — the standard for DELETE operations
     return None
