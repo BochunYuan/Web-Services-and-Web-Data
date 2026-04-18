@@ -10,6 +10,7 @@ from typing import Optional
 from app.database import get_db
 from app.models.circuit import Circuit
 from app.schemas.circuit import CircuitCreate, CircuitUpdate, CircuitResponse
+from app.services import cache_service
 from app.utils.pagination import PaginationParams, PagedResponse
 from app.utils.crud import (
     add_flush_refresh_or_409,
@@ -74,6 +75,7 @@ async def create_circuit(
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f"circuit_ref '{data.circuit_ref}' already exists")
 
     circuit = Circuit(**data.model_dump())
+    cache_service.mark_domain_data_changed(db)
     return await add_flush_refresh_or_409(
         db,
         circuit,
@@ -91,6 +93,7 @@ async def update_circuit(
     circuit = await get_or_404(db, Circuit, circuit_id, resource_name="Circuit")
 
     apply_partial_update(circuit, data)
+    cache_service.mark_domain_data_changed(db)
 
     return await flush_and_refresh(db, circuit)
 
@@ -102,4 +105,5 @@ async def delete_circuit(
     _: User = Depends(get_current_active_user),
 ) -> None:
     circuit = await get_or_404(db, Circuit, circuit_id, resource_name="Circuit")
+    cache_service.mark_domain_data_changed(db)
     await delete_and_flush(db, circuit)
