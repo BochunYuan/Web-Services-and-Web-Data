@@ -11,7 +11,7 @@ from fastapi.responses import FileResponse, HTMLResponse
 
 from app.config import settings
 from app.database import engine
-from app.database_constraints import create_schema_with_constraints
+from app.database_migrations import upgrade_database_to_head
 from app.core.rate_limiter import RateLimitMiddleware
 import app.models  # noqa: F401 — import models so Base.metadata is populated
 
@@ -34,11 +34,8 @@ CDN_REDOC_JS = "https://cdn.jsdelivr.net/npm/redoc@3.0.0-rc.0/bundle/redoc.stand
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # STARTUP: create all database tables if they don't exist yet.
-    # In production we'd use Alembic migrations instead, but for this
-    # project create_all is simpler and sufficient.
-    async with engine.begin() as conn:
-        await create_schema_with_constraints(conn)
+    # STARTUP: apply versioned Alembic migrations before serving requests.
+    upgrade_database_to_head()
 
     yield  # Application runs here
 
