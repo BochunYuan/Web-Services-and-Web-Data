@@ -163,18 +163,33 @@ class PDFDeck:
         )
         output_path.write_bytes(buffer)
 
+    @staticmethod
+    def is_background_rect(rect: Rect) -> bool:
+        return (
+            (rect.x <= 0.1 and rect.y <= 0.1 and rect.w >= SLIDE_W - 0.1 and rect.h >= SLIDE_H - 0.1)
+            or (rect.x <= 0.1 and rect.y <= 0.1 and rect.w <= 14 and rect.h >= SLIDE_H - 0.1)
+            or (rect.x >= 740 and rect.y >= 350 and rect.w >= 180 and rect.h >= 160)
+        )
+
+    def render_rect(self, rect: Rect) -> list[str]:
+        commands = [
+            f"{rect.fill[0]:.3f} {rect.fill[1]:.3f} {rect.fill[2]:.3f} rg "
+            f"{rect.x:.2f} {rect.y:.2f} {rect.w:.2f} {rect.h:.2f} re f"
+        ]
+        if rect.stroke:
+            commands.append(
+                f"{rect.stroke[0]:.3f} {rect.stroke[1]:.3f} {rect.stroke[2]:.3f} RG "
+                f"{rect.lw:.2f} w {rect.x:.2f} {rect.y:.2f} {rect.w:.2f} {rect.h:.2f} re S"
+            )
+        return commands
+
     def render_slide(self, slide: Slide) -> str:
         commands: list[str] = []
-        for rect in slide.rects:
-            commands.append(
-                f"{rect.fill[0]:.3f} {rect.fill[1]:.3f} {rect.fill[2]:.3f} rg "
-                f"{rect.x:.2f} {rect.y:.2f} {rect.w:.2f} {rect.h:.2f} re f"
-            )
-            if rect.stroke:
-                commands.append(
-                    f"{rect.stroke[0]:.3f} {rect.stroke[1]:.3f} {rect.stroke[2]:.3f} RG "
-                    f"{rect.lw:.2f} w {rect.x:.2f} {rect.y:.2f} {rect.w:.2f} {rect.h:.2f} re S"
-                )
+        background_rects = [rect for rect in slide.rects if self.is_background_rect(rect)]
+        foreground_rects = [rect for rect in slide.rects if not self.is_background_rect(rect)]
+
+        for rect in background_rects:
+            commands.extend(self.render_rect(rect))
         for poly in slide.polys:
             if not poly.points:
                 continue
@@ -192,6 +207,8 @@ class PDFDeck:
                 f"{line.color[0]:.3f} {line.color[1]:.3f} {line.color[2]:.3f} RG "
                 f"{line.lw:.2f} w {line.x1:.2f} {line.y1:.2f} m {line.x2:.2f} {line.y2:.2f} l S"
             )
+        for rect in foreground_rects:
+            commands.extend(self.render_rect(rect))
         for text in slide.texts:
             cleaned = clean_text(text.text)
             commands.append(
@@ -245,6 +262,25 @@ class Canvas:
     ) -> None:
         font = FONTS["mono_bold" if mono and bold else "mono" if mono else "bold" if bold else "body"]
         self.slide.texts.append(Text(x, y, text, font, size, color))
+
+    def text_width(self, text: str, size: float, *, mono: bool = False) -> float:
+        factor = 0.62 if mono else 0.54
+        return len(text) * size * factor
+
+    def center_text(
+        self,
+        x: float,
+        y: float,
+        w: float,
+        text: str,
+        size: float,
+        color: tuple[float, float, float] = COLORS["ink"],
+        *,
+        bold: bool = False,
+        mono: bool = False,
+    ) -> None:
+        tx = x + max(0, (w - self.text_width(text, size, mono=mono)) / 2)
+        self.text(tx, y, text, size, color, bold=bold, mono=mono)
 
     def paragraph(
         self,
@@ -307,16 +343,49 @@ class Canvas:
                 Poly([(x2, y2), (x2 - 6, y2 - 12 * direction), (x2 + 6, y2 - 12 * direction)], color)
             )
 
-    def card(self, x: float, y: float, w: float, h: float, title: str, body: str, accent: tuple[float, float, float] = COLORS["red"]) -> None:
+    def card(
+        self,
+        x: float,
+        y: float,
+        w: float,
+        h: float,
+        title: str,
+        body: str,
+        accent: tuple[float, float, float] = COLORS["red"],
+        *,
+        title_size: float = 14.2,
+        body_size: float = 11.0,
+        pad: float = 16,
+    ) -> None:
         self.rect(x, y, w, h, COLORS["panel"], COLORS["line"], 1)
         self.rect(x, y + h - 5, w, 5, accent)
-        self.text(x + 16, y + h - 28, title, 13, COLORS["ink"], bold=True)
-        self.paragraph(x + 16, y + h - 50, body, w - 32, 10.2, COLORS["muted"], leading=14)
+        self.text(x + pad, y + h - max(25, h * 0.26), title, title_size, COLORS["ink"], bold=True)
+        self.paragraph(
+            x + pad,
+            y + h - max(48, h * 0.50),
+            body,
+            w - pad * 2,
+            body_size,
+            COLORS["muted"],
+            leading=body_size + 4.2,
+        )
 
-    def stat(self, x: float, y: float, w: float, label: str, value: str, color: tuple[float, float, float] = COLORS["red"]) -> None:
-        self.rect(x, y, w, 70, COLORS["panel"], COLORS["line"], 1)
-        self.text(x + 16, y + 40, value, 22, color, bold=True)
-        self.text(x + 16, y + 18, label, 10, COLORS["muted"])
+    def stat(
+        self,
+        x: float,
+        y: float,
+        w: float,
+        label: str,
+        value: str,
+        color: tuple[float, float, float] = COLORS["red"],
+        *,
+        h: float = 74,
+        value_size: float = 23,
+        label_size: float = 10.8,
+    ) -> None:
+        self.rect(x, y, w, h, COLORS["panel"], COLORS["line"], 1)
+        self.center_text(x, y + h * 0.60, w, value, value_size, color, bold=True)
+        self.center_text(x, y + h * 0.33, w, label, label_size, COLORS["muted"])
 
     def browser_frame(self, x: float, y: float, w: float, h: float, url: str) -> None:
         self.rect(x, y, w, h, COLORS["panel"], COLORS["line"], 1)
@@ -349,12 +418,13 @@ def api_counts() -> tuple[int, int]:
 
 def table_box(c: Canvas, x: float, y: float, w: float, h: float, name: str, fields: list[str], color: tuple[float, float, float]) -> None:
     c.rect(x, y, w, h, COLORS["panel"], COLORS["line"], 1)
-    c.rect(x, y + h - 28, w, 28, color)
-    c.text(x + 12, y + h - 20, name, 12, COLORS["white"], bold=True)
-    fy = y + h - 44
+    header_h = 32
+    c.rect(x, y + h - header_h, w, header_h, color)
+    c.text(x + 14, y + h - 22, name, 13.5, COLORS["white"], bold=True)
+    fy = y + h - header_h - 16
     for field in fields[:7]:
-        c.text(x + 12, fy, field, 8.4, COLORS["muted"], mono=True)
-        fy -= 13
+        c.text(x + 14, fy, field, 9.2, COLORS["muted"], mono=True)
+        fy -= 14.5
 
 
 def add_title_slide(deck: PDFDeck, number: int, operations: int, analytics: int) -> None:
@@ -370,17 +440,17 @@ def add_title_slide(deck: PDFDeck, number: int, operations: int, analytics: int)
         COLORS["muted"],
         leading=21,
     )
-    c.stat(72, 170, 142, "Drivers", "861", COLORS["red"])
-    c.stat(232, 170, 142, "Teams", "212", COLORS["gold"])
-    c.stat(392, 170, 142, "Results", "26,759", COLORS["green"])
-    c.stat(552, 170, 142, "OpenAPI ops", str(operations), COLORS["cyan"])
-    c.stat(712, 170, 142, "Analytics", str(analytics), COLORS["purple"])
+    c.stat(72, 164, 142, "Drivers", "861", COLORS["red"], h=82, value_size=20.5, label_size=11.2)
+    c.stat(232, 164, 142, "Teams", "212", COLORS["gold"], h=82, value_size=20.5, label_size=11.2)
+    c.stat(392, 164, 142, "Results", "26,759", COLORS["green"], h=82, value_size=19.0, label_size=11.2)
+    c.stat(552, 164, 142, "OpenAPI ops", str(operations), COLORS["cyan"], h=82, value_size=20.5, label_size=11.2)
+    c.stat(712, 164, 142, "Analytics", str(analytics), COLORS["purple"], h=82, value_size=20.5, label_size=11.2)
     c.rect(710, 276, 160, 128, COLORS["panel"], COLORS["line"], 1)
-    c.text(732, 370, "Stack", 13, COLORS["ink"], bold=True)
-    c.text(732, 342, "FastAPI", 11, COLORS["muted"])
-    c.text(732, 320, "SQLAlchemy async", 11, COLORS["muted"])
-    c.text(732, 298, "JWT + bcrypt", 11, COLORS["muted"])
-    c.text(732, 276, "FastMCP", 11, COLORS["muted"])
+    c.center_text(710, 374, 160, "Stack", 13.8, COLORS["ink"], bold=True)
+    c.text(732, 344, "FastAPI", 11.8, COLORS["muted"])
+    c.text(732, 322, "SQLAlchemy async", 11.8, COLORS["muted"])
+    c.text(732, 300, "JWT + bcrypt", 11.8, COLORS["muted"])
+    c.text(732, 278, "FastMCP", 11.8, COLORS["muted"])
 
 
 def add_scope_slide(deck: PDFDeck, number: int) -> None:
@@ -431,26 +501,26 @@ def add_architecture_slide(deck: PDFDeck, number: int) -> None:
 
 def add_database_slide(deck: PDFDeck, number: int) -> None:
     c = Canvas(deck, "Database Diagram", "Star-schema style analytics around the results fact table", number)
-    table_box(c, 388, 215, 185, 175, "results", ["id PK", "race_id FK", "driver_id FK", "constructor_id FK", "position", "position_order", "points"], COLORS["red"])
+    table_box(c, 388, 212, 190, 182, "results", ["id PK", "race_id FK", "driver_id FK", "constructor_id FK", "position", "position_order", "points"], COLORS["red"])
     table_box(c, 82, 315, 180, 130, "drivers", ["id PK", "driver_ref UNIQUE", "forename", "surname INDEX", "nationality INDEX", "code"], COLORS["blue"])
     table_box(c, 82, 125, 180, 130, "teams", ["id PK", "constructor_ref UNIQUE", "name INDEX", "nationality", "url"], COLORS["purple"])
     table_box(c, 700, 315, 180, 130, "races", ["id PK", "year INDEX", "round", "circuit_id FK", "name", "date"], COLORS["green"])
     table_box(c, 700, 125, 180, 130, "circuits", ["id PK", "circuit_ref UNIQUE", "name", "location", "country INDEX", "lat / lng"], COLORS["gold"])
-    table_box(c, 388, 70, 185, 105, "users", ["id PK", "username UNIQUE", "email UNIQUE", "hashed_password", "is_active"], COLORS["cyan"])
+    table_box(c, 388, 70, 190, 110, "users", ["id PK", "username UNIQUE", "email UNIQUE", "hashed_password", "is_active"], COLORS["cyan"])
 
     c.arrow(262, 370, 388, 315, COLORS["blue"], 2)
     c.arrow(262, 190, 388, 260, COLORS["purple"], 2)
-    c.arrow(700, 370, 573, 315, COLORS["green"], 2)
+    c.arrow(700, 370, 578, 315, COLORS["green"], 2)
     c.arrow(790, 315, 790, 255, COLORS["gold"], 2)
-    c.rect(296, 358, 100, 22, COLORS["bg"])
-    c.text(306, 365, "1 driver -> many", 8.6, COLORS["muted"])
-    c.rect(296, 178, 92, 22, COLORS["bg"])
-    c.text(304, 185, "1 team -> many", 8.6, COLORS["muted"])
-    c.rect(576, 358, 92, 22, COLORS["bg"])
-    c.text(586, 365, "1 race -> many", 8.6, COLORS["muted"])
-    c.rect(805, 284, 78, 24, COLORS["bg"])
-    c.text(812, 292, "1 circuit", 8.4, COLORS["muted"])
-    c.text(812, 280, "-> many races", 8.4, COLORS["muted"])
+    c.rect(296, 358, 94, 24, COLORS["bg"])
+    c.center_text(296, 366, 94, "1 driver -> many", 8.9, COLORS["muted"])
+    c.rect(296, 178, 92, 24, COLORS["bg"])
+    c.center_text(296, 186, 92, "1 team -> many", 8.9, COLORS["muted"])
+    c.rect(588, 358, 90, 24, COLORS["bg"])
+    c.center_text(588, 366, 90, "1 race -> many", 8.9, COLORS["muted"])
+    c.rect(805, 280, 82, 34, COLORS["bg"])
+    c.center_text(805, 296, 82, "1 circuit", 8.8, COLORS["muted"])
+    c.center_text(805, 284, 82, "-> many races", 8.8, COLORS["muted"])
     c.paragraph(
         82,
         96,
@@ -463,25 +533,25 @@ def add_database_slide(deck: PDFDeck, number: int) -> None:
 
 def add_security_slide(deck: PDFDeck, number: int) -> None:
     c = Canvas(deck, "Security And Request Flow", "JWT auth, validation, rate limiting and safe password storage", number)
-    c.card(70, 340, 190, 80, "Register/login", "Pydantic validates username, email and password before auth_service touches the database.", COLORS["red"])
-    c.card(305, 340, 190, 80, "bcrypt hash", "User passwords are stored as bcrypt hashes, never plain text or response fields.", COLORS["gold"])
-    c.card(540, 340, 190, 80, "Token pair", "Access token: 30 minutes. Refresh token: 7 days.", COLORS["green"])
-    c.card(305, 205, 190, 80, "Protected writes", "POST, PUT and DELETE depend on get_current_active_user.", COLORS["cyan"])
-    c.card(540, 205, 190, 80, "Rate limit", "Sliding-window per-IP limiter returns 429 and Retry-After.", COLORS["purple"])
-    c.card(70, 205, 190, 80, "CORS", "Explicit allowed origins, not wildcard browser access.", COLORS["blue"])
+    c.card(70, 338, 190, 88, "Register/login", "Validate credentials, then issue tokens through auth_service.", COLORS["red"], body_size=10.5)
+    c.card(305, 338, 190, 88, "bcrypt hash", "Passwords are stored as bcrypt hashes, never plain text.", COLORS["gold"], body_size=10.5)
+    c.card(540, 338, 190, 88, "Token pair", "Access token: 30 minutes. Refresh token: 7 days.", COLORS["green"], body_size=10.5)
+    c.card(305, 196, 190, 88, "Protected writes", "POST, PUT and DELETE require an active authenticated user.", COLORS["cyan"], body_size=10.5)
+    c.card(540, 196, 190, 88, "Rate limit", "Sliding-window per-IP limiter returns 429 with Retry-After.", COLORS["purple"], body_size=10.5)
+    c.card(70, 196, 190, 88, "CORS", "Explicit allowed origins, not wildcard browser access.", COLORS["blue"], body_size=10.5)
     c.arrow(260, 380, 305, 380, COLORS["red"], 2)
     c.arrow(495, 380, 540, 380, COLORS["red"], 2)
     c.arrow(635, 340, 635, 285, COLORS["green"], 2)
     c.arrow(540, 245, 495, 245, COLORS["cyan"], 2)
     c.arrow(305, 245, 260, 245, COLORS["cyan"], 2)
-    c.rect(770, 190, 120, 230, COLORS["panel"], COLORS["line"], 1)
-    c.text(792, 390, "Status codes", 13, COLORS["ink"], bold=True)
-    c.text(792, 356, "401 invalid token", 10, COLORS["muted"], mono=True)
-    c.text(792, 332, "403 inactive user", 10, COLORS["muted"], mono=True)
-    c.text(792, 308, "409 conflict", 10, COLORS["muted"], mono=True)
-    c.text(792, 284, "422 validation", 10, COLORS["muted"], mono=True)
-    c.text(792, 260, "429 rate limit", 10, COLORS["muted"], mono=True)
-    c.paragraph(72, 126, "Important detail: login uses a dummy bcrypt hash when a username does not exist, reducing user-enumeration risk from timing differences.", 790, 12, COLORS["muted"])
+    c.rect(770, 182, 120, 238, COLORS["panel"], COLORS["line"], 1)
+    c.center_text(770, 390, 120, "Status codes", 13.6, COLORS["ink"], bold=True)
+    c.center_text(770, 356, 120, "401 invalid", 9.2, COLORS["muted"], mono=True)
+    c.center_text(770, 332, 120, "403 inactive", 9.2, COLORS["muted"], mono=True)
+    c.center_text(770, 308, 120, "409 conflict", 9.2, COLORS["muted"], mono=True)
+    c.center_text(770, 284, 120, "422 validation", 9.2, COLORS["muted"], mono=True)
+    c.center_text(770, 260, 120, "429 rate limit", 9.2, COLORS["muted"], mono=True)
+    c.paragraph(72, 126, "Important detail: dummy bcrypt hashing reduces username-enumeration timing risk during login.", 790, 12.8, COLORS["muted"])
 
 
 def add_frontend_demo_slide(deck: PDFDeck, number: int) -> None:
@@ -572,11 +642,11 @@ def add_testing_slide(deck: PDFDeck, number: int) -> None:
     analytics = count_tests("tests/test_analytics.py")
     results = count_tests("tests/test_results.py")
     total = auth + drivers + analytics + results
-    c.stat(72, 338, 150, "Auth tests", str(auth), COLORS["cyan"])
-    c.stat(246, 338, 150, "Driver tests", str(drivers), COLORS["red"])
-    c.stat(420, 338, 150, "Analytics tests", str(analytics), COLORS["gold"])
-    c.stat(594, 338, 150, "Result tests", str(results), COLORS["green"])
-    c.stat(768, 338, 120, "Total", str(total), COLORS["purple"])
+    c.stat(72, 330, 150, "Auth tests", str(auth), COLORS["cyan"], h=82, value_size=20.5, label_size=11.2)
+    c.stat(246, 330, 150, "Driver tests", str(drivers), COLORS["red"], h=82, value_size=20.5, label_size=11.2)
+    c.stat(420, 330, 150, "Analytics tests", str(analytics), COLORS["gold"], h=82, value_size=20.5, label_size=11.2)
+    c.stat(594, 330, 150, "Result tests", str(results), COLORS["green"], h=82, value_size=20.5, label_size=11.2)
+    c.stat(768, 330, 120, "Total", str(total), COLORS["purple"], h=82, value_size=20.5, label_size=11.2)
     c.rect(72, 156, 420, 132, COLORS["panel"], COLORS["line"], 1)
     c.text(96, 254, "$ ./venv/bin/pytest", 13, COLORS["ink"], mono=True, bold=True)
     c.text(96, 224, "67 passed, 2 warnings", 25, COLORS["green"], bold=True)
