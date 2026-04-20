@@ -14,6 +14,7 @@ A RESTful API for Formula 1 World Championship data analysis, covering race resu
 | Database (dev) | **SQLite + aiosqlite** | Zero-config local development; async-compatible |
 | Database (prod) | **MySQL (PythonAnywhere)** | Managed, always-on, compatible via SQLAlchemy URL switch |
 | ORM | **SQLAlchemy 2.0** | Type-annotated models, async session, DB-agnostic queries |
+| Migrations | **Alembic** | Versioned database evolution instead of ad-hoc `create_all()` |
 | Authentication | **JWT (python-jose) + bcrypt (passlib)** | Industry-standard stateless auth; bcrypt deliberately slow against brute-force |
 | Input Validation | **Pydantic v2** | Strict type coercion, field-level validators, auto 422 on bad input |
 | Caching | **cachetools TTLCache** | In-memory sliding-window cache; analytics queries cached 10–30 min |
@@ -32,6 +33,7 @@ f1-analytics-api/
 │   ├── main.py               # FastAPI app, middleware, router registration
 │   ├── config.py             # pydantic-settings: typed config from .env
 │   ├── database.py           # Async engine, session factory, get_db() dependency
+│   ├── database_migrations.py # Alembic startup/test/import integration
 │   ├── models/               # SQLAlchemy ORM models (6 tables)
 │   │   ├── user.py
 │   │   ├── driver.py
@@ -58,6 +60,9 @@ f1-analytics-api/
 │       └── rate_limiter.py   # Sliding-window middleware
 ├── scripts/
 │   └── import_data.py        # CSV → DB bulk import (with --reset, --verify)
+├── alembic/
+│   ├── env.py                # Alembic environment wired to app metadata
+│   └── versions/             # Versioned schema migrations
 ├── mcp_server/
 │   └── server.py             # FastMCP: 8 AI-callable tools
 ├── tests/
@@ -121,6 +126,13 @@ python scripts/import_data.py
 python scripts/import_data.py --verify
 ```
 
+The import command applies Alembic migrations before loading CSV data. To run
+migrations manually, use:
+
+```bash
+alembic upgrade head
+```
+
 ### 5. Start the API server
 
 ```bash
@@ -141,7 +153,7 @@ The API is now running at **http://127.0.0.1:8000**
 
 ```bash
 pytest
-# 67 tests, ~4 seconds
+# 178 tests, ~9 seconds
 # Tests use an isolated test_f1.db — production data is never touched
 ```
 
@@ -434,6 +446,16 @@ Redis is the production-grade choice for distributed caching. For a single-serve
 
 The `results` table is the central fact table in a star schema: each row records one driver's result in one race, with foreign keys to `drivers`, `teams`, and `races`. This design makes aggregation queries (sum points by season, count wins by circuit) natural SQL GROUP BY operations rather than application-level loops.
 
+### Schema evolution: Alembic migrations
+
+Database structure is managed through Alembic rather than relying on
+`Base.metadata.create_all()` at runtime. The initial revision creates the
+current six application tables, foreign keys, indexes, and critical uniqueness
+rules such as `drivers.driver_ref`, `teams.constructor_ref`, `circuits.circuit_ref`
+and `races(year, round)`. Application startup, the CSV import script, and the
+test database setup all call the same migration helper, so every environment is
+initialised through the same versioned schema path.
+
 ### MCP as a novel integration layer
 
 Wrapping a REST API as an MCP server is non-trivial: it requires understanding the tool-call lifecycle, structuring function signatures so an LLM can reason about parameter semantics, and writing `instructions` that guide the model to use discovery tools (`search_drivers`) before analytics tools. The result is an API that is usable not just by HTTP clients but by conversational AI agents — a genuinely novel access pattern for sports analytics data.
@@ -444,8 +466,19 @@ Wrapping a REST API as an MCP server is non-trivial: it requires understanding t
 
 Full interactive documentation is auto-generated at runtime:
 
-- **Swagger UI:** `/docs` — try every endpoint directly in the browser, including authenticated ones via the Authorize button
-- **ReDoc:** `/redoc` — clean, readable reference documentation
-- **OpenAPI JSON:** `/openapi.json` — machine-readable schema for client generation
+- **Swagger UI:** `/docs` - try every endpoint directly in the browser, including authenticated ones via the Authorize button
+- **ReDoc:** `/redoc` - clean, readable reference documentation
+- **OpenAPI JSON:** `/openapi.json` - machine-readable schema for client generation
 
-A static export of the API documentation is available in `docs/api_documentation.pdf`.
+A static export of the API documentation is available in [docs/api_documentation.pdf](docs/api_documentation.pdf).
+Regenerate it with `python scripts/generate_api_documentation_pdf.py`.
+
+## Technical Report
+
+A formal technical report covering stack justification, architecture, challenges, testing, limitations, and the GenAI declaration is available in [docs/technical_report.pdf](docs/technical_report.pdf).
+Regenerate it with `python scripts/generate_technical_report_pdf.py`.
+
+## Presentation Slides
+
+A presentation slide deck covering the architecture diagram, database diagram, demo screenshots, test result, and MCP workflow is available in [docs/presentation_slides.pdf](docs/presentation_slides.pdf).
+Regenerate it with `python scripts/generate_presentation_slides_pdf.py`.
