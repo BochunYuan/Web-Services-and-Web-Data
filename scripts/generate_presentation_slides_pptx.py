@@ -53,6 +53,10 @@ for prefix, uri in NS.items():
 EMU_PER_UNIT = 12_700
 SLIDE_CX = int(SLIDE_W * EMU_PER_UNIT)
 SLIDE_CY = int(SLIDE_H * EMU_PER_UNIT)
+TEXT_RIGHT_PADDING = 8.0
+TEXT_MIN_WIDTH = 18.0
+TEXT_MIN_FONT_SIZE = 5.4
+TEXT_WIDTH_SAFETY = 0.94
 
 
 def qn(prefix: str, tag: str) -> str:
@@ -133,10 +137,72 @@ def font_family(font_code: str) -> str:
     return "Courier New" if font_code in {"F3", "F4"} else "Arial"
 
 
-def add_text_shape(sp_tree: Element, shape_id: int, text: object) -> int:
-    font_size = max(9, int(round(text.size * 100)))
-    approx_width = max(36.0, min(SLIDE_W - text.x - 4, len(text.text) * max(text.size * 0.68, 7.5)))
-    approx_height = max(18.0, text.size * 1.45)
+def text_width_estimate(value: str, size: float, mono: bool) -> float:
+    """
+    Estimate text width in slide units.
+
+    PowerPoint does not use exactly the same font metrics as the PDF export.
+    A conservative estimate lets us shrink long labels before they can spill
+    outside their cards, endpoint rows, or demo browser frames.
+    """
+    if not value:
+        return 0.0
+
+    if mono:
+        return len(value) * size * 0.64
+
+    width = 0.0
+    for char in value:
+        if char in "ilI.,;:!|'` ":
+            width += 0.34
+        elif char in "MW@#%&{}[]":
+            width += 0.88
+        elif char.isupper() or char.isdigit():
+            width += 0.66
+        elif char in "/\\_-+=()":
+            width += 0.52
+        else:
+            width += 0.57
+    return width * size
+
+
+def containing_rect(slide: object, text: object) -> object | None:
+    candidates = [
+        rect
+        for rect in slide.rects
+        if rect.x - 0.1 <= text.x <= rect.x + rect.w + 0.1
+        and rect.y - 0.1 <= text.y <= rect.y + rect.h + 0.1
+    ]
+    if not candidates:
+        return None
+    return min(candidates, key=lambda rect: rect.w * rect.h)
+
+
+def fit_text_metrics(slide: object, text: object) -> tuple[float, float]:
+    rect = containing_rect(slide, text)
+    if rect is None:
+        available_width = SLIDE_W - text.x - TEXT_RIGHT_PADDING
+    else:
+        available_width = rect.x + rect.w - text.x - TEXT_RIGHT_PADDING
+
+    available_width = max(TEXT_MIN_WIDTH, available_width)
+    mono = text.font in {"F3", "F4"}
+    target_width = available_width * TEXT_WIDTH_SAFETY
+    estimated_width = text_width_estimate(text.text, text.size, mono)
+    adjusted_size = text.size
+
+    if estimated_width > target_width:
+        adjusted_size = max(TEXT_MIN_FONT_SIZE, text.size * target_width / estimated_width)
+    else:
+        adjusted_size = text.size
+
+    return available_width, adjusted_size
+
+
+def add_text_shape(sp_tree: Element, shape_id: int, slide: object, text: object) -> int:
+    shape_width, adjusted_size = fit_text_metrics(slide, text)
+    font_size = max(1, int(round(adjusted_size * 100)))
+    approx_height = max(12.0, adjusted_size * 1.55)
 
     shape = SubElement(sp_tree, qn("p", "sp"))
     nv_sp_pr = SubElement(shape, qn("p", "nvSpPr"))
@@ -151,7 +217,7 @@ def add_text_shape(sp_tree: Element, shape_id: int, text: object) -> int:
         qn("a", "off"),
         {"x": str(emu(text.x)), "y": str(slide_top_from_bottom(text.y, approx_height * 0.85))},
     )
-    SubElement(xfrm, qn("a", "ext"), {"cx": str(emu(approx_width)), "cy": str(emu(approx_height))})
+    SubElement(xfrm, qn("a", "ext"), {"cx": str(emu(shape_width)), "cy": str(emu(approx_height))})
     prst = SubElement(sp_pr, qn("a", "prstGeom"), {"prst": "rect"})
     SubElement(prst, qn("a", "avLst"))
     SubElement(sp_pr, qn("a", "noFill"))
@@ -170,7 +236,7 @@ def add_text_shape(sp_tree: Element, shape_id: int, text: object) -> int:
             "anchor": "t",
         },
     )
-    SubElement(body_pr, qn("a", "spAutoFit"))
+    SubElement(body_pr, qn("a", "normAutofit"), {"fontScale": "60000", "lnSpcReduction": "20000"})
     SubElement(tx_body, qn("a", "lstStyle"))
     paragraph = SubElement(tx_body, qn("a", "p"))
     SubElement(paragraph, qn("a", "pPr"), {"algn": "l"})
@@ -237,7 +303,7 @@ def build_slide_xml(slide_index: int, slide: object) -> bytes:
     for line in slide.lines:
         shape_id = add_line_shape(sp_tree, shape_id, line)
     for text in slide.texts:
-        shape_id = add_text_shape(sp_tree, shape_id, text)
+        shape_id = add_text_shape(sp_tree, shape_id, slide, text)
 
     clr_map = SubElement(sld, qn("p", "clrMapOvr"))
     SubElement(clr_map, qn("a", "masterClrMapping"))
