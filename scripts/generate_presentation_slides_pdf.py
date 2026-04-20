@@ -219,7 +219,7 @@ class Canvas:
         self.rect(0, 0, SLIDE_W, SLIDE_H, COLORS["bg"])
         self.rect(0, 0, SLIDE_W, 540, (0.045, 0.047, 0.067))
         self.rect(0, 0, 12, SLIDE_H, COLORS["red"])
-        self.rect(760, 360, 250, 210, (0.080, 0.030, 0.035))
+        self.rect(760, 360, SLIDE_W - 760, 180, (0.080, 0.030, 0.035))
         self.line(MARGIN, 52, SLIDE_W - MARGIN, 52, COLORS["line"], 1)
 
     def footer(self) -> None:
@@ -442,16 +442,21 @@ def add_database_slide(deck: PDFDeck, number: int) -> None:
     c.arrow(262, 190, 388, 260, COLORS["purple"], 2)
     c.arrow(700, 370, 573, 315, COLORS["green"], 2)
     c.arrow(790, 315, 790, 255, COLORS["gold"], 2)
-    c.text(304, 364, "1 driver -> many results", 9.5, COLORS["muted"])
-    c.text(285, 190, "1 team -> many results", 9.5, COLORS["muted"])
-    c.text(582, 365, "1 race -> many results", 9.5, COLORS["muted"])
-    c.text(805, 287, "1 circuit -> many races", 9.5, COLORS["muted"])
+    c.rect(296, 358, 100, 22, COLORS["bg"])
+    c.text(306, 365, "1 driver -> many", 8.6, COLORS["muted"])
+    c.rect(296, 178, 92, 22, COLORS["bg"])
+    c.text(304, 185, "1 team -> many", 8.6, COLORS["muted"])
+    c.rect(576, 358, 92, 22, COLORS["bg"])
+    c.text(586, 365, "1 race -> many", 8.6, COLORS["muted"])
+    c.rect(805, 284, 78, 24, COLORS["bg"])
+    c.text(812, 292, "1 circuit", 8.4, COLORS["muted"])
+    c.text(812, 280, "-> many races", 8.4, COLORS["muted"])
     c.paragraph(
         82,
-        82,
-        "The analytics service groups and joins through results to calculate points totals, wins, DNFs, champions, circuit records and head-to-head outcomes.",
-        760,
-        11.5,
+        96,
+        "Analytics joins through results to calculate points, wins, DNFs, champions and head-to-head outcomes.",
+        270,
+        10.2,
         COLORS["muted"],
     )
 
@@ -488,15 +493,15 @@ def add_frontend_demo_slide(deck: PDFDeck, number: int) -> None:
     c.paragraph(92, 304, "Query race results, driver careers, team championships and head-to-head records across Formula 1 history.", 310, 10.5, COLORS["muted"], leading=14)
     c.rect(92, 250, 300, 38, COLORS["panel"], COLORS["line"], 1)
     c.text(110, 264, "Search a driver - Hamilton", 10, COLORS["muted"])
-    c.rect(92, 175, 86, 50, COLORS["panel2"], COLORS["line"], 1)
-    c.text(110, 204, "861", 18, COLORS["red"], bold=True)
-    c.text(110, 188, "Drivers", 8.5, COLORS["muted"])
-    c.rect(196, 175, 86, 50, COLORS["panel2"], COLORS["line"], 1)
-    c.text(214, 204, "212", 18, COLORS["gold"], bold=True)
-    c.text(214, 188, "Teams", 8.5, COLORS["muted"])
-    c.rect(300, 175, 86, 50, COLORS["panel2"], COLORS["line"], 1)
-    c.text(318, 204, "77", 18, COLORS["green"], bold=True)
-    c.text(318, 188, "Circuits", 8.5, COLORS["muted"])
+    c.rect(92, 172, 90, 56, COLORS["panel2"], COLORS["line"], 1)
+    c.text(110, 203, "861", 15.5, COLORS["red"], bold=True)
+    c.text(110, 185, "Drivers", 8.2, COLORS["muted"])
+    c.rect(196, 172, 90, 56, COLORS["panel2"], COLORS["line"], 1)
+    c.text(214, 203, "212", 15.5, COLORS["gold"], bold=True)
+    c.text(214, 185, "Teams", 8.2, COLORS["muted"])
+    c.rect(300, 172, 90, 56, COLORS["panel2"], COLORS["line"], 1)
+    c.text(318, 203, "77", 15.5, COLORS["green"], bold=True)
+    c.text(318, 185, "Circuits", 8.2, COLORS["muted"])
 
     c.browser_frame(500, 105, 398, 330, "http://127.0.0.1:8000/#explore")
     c.rect(500, 105, 398, 296, (0.040, 0.042, 0.058))
@@ -538,7 +543,7 @@ def add_api_demo_slide(deck: PDFDeck, number: int) -> None:
 
     c.browser_frame(500, 86, 398, 350, "GET /api/v1/analytics/seasons/2023/highlights")
     c.rect(500, 86, 398, 316, (0.025, 0.028, 0.040))
-    c.text(526, 370, "200 OK", 12, COLORS["green"], mono=True, bold=True)
+    c.text(526, 370, "200 OK", 10.5, COLORS["green"], mono=True, bold=True)
     c.text(526, 342, "{", 10.5, COLORS["muted"], mono=True)
     json_lines = [
         '"season": 2023,',
@@ -555,7 +560,7 @@ def add_api_demo_slide(deck: PDFDeck, number: int) -> None:
     ]
     yy = 320
     for line in json_lines:
-        c.text(542, yy, line, 9.5, COLORS["ink"] if ":" in line else COLORS["muted"], mono=True)
+        c.text(542, yy, line, 8.9, COLORS["ink"] if ":" in line else COLORS["muted"], mono=True)
         yy -= 20
     c.text(526, yy, "}", 10.5, COLORS["muted"], mono=True)
 
