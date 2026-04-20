@@ -50,6 +50,7 @@ LAST_TEST_WARNINGS = (
     "third-party dependency on Python's deprecated crypt module rather than "
     "from project code."
 )
+PUBLIC_GITHUB_REPOSITORY = "https://github.com/BochunYuan/Web-Services-and-Web-Data.git"
 
 
 def count_test_functions(path: Path) -> int:
@@ -239,10 +240,15 @@ def build_document() -> PDFBuilder:
         [
             ("Module", "XJCO3011 Web Services and Web Data"),
             ("Project", "F1 Analytics API"),
+            ("GitHub repository", PUBLIC_GITHUB_REPOSITORY),
             ("Version", settings.PROJECT_VERSION),
             ("API surface", f"{operations} HTTP operations including {analytics} analytics endpoints"),
             ("Test suite", f"{total_tests} automated tests across {len(test_modules)} modules"),
-            ("Static outputs", "docs/api_documentation.pdf, docs/technical_report.pdf, docs/presentation_slides.pdf"),
+            (
+                "Static outputs",
+                "docs/api_documentation.pdf, docs/technical_report.pdf, "
+                "docs/presentation_slides.pdf, docs/presentation_slides.pptx",
+            ),
         ]
     )
     layout.add_paragraph(
