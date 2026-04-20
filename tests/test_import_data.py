@@ -333,6 +333,9 @@ class TestImportOrchestrator:
                 calls.append("run_sync")
                 fn("sync-connection")
 
+            async def execute(self, statement, params=None):
+                calls.append(str(statement).strip())
+
         class DummyEngine:
             def begin(self):
                 return self
@@ -348,8 +351,8 @@ class TestImportOrchestrator:
         def fake_drop_all(sync_conn):
             calls.append(f"drop_all:{sync_conn}")
 
-        async def fake_create_schema(conn):
-            calls.append("create_schema")
+        def fake_upgrade_database():
+            calls.append("upgrade_database")
 
         def make_importer(name):
             async def fake_importer(data_dir, conn):
@@ -360,7 +363,7 @@ class TestImportOrchestrator:
 
         monkeypatch.setattr(import_data, "engine", DummyEngine())
         monkeypatch.setattr(import_data.Base.metadata, "drop_all", fake_drop_all)
-        monkeypatch.setattr(import_data, "create_schema_with_constraints", fake_create_schema)
+        monkeypatch.setattr(import_data, "upgrade_database_to_head", fake_upgrade_database)
         monkeypatch.setattr(
             import_data,
             "TABLE_IMPORTERS",
@@ -373,7 +376,10 @@ class TestImportOrchestrator:
             "engine_begin",
             "run_sync",
             "drop_all:sync-connection",
-            "create_schema",
+            "DROP TABLE IF EXISTS alembic_version",
+            "engine_end",
+            "upgrade_database",
+            "engine_begin",
             "import:drivers:data",
             "import:results:data",
             "engine_end",
