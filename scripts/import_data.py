@@ -5,7 +5,7 @@ Reads Ergast F1 CSV files from the data/ directory and bulk-inserts
 them into the SQLite (dev) or MySQL (production) database.
 
 Usage:
-    # First time setup — creates tables then imports all data
+    # First time setup — applies migrations then imports all data
     python scripts/import_data.py
 
     # Re-import: drop all data first then re-insert
@@ -35,7 +35,7 @@ from sqlalchemy import text
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from app.database import engine, Base
-from app.database_constraints import create_schema_with_constraints
+from app.database_migrations import upgrade_database_to_head
 from app.models import Driver, Team, Circuit, Race, Result  # noqa: F401 — needed for Base.metadata
 
 
@@ -332,22 +332,29 @@ TABLE_IMPORTERS = {
 IMPORT_ORDER = ["circuits", "drivers", "teams", "races", "results"]
 
 
+async def drop_database_schema() -> None:
+    """Drop application tables and Alembic version metadata for a clean reset."""
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.drop_all)
+        await conn.execute(text("DROP TABLE IF EXISTS alembic_version"))
+
+
 async def main(reset: bool = False, tables: list[str] = None):
     data_dir = Path(__file__).parent.parent / "data"
     target_tables = tables or IMPORT_ORDER
 
     print("\n=== F1 Analytics API — Data Import ===\n")
 
+    if reset:
+        print("⚠  --reset flag detected. Dropping all tables...")
+        await drop_database_schema()
+        print("   Tables dropped.\n")
+
+    print("Applying database migrations...")
+    upgrade_database_to_head()
+    print("   Database schema is at Alembic head.\n")
+
     async with engine.begin() as conn:
-        if reset:
-            print("⚠  --reset flag detected. Dropping all tables...")
-            await conn.run_sync(Base.metadata.drop_all)
-            print("   Tables dropped.\n")
-
-        print("Creating tables (if not exist)...")
-        await create_schema_with_constraints(conn)
-        print("   Tables ready.\n")
-
         for table_name in IMPORT_ORDER:
             if table_name not in target_tables:
                 continue
