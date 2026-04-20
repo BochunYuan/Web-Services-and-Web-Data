@@ -46,7 +46,7 @@ os.environ["ENVIRONMENT"] = "test"   # disables rate limiting during tests
 # Now import the app (which reads settings at import time)
 from app.main import app
 from app.database import Base, get_db
-from app.database_constraints import create_schema_with_constraints
+from app.database_migrations import upgrade_database_to_head
 from app.models import Driver, Team, Circuit, Race, Result  # ensure models are registered
 from app.services import cache_service
 
@@ -79,7 +79,7 @@ TestSessionLocal = async_sessionmaker(
 @pytest_asyncio.fixture(scope="session", loop_scope="session")
 async def setup_test_db():
     """
-    Create all database tables in the test database.
+    Apply Alembic migrations to the test database.
     Runs once before any test, torn down after all tests complete.
 
     scope="session" means this fixture is shared across all test files —
@@ -87,13 +87,16 @@ async def setup_test_db():
     """
     async with test_engine.begin() as conn:
         await conn.run_sync(Base.metadata.drop_all)   # clean slate
-        await create_schema_with_constraints(conn)
+        await conn.execute(text("DROP TABLE IF EXISTS alembic_version"))
+
+    upgrade_database_to_head(TEST_DATABASE_URL)
 
     yield  # all tests run here
 
     # Teardown: drop all tables and delete the test database file
     async with test_engine.begin() as conn:
         await conn.run_sync(Base.metadata.drop_all)
+        await conn.execute(text("DROP TABLE IF EXISTS alembic_version"))
     await test_engine.dispose()
 
     import os
