@@ -609,9 +609,14 @@ A presentation slide deck covering the architecture diagram, database diagram, d
 Regenerate it with `python scripts/generate_presentation_slides_pdf.py`.
 
 ## Enter the following terminal command to run：
-cd /Users/bochunyuan/Downloads/CWK/Web_service_and_web_data/f1-analytics-api 
-python3.11 -m venv venv 
+cd /Users/bochunyuan/Downloads/CWK/Web_service_and_web_data/f1-analytics-api
+
+python3.11 -m venv venv
+
 source venv/bin/activate 
-pip install -r requirements.txt 
-python manage.py migrate --fake-initial 
-python manage.py runserver 127.0.0.1:8001 
+
+pip install -r requirements.txt
+
+python manage.py migrate --fake-initial
+
+python manage.py runserver 127.0.0.1:8001
