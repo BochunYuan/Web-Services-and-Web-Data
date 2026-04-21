@@ -1,0 +1,1662 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 2889 >>
+stream
+0.870 0.920 0.980 rg 54.00 533.89 487.28 220.00 re f
+0.960 0.970 0.990 rg 54.00 451.89 235.64 64.00 re f
+0.960 0.970 0.990 rg 305.64 451.89 235.64 64.00 re f
+0.960 0.970 0.990 rg 54.00 375.89 235.64 64.00 re f
+0.960 0.970 0.990 rg 305.64 375.89 235.64 64.00 re f
+0.960 0.970 0.990 rg 54.00 299.89 235.64 64.00 re f
+0.960 0.970 0.990 rg 305.64 299.89 235.64 64.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 1) Tj ET
+BT /F2 28.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 84.00 699.89 Tm (F1 Analytics API) Tj ET
+BT /F2 18.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 84.00 667.89 Tm (Static API Documentation) Tj ET
+BT /F1 13.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 84.00 625.89 Tm (FastAPI Core + Django Adapter + JWT + Analytics) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 84.00 587.89 Tm (This PDF is a compact export of the F1 Analytics API. It is generated from the) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 84.00 572.89 Tm (live OpenAPI schema and trimmed to the contract details most useful for) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 84.00 557.89 Tm (coursework review.) Tj ET
+BT /F1 10.50 Tf 0.370 0.420 0.500 rg 1 0 0 1 70.00 496.89 Tm (Version) Tj ET
+BT /F2 15.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 463.89 Tm (1.0.0) Tj ET
+BT /F1 10.50 Tf 0.370 0.420 0.500 rg 1 0 0 1 321.64 496.89 Tm (HTTP operations) Tj ET
+BT /F2 15.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 321.64 463.89 Tm (33) Tj ET
+BT /F1 10.50 Tf 0.370 0.420 0.500 rg 1 0 0 1 70.00 420.89 Tm (Analytics endpoints) Tj ET
+BT /F2 15.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 387.89 Tm (6) Tj ET
+BT /F1 10.50 Tf 0.370 0.420 0.500 rg 1 0 0 1 321.64 420.89 Tm (Security) Tj ET
+BT /F2 15.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 321.64 387.89 Tm (JWT access + refresh) Tj ET
+BT /F1 10.50 Tf 0.370 0.420 0.500 rg 1 0 0 1 70.00 344.89 Tm (Runtime docs) Tj ET
+BT /F2 15.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 311.89 Tm (/docs, /redoc, /openapi.json) Tj ET
+BT /F1 10.50 Tf 0.370 0.420 0.500 rg 1 0 0 1 321.64 344.89 Tm (Verified checks) Tj ET
+BT /F2 15.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 321.64 328.69 Tm (Django check + acceptance) Tj ET
+BT /F2 15.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 321.64 311.89 Tm (suite passed) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 92.00 Tm (Project version: 1.0.0    Base prefix: /api/v1) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 72.00 Tm (Primary runtime docs: /docs, /redoc, /openapi.json    Static export: docs/api_documentation.pdf) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 6697 >>
+stream
+0.960 0.970 0.990 rg 54.00 383.99 487.28 34.00 re f
+0.960 0.970 0.990 rg 54.00 347.99 487.28 34.00 re f
+0.960 0.970 0.990 rg 54.00 311.99 487.28 34.00 re f
+0.960 0.970 0.990 rg 54.00 268.99 487.28 41.00 re f
+0.960 0.970 0.990 rg 54.00 232.99 487.28 34.00 re f
+0.960 0.970 0.990 rg 54.00 196.99 487.28 34.00 re f
+0.960 0.970 0.990 rg 54.00 153.99 487.28 41.00 re f
+0.960 0.970 0.990 rg 54.00 117.99 487.28 34.00 re f
+0.960 0.970 0.990 rg 54.00 74.99 487.28 41.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 753.89 m 174.00 753.89 l S
+0.860 0.890 0.930 RG 0.80 w 210.00 383.99 m 210.00 417.99 l S
+0.860 0.890 0.930 RG 0.80 w 210.00 347.99 m 210.00 381.99 l S
+0.860 0.890 0.930 RG 0.80 w 210.00 311.99 m 210.00 345.99 l S
+0.860 0.890 0.930 RG 0.80 w 210.00 268.99 m 210.00 309.99 l S
+0.860 0.890 0.930 RG 0.80 w 210.00 232.99 m 210.00 266.99 l S
+0.860 0.890 0.930 RG 0.80 w 210.00 196.99 m 210.00 230.99 l S
+0.860 0.890 0.930 RG 0.80 w 210.00 153.99 m 210.00 194.99 l S
+0.860 0.890 0.930 RG 0.80 w 210.00 117.99 m 210.00 151.99 l S
+0.860 0.890 0.930 RG 0.80 w 210.00 74.99 m 210.00 115.99 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 2) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 763.89 Tm (Overview) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 731.89 Tm (F1 Analytics API is a RESTful service for Formula 1 data exploration. It combines CRUD) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 715.99 Tm (coverage for core resources with a read-only analytics layer.) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 690.09 Tm (Application) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 690.09 Tm (F1 Analytics API) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 674.09 Tm (Version) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 674.09 Tm (1.0.0) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 658.09 Tm (Base prefix) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 658.09 Tm (/api/v1) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 642.09 Tm (OpenAPI schema) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 642.09 Tm (/openapi.json) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 626.09 Tm (Interactive docs) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 626.09 Tm (/docs and /redoc) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 610.09 Tm (Primary stack) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 610.09 Tm (FastAPI, Pydantic, SQLAlchemy, Django adapter) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 594.09 Tm (Authentication) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 594.09 Tm (Form/JSON login + JWT bearer tokens) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 578.09 Tm (Rate limiting) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 578.09 Tm (60 requests per minute per IP) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 562.09 Tm (Caching) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 562.09 Tm (TTL cache for analytics queries) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 546.09 Tm (Deployment) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 546.09 Tm (Django WSGI adapter plus direct ASGI entrypoint) Tj ET
+BT /F2 14.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 520.09 Tm (Domain Model) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 496.09 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 496.09 Tm (drivers, teams, circuits, and races are primary resource collections.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 479.39 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 479.39 Tm (results is the central fact table and remains read-only through the API.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 462.69 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 462.69 Tm (analytics endpoints aggregate historical results into reusable insights.) Tj ET
+BT /F2 14.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 435.99 Tm (Status and Error Conventions) Tj ET
+BT /F2 10.20 Tf 0.100 0.270 0.510 rg 1 0 0 1 66.00 399.99 Tm (200 OK) Tj ET
+BT /F1 10.20 Tf 0.110 0.160 0.240 rg 1 0 0 1 224.00 399.99 Tm (Successful read, update, login, refresh, or analytics response.) Tj ET
+BT /F2 10.20 Tf 0.100 0.270 0.510 rg 1 0 0 1 66.00 363.99 Tm (201 Created) Tj ET
+BT /F1 10.20 Tf 0.110 0.160 0.240 rg 1 0 0 1 224.00 363.99 Tm (Successful creation of a new resource such as a user or driver.) Tj ET
+BT /F2 10.20 Tf 0.100 0.270 0.510 rg 1 0 0 1 66.00 327.99 Tm (204 No Content) Tj ET
+BT /F1 10.20 Tf 0.110 0.160 0.240 rg 1 0 0 1 224.00 327.99 Tm (Successful delete operation with an empty response body.) Tj ET
+BT /F2 10.20 Tf 0.100 0.270 0.510 rg 1 0 0 1 66.00 291.99 Tm (401 Unauthorized) Tj ET
+BT /F1 10.20 Tf 0.110 0.160 0.240 rg 1 0 0 1 224.00 291.99 Tm (Missing token, invalid token, bad credentials, or invalid refresh) Tj ET
+BT /F1 10.20 Tf 0.110 0.160 0.240 rg 1 0 0 1 224.00 278.49 Tm (token.) Tj ET
+BT /F2 10.20 Tf 0.100 0.270 0.510 rg 1 0 0 1 66.00 248.99 Tm (403 Forbidden) Tj ET
+BT /F1 10.20 Tf 0.110 0.160 0.240 rg 1 0 0 1 224.00 248.99 Tm (Authenticated user exists but the account is disabled.) Tj ET
+BT /F2 10.20 Tf 0.100 0.270 0.510 rg 1 0 0 1 66.00 212.99 Tm (404 Not Found) Tj ET
+BT /F1 10.20 Tf 0.110 0.160 0.240 rg 1 0 0 1 224.00 212.99 Tm (Requested resource or season/circuit/driver does not exist.) Tj ET
+BT /F2 10.20 Tf 0.100 0.270 0.510 rg 1 0 0 1 66.00 176.99 Tm (409 Conflict) Tj ET
+BT /F1 10.20 Tf 0.110 0.160 0.240 rg 1 0 0 1 224.00 176.99 Tm (Uniqueness conflict such as duplicate username, driver_ref, or) Tj ET
+BT /F1 10.20 Tf 0.110 0.160 0.240 rg 1 0 0 1 224.00 163.49 Tm (season round.) Tj ET
+BT /F2 10.20 Tf 0.100 0.270 0.510 rg 1 0 0 1 66.00 133.99 Tm (422 Unprocessable Entity) Tj ET
+BT /F1 10.20 Tf 0.110 0.160 0.240 rg 1 0 0 1 224.00 133.99 Tm (Validation failure for query parameters or request body.) Tj ET
+BT /F2 10.20 Tf 0.100 0.270 0.510 rg 1 0 0 1 66.00 97.99 Tm (429 Too Many Requests) Tj ET
+BT /F1 10.20 Tf 0.110 0.160 0.240 rg 1 0 0 1 224.00 97.99 Tm (Rate limit exceeded; response includes Retry-After and rate-limit) Tj ET
+BT /F1 10.20 Tf 0.110 0.160 0.240 rg 1 0 0 1 224.00 84.49 Tm (headers.) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 5738 >>
+stream
+0.940 0.950 0.980 rg 54.00 483.09 487.28 115.50 re f
+0.080 0.330 0.700 rg 54.00 343.39 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 739.89 m 174.00 739.89 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 443.09 m 174.00 443.09 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 373.39 m 541.28 373.39 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 3) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 749.89 Tm (Authentication Flow) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 717.89 Tm (Write operations require a bearer access token. Login issues access and refresh tokens,) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 701.99 Tm (and refresh rotates the access token.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 676.09 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 676.09 Tm (Register a user with POST /api/v1/auth/register.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 659.39 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 659.39 Tm (Login with POST /api/v1/auth/login or POST /api/v1/auth/login/json.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 642.69 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 642.69 Tm (Send Authorization: Bearer <access_token> for protected write endpoints and GET) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 627.99 Tm (/api/v1/auth/me.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 611.29 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 611.29 Tm (Use POST /api/v1/auth/refresh to exchange a valid refresh token for a new access token.) Tj ET
+BT /F2 9.50 Tf 0.370 0.420 0.500 rg 1 0 0 1 66.00 580.59 Tm (Auth sequence) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 562.59 Tm (POST /api/v1/auth/register) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 549.09 Tm (POST /api/v1/auth/login) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 535.59 Tm (Authorization: Bearer <access_token>) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 522.09 Tm (POST /api/v1/auth/refresh) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 508.59 Tm () Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 453.09 Tm (Authentication) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 421.09 Tm (Authentication is implemented with JWT bearer tokens. The API issues a short-lived access) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 405.19 Tm (token and a long-lived refresh token, supports both form login and JSON login, and protects) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 389.29 Tm (write operations with the current active user permission.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 351.39 Tm (POST) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 354.39 Tm (/api/v1/auth/login) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 329.39 Tm (Login and receive JWT tokens) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 312.79 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 312.79 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 296.79 Tm (Authenticate with username and password.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 281.19 Tm (Request) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 267.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 267.19 Tm (Content-Type: application/x-www-form-urlencoded) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 251.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 251.49 Tm (grant_type: string | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 235.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 235.79 Tm (username: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 220.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 220.09 Tm (password: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 204.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 204.39 Tm (+3 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 188.69 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 174.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 174.69 Tm (access_token: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 158.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 158.99 Tm (refresh_token: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 143.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 143.29 Tm (token_type: string \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 127.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 127.59 Tm (expires_in: integer \(required\)) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 111.89 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 97.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 97.89 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 82.39 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 82.39 Tm (422 - Validation Error) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 5877 >>
+stream
+0.940 0.950 0.980 rg 54.00 599.89 487.28 129.00 re f
+0.080 0.330 0.700 rg 54.00 559.89 54.00 23.00 re f
+0.140 0.460 0.280 rg 54.00 284.79 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 589.89 m 541.28 589.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 314.79 m 541.28 314.79 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 4) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 769.89 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 755.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 755.89 Tm (Swagger UI can submit the form-field variant of login.) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 740.39 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 740.39 Tm (Successful login returns access_token, refresh_token, token_type, and expires_in.) Tj ET
+BT /F2 9.50 Tf 0.370 0.420 0.500 rg 1 0 0 1 66.00 710.89 Tm (Example) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 692.89 Tm ({) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 679.39 Tm ("access_token": "<jwt>",) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 665.89 Tm ("refresh_token": "<jwt>",) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 652.39 Tm ("token_type": "bearer",) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 638.89 Tm ("expires_in": 1800) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 625.39 Tm (}) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 567.89 Tm (POST) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 570.89 Tm (/api/v1/auth/login/json) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 545.89 Tm (Login with JSON body) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 529.29 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 529.29 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 513.29 Tm (Alternative login endpoint accepting JSON \(for clients that prefer JSON over form data\).) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 497.69 Tm (Request) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 483.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 483.69 Tm (Content-Type: application/json) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 467.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 467.99 Tm (username: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 452.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 452.29 Tm (password: string \(required\)) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 436.59 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 422.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 422.59 Tm (access_token: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 406.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 406.89 Tm (refresh_token: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 391.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 391.19 Tm (token_type: string \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 375.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 375.49 Tm (expires_in: integer \(required\)) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 359.79 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 345.79 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 345.79 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 330.29 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 330.29 Tm (422 - Validation Error) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 292.79 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 295.79 Tm (/api/v1/auth/me) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 270.79 Tm (Get current user profile) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 254.19 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 254.19 Tm (Bearer token required) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 238.19 Tm (Returns the profile of the currently authenticated user.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 222.59 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 208.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 208.59 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 192.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 192.89 Tm (username: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 177.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 177.19 Tm (email: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 161.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 161.49 Tm (is_active: boolean \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 145.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 145.79 Tm (created_at: string \(date-time\) \(required\)) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 130.09 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 116.09 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 116.09 Tm (200 - Successful Response) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 5841 >>
+stream
+0.080 0.330 0.700 rg 54.00 749.89 54.00 23.00 re f
+0.940 0.950 0.980 rg 54.00 424.69 487.28 115.50 re f
+0.080 0.330 0.700 rg 54.00 384.69 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 779.89 m 541.28 779.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 414.69 m 541.28 414.69 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 5) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 757.89 Tm (POST) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 760.89 Tm (/api/v1/auth/refresh) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 735.89 Tm (Refresh access token) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 719.29 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 719.29 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 703.29 Tm (Exchange a valid refresh token for a new access token.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 687.69 Tm (Request) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 673.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 673.69 Tm (Content-Type: application/json) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 657.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 657.99 Tm (refresh_token: string \(required\)) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 642.29 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 628.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 628.29 Tm (access_token: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 612.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 612.59 Tm (token_type: string \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 596.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 596.89 Tm (expires_in: integer \(required\)) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 581.19 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 567.19 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 567.19 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 551.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 551.69 Tm (422 - Validation Error) Tj ET
+BT /F2 9.50 Tf 0.370 0.420 0.500 rg 1 0 0 1 66.00 522.19 Tm (Example) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 504.19 Tm ({) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 490.69 Tm ("access_token": "<jwt>",) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 477.19 Tm ("token_type": "bearer",) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 463.69 Tm ("expires_in": 1800) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 450.19 Tm (}) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 392.69 Tm (POST) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 395.69 Tm (/api/v1/auth/register) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 370.69 Tm (Register a new user account) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 354.09 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 354.09 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 338.09 Tm (Create a new user account with a username, email, and password.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 322.49 Tm (Request) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 308.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 308.49 Tm (Content-Type: application/json) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 292.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 292.79 Tm (username: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 277.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 277.09 Tm (email: string \(email\) \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 261.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 261.39 Tm (password: string \(required\)) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 245.69 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 231.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 231.69 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 215.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 215.99 Tm (username: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 200.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 200.29 Tm (email: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 184.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 184.59 Tm (is_active: boolean \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 168.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 168.89 Tm (created_at: string \(date-time\) \(required\)) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 153.19 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 139.19 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 139.19 Tm (201 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 123.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 123.69 Tm (422 - Validation Error) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 5592 >>
+stream
+0.140 0.460 0.280 rg 54.00 656.09 54.00 23.00 re f
+0.080 0.330 0.700 rg 54.00 304.39 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 739.89 m 174.00 739.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 686.09 m 541.28 686.09 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 334.39 m 541.28 334.39 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 6) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 749.89 Tm (Drivers) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 717.89 Tm (Driver endpoints provide full CRUD plus pagination and filtering by nationality and surname) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 701.99 Tm (search. Write actions require authentication.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 664.09 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 667.09 Tm (/api/v1/drivers) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 642.09 Tm (List all drivers) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 625.49 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 625.49 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 609.49 Tm (Retrieve a paginated list of Formula 1 drivers.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 593.89 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 579.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 579.89 Tm (nationality [query] - string | null, optional - Filter by nationality) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 564.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 564.19 Tm (search [query] - string | null, optional - Search by surname \(partial match\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 548.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 548.49 Tm (page [query] - integer, optional - Page number \(1-based\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 532.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 532.79 Tm (+1 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 517.09 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 503.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 503.09 Tm (items: array[DriverResponse]) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 487.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 487.39 Tm (total: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 471.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 471.69 Tm (page: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 455.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 455.99 Tm (limit: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 440.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 440.29 Tm (pages: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 424.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 424.59 Tm (+1 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 408.89 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 394.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 394.89 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 379.39 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 379.39 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 363.89 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 349.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 349.89 Tm (List endpoints return a shared pagination envelope.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 312.39 Tm (POST) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 315.39 Tm (/api/v1/drivers) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 290.39 Tm (Create a new driver) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 273.79 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 273.79 Tm (Bearer token required) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 257.79 Tm (Requires authentication.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 242.19 Tm (Request) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 228.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 228.19 Tm (Content-Type: application/json) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 212.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 212.49 Tm (driver_ref: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 196.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 196.79 Tm (driver_number: integer | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 181.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 181.09 Tm (code: string | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 165.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 165.39 Tm (+4 more) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 15 0 R >>
+endobj
+17 0 obj
+<< /Length 5901 >>
+stream
+0.720 0.180 0.180 rg 54.00 586.69 54.00 23.00 re f
+0.140 0.460 0.280 rg 54.00 419.79 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 616.69 m 541.28 616.69 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 449.79 m 541.28 449.79 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 7) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 769.89 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 755.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 755.89 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 740.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 740.19 Tm (driver_ref: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 724.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 724.49 Tm (driver_number: integer | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 708.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 708.79 Tm (code: string | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 693.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 693.09 Tm (forename: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 677.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 677.39 Tm (+3 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 661.69 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 647.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 647.69 Tm (201 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 632.19 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 632.19 Tm (422 - Validation Error) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 594.69 Tm (DELETE) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 597.69 Tm (/api/v1/drivers/{driver_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 572.69 Tm (Delete a driver) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 556.09 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 556.09 Tm (Bearer token required) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 540.09 Tm (Requires authentication.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 524.49 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 510.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 510.49 Tm (driver_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 494.79 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 480.79 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 480.79 Tm (204 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 465.29 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 465.29 Tm (422 - Validation Error) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 427.79 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 430.79 Tm (/api/v1/drivers/{driver_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 405.79 Tm (Get a driver by ID) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 389.19 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 389.19 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 373.19 Tm (Get a driver by ID) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 357.59 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 343.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 343.59 Tm (driver_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 327.89 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 313.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 313.89 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 298.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 298.19 Tm (driver_ref: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 282.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 282.49 Tm (driver_number: integer | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 266.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 266.79 Tm (code: string | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 251.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 251.09 Tm (forename: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 235.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 235.39 Tm (+3 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 219.69 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 205.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 205.69 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 190.19 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 190.19 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 174.69 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 160.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 160.69 Tm (Response contract is shared by direct ASGI and Django-adapted deployments.) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 17 0 R >>
+endobj
+19 0 obj
+<< /Length 5620 >>
+stream
+0.680 0.450 0.100 rg 54.00 749.89 54.00 23.00 re f
+0.140 0.460 0.280 rg 54.00 288.49 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 779.89 m 541.28 779.89 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 372.29 m 174.00 372.29 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 318.49 m 541.28 318.49 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 8) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 757.89 Tm (PUT) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 760.89 Tm (/api/v1/drivers/{driver_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 735.89 Tm (Update a driver) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 719.29 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 719.29 Tm (Bearer token required) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 703.29 Tm (Requires authentication.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 687.69 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 673.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 673.69 Tm (driver_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 657.99 Tm (Request) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 643.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 643.99 Tm (Content-Type: application/json) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 628.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 628.29 Tm (driver_number: integer | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 612.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 612.59 Tm (code: string | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 596.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 596.89 Tm (forename: string | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 581.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 581.19 Tm (+4 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 565.49 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 551.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 551.49 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 535.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 535.79 Tm (driver_ref: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 520.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 520.09 Tm (driver_number: integer | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 504.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 504.39 Tm (code: string | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 488.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 488.69 Tm (forename: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 472.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 472.99 Tm (+3 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 457.29 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 443.29 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 443.29 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 427.79 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 427.79 Tm (422 - Validation Error) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 382.29 Tm (Teams) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 350.29 Tm (Team endpoints expose constructor data as a standard CRUD resource with pagination and) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 334.39 Tm (optional nationality/name filtering.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 296.49 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 299.49 Tm (/api/v1/teams) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 274.49 Tm (List all teams) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 257.89 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 257.89 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 241.89 Tm (Paginated list of F1 constructors.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 226.29 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 212.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 212.29 Tm (nationality [query] - string | null, optional - Filter by nationality) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 196.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 196.59 Tm (search [query] - string | null, optional - Search by team name) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 180.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 180.89 Tm (page [query] - integer, optional - Page number \(1-based\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 165.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 165.19 Tm (+1 more) Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 19 0 R >>
+endobj
+21 0 obj
+<< /Length 6320 >>
+stream
+0.080 0.330 0.700 rg 54.00 557.19 54.00 23.00 re f
+0.720 0.180 0.180 rg 54.00 234.99 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 587.19 m 541.28 587.19 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 264.99 m 541.28 264.99 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 9) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 769.89 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 755.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 755.89 Tm (items: array[TeamResponse]) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 740.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 740.19 Tm (total: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 724.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 724.49 Tm (page: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 708.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 708.79 Tm (limit: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 693.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 693.09 Tm (pages: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 677.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 677.39 Tm (+1 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 661.69 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 647.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 647.69 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 632.19 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 632.19 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 616.69 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 602.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 602.69 Tm (Response contract is shared by direct ASGI and Django-adapted deployments.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 565.19 Tm (POST) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 568.19 Tm (/api/v1/teams) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 543.19 Tm (Create a new team) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 526.59 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 526.59 Tm (Bearer token required) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 510.59 Tm (Requires authentication.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 494.99 Tm (Request) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 480.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 480.99 Tm (Content-Type: application/json) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 465.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 465.29 Tm (constructor_ref: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 449.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 449.59 Tm (name: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 433.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 433.89 Tm (nationality: string | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 418.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 418.19 Tm (+1 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 402.49 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 388.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 388.49 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 372.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 372.79 Tm (constructor_ref: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 357.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 357.09 Tm (name: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 341.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 341.39 Tm (nationality: string | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 325.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 325.69 Tm (url: string | null \(required\)) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 309.99 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 295.99 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 295.99 Tm (201 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 280.49 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 280.49 Tm (422 - Validation Error) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 242.99 Tm (DELETE) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 245.99 Tm (/api/v1/teams/{team_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 220.99 Tm (Delete a team) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 204.39 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 204.39 Tm (Bearer token required) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 188.39 Tm (Delete a team) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 172.79 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 158.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 158.79 Tm (team_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 143.09 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 129.09 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 129.09 Tm (204 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 113.59 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 113.59 Tm (422 - Validation Error) Tj ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 21 0 R >>
+endobj
+23 0 obj
+<< /Length 5936 >>
+stream
+0.140 0.460 0.280 rg 54.00 749.89 54.00 23.00 re f
+0.680 0.450 0.100 rg 54.00 460.99 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 779.89 m 541.28 779.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 490.99 m 541.28 490.99 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 10) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 757.89 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 760.89 Tm (/api/v1/teams/{team_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 735.89 Tm (Get a team by ID) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 719.29 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 719.29 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 703.29 Tm (Get a team by ID) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 687.69 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 673.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 673.69 Tm (team_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 657.99 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 643.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 643.99 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 628.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 628.29 Tm (constructor_ref: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 612.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 612.59 Tm (name: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 596.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 596.89 Tm (nationality: string | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 581.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 581.19 Tm (url: string | null \(required\)) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 565.49 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 551.49 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 551.49 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 535.99 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 535.99 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 520.49 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 506.49 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 506.49 Tm (Response contract is shared by direct ASGI and Django-adapted deployments.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 468.99 Tm (PUT) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 471.99 Tm (/api/v1/teams/{team_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 446.99 Tm (Update a team) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 430.39 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 430.39 Tm (Bearer token required) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 414.39 Tm (Update a team) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 398.79 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 384.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 384.79 Tm (team_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 369.09 Tm (Request) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 355.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 355.09 Tm (Content-Type: application/json) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 339.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 339.39 Tm (name: string | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 323.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 323.69 Tm (nationality: string | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 307.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 307.99 Tm (url: string | null \(optional\)) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 292.29 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 278.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 278.29 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 262.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 262.59 Tm (constructor_ref: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 246.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 246.89 Tm (name: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 231.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 231.19 Tm (nationality: string | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 215.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 215.49 Tm (url: string | null \(required\)) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 199.79 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 185.79 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 185.79 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 170.29 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 170.29 Tm (422 - Validation Error) Tj ET
+endstream
+endobj
+24 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 23 0 R >>
+endobj
+25 0 obj
+<< /Length 5570 >>
+stream
+0.140 0.460 0.280 rg 54.00 656.09 54.00 23.00 re f
+0.080 0.330 0.700 rg 54.00 304.39 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 739.89 m 174.00 739.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 686.09 m 541.28 686.09 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 334.39 m 541.28 334.39 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 11) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 749.89 Tm (Circuits) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 717.89 Tm (Circuit endpoints manage track metadata, including optional location and geographic) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 701.99 Tm (coordinates useful for analytics and visualisation.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 664.09 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 667.09 Tm (/api/v1/circuits) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 642.09 Tm (List all circuits) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 625.49 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 625.49 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 609.49 Tm (Paginated list of F1 circuits.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 593.89 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 579.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 579.89 Tm (country [query] - string | null, optional - Filter by country) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 564.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 564.19 Tm (search [query] - string | null, optional - Search by circuit name) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 548.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 548.49 Tm (page [query] - integer, optional - Page number \(1-based\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 532.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 532.79 Tm (+1 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 517.09 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 503.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 503.09 Tm (items: array[CircuitResponse]) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 487.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 487.39 Tm (total: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 471.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 471.69 Tm (page: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 455.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 455.99 Tm (limit: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 440.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 440.29 Tm (pages: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 424.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 424.59 Tm (+1 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 408.89 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 394.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 394.89 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 379.39 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 379.39 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 363.89 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 349.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 349.89 Tm (Response contract is shared by direct ASGI and Django-adapted deployments.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 312.39 Tm (POST) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 315.39 Tm (/api/v1/circuits) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 290.39 Tm (Create a new circuit) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 273.79 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 273.79 Tm (Bearer token required) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 257.79 Tm (Requires authentication.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 242.19 Tm (Request) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 228.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 228.19 Tm (Content-Type: application/json) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 212.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 212.49 Tm (circuit_ref: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 196.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 196.79 Tm (name: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 181.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 181.09 Tm (location: string | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 165.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 165.39 Tm (+4 more) Tj ET
+endstream
+endobj
+26 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 25 0 R >>
+endobj
+27 0 obj
+<< /Length 5891 >>
+stream
+0.720 0.180 0.180 rg 54.00 586.69 54.00 23.00 re f
+0.140 0.460 0.280 rg 54.00 419.79 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 616.69 m 541.28 616.69 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 449.79 m 541.28 449.79 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 12) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 769.89 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 755.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 755.89 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 740.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 740.19 Tm (circuit_ref: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 724.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 724.49 Tm (name: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 708.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 708.79 Tm (location: string | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 693.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 693.09 Tm (country: string | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 677.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 677.39 Tm (+3 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 661.69 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 647.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 647.69 Tm (201 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 632.19 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 632.19 Tm (422 - Validation Error) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 594.69 Tm (DELETE) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 597.69 Tm (/api/v1/circuits/{circuit_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 572.69 Tm (Delete a circuit) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 556.09 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 556.09 Tm (Bearer token required) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 540.09 Tm (Delete a circuit) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 524.49 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 510.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 510.49 Tm (circuit_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 494.79 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 480.79 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 480.79 Tm (204 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 465.29 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 465.29 Tm (422 - Validation Error) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 427.79 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 430.79 Tm (/api/v1/circuits/{circuit_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 405.79 Tm (Get a circuit by ID) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 389.19 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 389.19 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 373.19 Tm (Get a circuit by ID) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 357.59 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 343.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 343.59 Tm (circuit_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 327.89 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 313.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 313.89 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 298.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 298.19 Tm (circuit_ref: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 282.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 282.49 Tm (name: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 266.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 266.79 Tm (location: string | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 251.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 251.09 Tm (country: string | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 235.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 235.39 Tm (+3 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 219.69 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 205.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 205.69 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 190.19 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 190.19 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 174.69 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 160.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 160.69 Tm (Response contract is shared by direct ASGI and Django-adapted deployments.) Tj ET
+endstream
+endobj
+28 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 27 0 R >>
+endobj
+29 0 obj
+<< /Length 5648 >>
+stream
+0.680 0.450 0.100 rg 54.00 749.89 54.00 23.00 re f
+0.140 0.460 0.280 rg 54.00 288.49 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 779.89 m 541.28 779.89 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 372.29 m 174.00 372.29 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 318.49 m 541.28 318.49 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 13) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 757.89 Tm (PUT) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 760.89 Tm (/api/v1/circuits/{circuit_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 735.89 Tm (Update a circuit) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 719.29 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 719.29 Tm (Bearer token required) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 703.29 Tm (Update a circuit) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 687.69 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 673.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 673.69 Tm (circuit_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 657.99 Tm (Request) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 643.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 643.99 Tm (Content-Type: application/json) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 628.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 628.29 Tm (name: string | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 612.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 612.59 Tm (location: string | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 596.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 596.89 Tm (country: string | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 581.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 581.19 Tm (+4 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 565.49 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 551.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 551.49 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 535.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 535.79 Tm (circuit_ref: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 520.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 520.09 Tm (name: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 504.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 504.39 Tm (location: string | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 488.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 488.69 Tm (country: string | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 472.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 472.99 Tm (+3 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 457.29 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 443.29 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 443.29 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 427.79 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 427.79 Tm (422 - Validation Error) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 382.29 Tm (Races) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 350.29 Tm (Race endpoints expose the season calendar and embed nested circuit summaries in responses.) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 334.39 Tm (The write path enforces uniqueness of \(year, round\) to avoid duplicate calendar rounds.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 296.49 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 299.49 Tm (/api/v1/races) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 274.49 Tm (List all races) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 257.89 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 257.89 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 241.89 Tm (Paginated list of F1 races.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 226.29 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 212.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 212.29 Tm (year [query] - integer | null, optional - Filter by season year) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 196.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 196.59 Tm (search [query] - string | null, optional - Search by race name) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 180.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 180.89 Tm (page [query] - integer, optional - Page number \(1-based\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 165.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 165.19 Tm (+1 more) Tj ET
+endstream
+endobj
+30 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 29 0 R >>
+endobj
+31 0 obj
+<< /Length 6444 >>
+stream
+0.080 0.330 0.700 rg 54.00 557.19 54.00 23.00 re f
+0.720 0.180 0.180 rg 54.00 219.29 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 587.19 m 541.28 587.19 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 249.29 m 541.28 249.29 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 14) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 769.89 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 755.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 755.89 Tm (items: array[RaceResponse]) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 740.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 740.19 Tm (total: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 724.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 724.49 Tm (page: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 708.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 708.79 Tm (limit: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 693.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 693.09 Tm (pages: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 677.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 677.39 Tm (+1 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 661.69 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 647.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 647.69 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 632.19 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 632.19 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 616.69 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 602.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 602.69 Tm (Response contract is shared by direct ASGI and Django-adapted deployments.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 565.19 Tm (POST) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 568.19 Tm (/api/v1/races) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 543.19 Tm (Create a new race) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 526.59 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 526.59 Tm (Bearer token required) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 510.59 Tm (Requires authentication.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 494.99 Tm (Request) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 480.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 480.99 Tm (Content-Type: application/json) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 465.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 465.29 Tm (year: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 449.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 449.59 Tm (round: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 433.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 433.89 Tm (circuit_id: integer | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 418.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 418.19 Tm (+4 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 402.49 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 388.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 388.49 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 372.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 372.79 Tm (year: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 357.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 357.09 Tm (round: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 341.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 341.39 Tm (circuit_id: integer | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 325.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 325.69 Tm (name: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 309.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 309.99 Tm (+3 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 294.29 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 280.29 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 280.29 Tm (201 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 264.79 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 264.79 Tm (422 - Validation Error) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 227.29 Tm (DELETE) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 230.29 Tm (/api/v1/races/{race_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 205.29 Tm (Delete a race) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 188.69 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 188.69 Tm (Bearer token required) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 172.69 Tm (Delete a race) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 157.09 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 143.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 143.09 Tm (race_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 127.39 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 113.39 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 113.39 Tm (204 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 97.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 97.89 Tm (422 - Validation Error) Tj ET
+endstream
+endobj
+32 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 31 0 R >>
+endobj
+33 0 obj
+<< /Length 6364 >>
+stream
+0.140 0.460 0.280 rg 54.00 749.89 54.00 23.00 re f
+0.680 0.450 0.100 rg 54.00 445.29 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 779.89 m 541.28 779.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 475.29 m 541.28 475.29 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 15) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 757.89 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 760.89 Tm (/api/v1/races/{race_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 735.89 Tm (Get a race by ID) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 719.29 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 719.29 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 703.29 Tm (Get a race by ID) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 687.69 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 673.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 673.69 Tm (race_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 657.99 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 643.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 643.99 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 628.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 628.29 Tm (year: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 612.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 612.59 Tm (round: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 596.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 596.89 Tm (circuit_id: integer | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 581.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 581.19 Tm (name: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 565.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 565.49 Tm (+3 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 549.79 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 535.79 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 535.79 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 520.29 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 520.29 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 504.79 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 490.79 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 490.79 Tm (Response contract is shared by direct ASGI and Django-adapted deployments.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 453.29 Tm (PUT) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 456.29 Tm (/api/v1/races/{race_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 431.29 Tm (Update a race) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 414.69 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 414.69 Tm (Bearer token required) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 398.69 Tm (Update a race) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 383.09 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 369.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 369.09 Tm (race_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 353.39 Tm (Request) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 339.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 339.39 Tm (Content-Type: application/json) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 323.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 323.69 Tm (circuit_id: integer | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 307.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 307.99 Tm (name: string | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 292.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 292.29 Tm (race_date: string \(date\) | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 276.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 276.59 Tm (+2 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 260.89 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 246.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 246.89 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 231.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 231.19 Tm (year: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 215.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 215.49 Tm (round: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 199.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 199.79 Tm (circuit_id: integer | null \(optional\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 184.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 184.09 Tm (name: string \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 168.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 168.39 Tm (+3 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 152.69 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 138.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 138.69 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 123.19 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 123.19 Tm (422 - Validation Error) Tj ET
+endstream
+endobj
+34 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 33 0 R >>
+endobj
+35 0 obj
+<< /Length 6121 >>
+stream
+0.140 0.460 0.280 rg 54.00 640.19 54.00 23.00 re f
+0.140 0.460 0.280 rg 54.00 288.49 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 739.89 m 174.00 739.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 670.19 m 541.28 670.19 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 318.49 m 541.28 318.49 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 16) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 749.89 Tm (Results) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 717.89 Tm (Results are intentionally read-only because they are imported from the Ergast dataset.) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 701.99 Tm (These endpoints support filtering and pagination and serve as the foundation for the) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 686.09 Tm (analytics layer.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 648.19 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 651.19 Tm (/api/v1/results) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 626.19 Tm (List race results) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 609.59 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 609.59 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 593.59 Tm (Paginated list of race results.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 577.99 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 563.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 563.99 Tm (race_id [query] - integer | null, optional - Filter by race ID) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 548.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 548.29 Tm (driver_id [query] - integer | null, optional - Filter by driver ID) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 532.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 532.59 Tm (status [query] - string | null, optional - Filter by finish status) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 516.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 516.89 Tm (+2 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 501.19 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 487.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 487.19 Tm (items: array[ResultResponse]) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 471.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 471.49 Tm (total: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 455.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 455.79 Tm (page: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 440.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 440.09 Tm (limit: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 424.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 424.39 Tm (pages: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 408.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 408.69 Tm (+1 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 392.99 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 378.99 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 378.99 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 363.49 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 363.49 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 347.99 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 333.99 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 333.99 Tm (Response contract is shared by direct ASGI and Django-adapted deployments.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 296.49 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 299.49 Tm (/api/v1/results/{result_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 274.49 Tm (Get a result by ID) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 257.89 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 257.89 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 241.89 Tm (Get a result by ID) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 226.29 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 212.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 212.29 Tm (result_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 196.59 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 182.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 182.59 Tm (id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 166.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 166.89 Tm (race_id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 151.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 151.19 Tm (driver_id: integer \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 135.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 135.49 Tm (constructor_id: integer | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 119.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 119.79 Tm (grid: integer | null \(required\)) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 104.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 104.09 Tm (+3 more) Tj ET
+endstream
+endobj
+36 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 35 0 R >>
+endobj
+37 0 obj
+<< /Length 5129 >>
+stream
+0.140 0.460 0.280 rg 54.00 505.59 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 655.39 m 174.00 655.39 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 535.59 m 541.28 535.59 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 17) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 769.89 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 755.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 755.89 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 740.39 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 740.39 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 724.89 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 710.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 710.89 Tm (Response contract is shared by direct ASGI and Django-adapted deployments.) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 665.39 Tm (Analytics) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 633.39 Tm (Analytics endpoints are read-only, uncached at the HTTP contract level but cached) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 617.49 Tm (internally in the service layer. They aggregate historical race data into reusable insights) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 601.59 Tm (for dashboards, reports, and API consumers.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 575.69 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 575.69 Tm (All analytics endpoints are public and read-only.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 558.99 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 558.99 Tm (Results are cached internally to speed up repeated aggregate queries.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 542.29 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 542.29 Tm (This section summarises the response contract instead of expanding every nested schema.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 513.59 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 516.59 Tm (/api/v1/analytics/circuits/{circuit_id}/stats) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 491.59 Tm (Circuit historical statistics) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 474.99 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 474.99 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 458.99 Tm (Historical race data for a specific circuit.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 443.39 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 429.39 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 429.39 Tm (circuit_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 413.69 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 399.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 399.69 Tm (circuit: id, name, location, country, lat, lng) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 383.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 383.99 Tm (total_races_hosted: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 368.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 368.29 Tm (first_race_year / last_race_year: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 352.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 352.59 Tm (top_winners[]: driver, wins) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 336.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 336.89 Tm (most_successful_constructor: name, wins, total_points) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 321.19 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 307.19 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 307.19 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 291.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 291.69 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 276.19 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 262.19 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 262.19 Tm (Returns a no-data message when the circuit exists but has no race history.) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 246.69 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 246.69 Tm (Results are cached for 10 minutes.) Tj ET
+endstream
+endobj
+38 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 37 0 R >>
+endobj
+39 0 obj
+<< /Length 5844 >>
+stream
+0.140 0.460 0.280 rg 54.00 749.89 54.00 23.00 re f
+0.140 0.460 0.280 rg 54.00 476.89 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 779.89 m 541.28 779.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 506.89 m 541.28 506.89 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 18) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 757.89 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 760.89 Tm (/api/v1/analytics/drivers/compare) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 735.89 Tm (Compare multiple drivers head-to-head \(career stats\)) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 719.29 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 719.29 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 703.29 Tm (Compare 2-5 drivers across their entire careers.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 687.69 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 673.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 673.69 Tm (driver_ids [query] - array[integer], required - Repeat this query parameter for 2-5 driver IDs) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 657.99 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 643.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 643.99 Tm (drivers_compared: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 628.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 628.29 Tm (comparisons[]: driver object plus stats) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 612.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 612.59 Tm (stats: total_points, wins, podiums, races_entered, dnfs, seasons, win_rate_pct, points_per_race) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 596.89 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 582.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 582.89 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 567.39 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 567.39 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 551.89 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 537.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 537.89 Tm (Accepts between 2 and 5 driver_ids.) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 522.39 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 522.39 Tm (Order in the response matches the order in the request.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 484.89 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 487.89 Tm (/api/v1/analytics/drivers/{driver_id}/head-to-head/{rival_id}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 462.89 Tm (Head-to-head record between two drivers) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 446.29 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 446.29 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 430.29 Tm (Direct comparison between two drivers in races where both participated.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 414.69 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 400.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 400.69 Tm (driver_id [path] - integer, required) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 384.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 384.99 Tm (rival_id [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 369.29 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 355.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 355.29 Tm (driver / rival: id, name) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 339.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 339.59 Tm (shared_races: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 323.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 323.89 Tm (head_to_head: driver_wins, rival_wins, ties, driver_win_pct, rival_win_pct) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 308.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 308.19 Tm (points_in_shared_races: driver_points, rival_points) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 292.49 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 278.49 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 278.49 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 262.99 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 262.99 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 247.49 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 233.49 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 233.49 Tm (Uses position_order rather than position so DNFs are handled correctly.) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 217.99 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 217.99 Tm (Returns a no-shared-races message when the drivers never raced together.) Tj ET
+endstream
+endobj
+40 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 39 0 R >>
+endobj
+41 0 obj
+<< /Length 6249 >>
+stream
+0.140 0.460 0.280 rg 54.00 749.89 54.00 23.00 re f
+0.140 0.460 0.280 rg 54.00 445.49 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 779.89 m 541.28 779.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 475.49 m 541.28 475.49 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 19) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 757.89 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 760.89 Tm (/api/v1/analytics/drivers/{driver_id}/performance) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 735.89 Tm (Driver season-by-season performance) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 719.29 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 719.29 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 703.29 Tm (Retrieve a complete career breakdown for a Formula 1 driver, season by season.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 687.69 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 673.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 673.69 Tm (driver_id [path] - integer, required) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 657.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 657.99 Tm (start_year [query] - integer, optional - Filter from this season) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 642.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 642.29 Tm (end_year [query] - integer, optional - Filter to this season) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 626.59 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 612.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 612.59 Tm (driver: id, name, nationality, code) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 596.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 596.89 Tm (seasons[]: year, total_points, wins, podiums, races_entered, dnfs, win_rate) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 581.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 581.19 Tm (career_summary: total_seasons, total_points, total_wins, total_podiums, total_races) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 565.49 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 551.49 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 551.49 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 535.99 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 535.99 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 520.49 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 506.49 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 506.49 Tm (DNFs are counted when position is null and status is not Finished.) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 490.99 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 490.99 Tm (Results are cached for 10 minutes.) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 453.49 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 456.49 Tm (/api/v1/analytics/seasons/{year}/highlights) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 431.49 Tm (Season highlights and champion summary) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 414.89 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 414.89 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 398.89 Tm (Executive summary of a complete Formula 1 season.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 383.29 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 369.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 369.29 Tm (year [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 353.59 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 339.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 339.59 Tm (season: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 323.89 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 323.89 Tm (total_races: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 308.19 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 308.19 Tm (champion_driver: id, name, points) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 292.49 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 292.49 Tm (champion_constructor: id, name, points) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 276.79 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 276.79 Tm (most_race_wins: driver, wins) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 261.09 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 261.09 Tm (+2 more) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 245.39 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 231.39 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 231.39 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 215.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 215.89 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 200.39 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 186.39 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 186.39 Tm (Uses aggregate queries and winner subqueries to identify champions.) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 170.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 170.89 Tm (Results are cached for 30 minutes.) Tj ET
+endstream
+endobj
+42 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 41 0 R >>
+endobj
+43 0 obj
+<< /Length 5255 >>
+stream
+0.940 0.950 0.980 rg 54.00 455.89 487.28 318.00 re f
+0.140 0.460 0.280 rg 54.00 415.89 54.00 23.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 445.89 m 541.28 445.89 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 132.89 m 174.00 132.89 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 20) Tj ET
+BT /F2 9.50 Tf 0.370 0.420 0.500 rg 1 0 0 1 66.00 755.89 Tm (Example) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 737.89 Tm ({) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 724.39 Tm ("season": 2021,) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 710.89 Tm ("total_races": 22,) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 697.39 Tm ("champion_driver": {) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 683.89 Tm ("id": 830,) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 670.39 Tm ("name": "Max Verstappen",) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 656.89 Tm ("points": 395.5) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 643.39 Tm (},) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 629.89 Tm ("champion_constructor": {) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 616.39 Tm ("id": 9,) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 602.89 Tm ("name": "Red Bull",) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 589.39 Tm ("points": 585.5) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 575.89 Tm (},) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 562.39 Tm ("most_race_wins": {) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 548.89 Tm ("driver": "Max Verstappen",) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 535.39 Tm ("wins": 10) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 521.89 Tm (},) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 508.39 Tm ("unique_race_winners": 3,) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 494.89 Tm ("total_points_scored": 2446.5) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 481.39 Tm (}) Tj ET
+BT /F2 10.20 Tf 1.000 1.000 1.000 rg 1 0 0 1 65.00 423.89 Tm (GET) Tj ET
+BT /F4 10.70 Tf 0.110 0.160 0.240 rg 1 0 0 1 122.00 426.89 Tm (/api/v1/analytics/teams/standings/{year}) Tj ET
+BT /F1 10.20 Tf 0.370 0.420 0.500 rg 1 0 0 1 122.00 401.89 Tm (Constructor championship standings for a season) Tj ET
+BT /F2 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 385.29 Tm (Auth) Tj ET
+BT /F1 10.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 162.00 385.29 Tm (Public) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 369.29 Tm (Full constructor \(team\) championship standings for the given season.) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 353.69 Tm (Parameters) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 339.69 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 339.69 Tm (year [path] - integer, required) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 323.99 Tm (Response) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 309.99 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 309.99 Tm (season: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 294.29 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 294.29 Tm (total_races: integer) Tj ET
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 278.59 Tm (-) Tj ET
+BT /F1 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 278.59 Tm (standings[]: position, team_id, team_name, nationality, total_points, wins, race_entries...) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 262.89 Tm (Status) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 248.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 248.89 Tm (200 - Successful Response) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 233.39 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 233.39 Tm (422 - Validation Error) Tj ET
+BT /F2 10.60 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 217.89 Tm (Notes) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 203.89 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 203.89 Tm (Standings are ordered by total constructor points descending.) Tj ET
+BT /F2 10.30 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 188.39 Tm (-) Tj ET
+BT /F1 9.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 70.00 188.39 Tm (Results are cached for 10 minutes.) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 142.89 Tm (Deployment Appendix) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 110.89 Tm (The Django layer is a thin WSGI deployment adapter around the same FastAPI core used) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 94.99 Tm (for direct ASGI execution, so routes, auth, docs, and analytics stay aligned across both) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 79.09 Tm (entrypoints.) Tj ET
+endstream
+endobj
+44 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 43 0 R >>
+endobj
+45 0 obj
+<< /Length 5162 >>
+stream
+0.940 0.950 0.980 rg 54.00 479.99 487.28 183.00 re f
+0.940 0.950 0.980 rg 54.00 114.09 487.28 156.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 439.99 m 174.00 439.99 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 396.28 807.89 Tm (Static API Documentation) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from code on 2026-04-21 14:26) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 21) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 769.89 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 769.89 Tm (API_V1_PREFIX controls Django route mounting, FastAPI router prefixes, and frontend API) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 755.19 Tm (requests.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 738.49 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 738.49 Tm (collectstatic writes production assets to STATIC_ROOT for web-server or PythonAnywhere) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 723.79 Tm (static mappings.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 707.09 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 707.09 Tm (FastAPI startup runs Alembic migrations automatically through app/database_migrations.py.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 690.39 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 690.39 Tm (Django can still adopt an existing SQLite database with migrate --fake-initial so its app) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 675.69 Tm (registry matches the already-migrated schema.) Tj ET
+BT /F2 9.50 Tf 0.370 0.420 0.500 rg 1 0 0 1 66.00 644.99 Tm (Django deployment checklist) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 626.99 Tm (python manage.py check) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 613.49 Tm () Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 599.99 Tm (# FastAPI / shared schema entrypoint) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 586.49 Tm (python -m uvicorn app.main:app --reload) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 572.99 Tm () Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 559.49 Tm (# Django deployment adapter) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 545.99 Tm (python manage.py migrate --fake-initial) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 532.49 Tm (python manage.py collectstatic --noinput) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 518.99 Tm (python manage.py runserver 127.0.0.1:8001) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 505.49 Tm () Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 449.99 Tm (Testing and Reliability) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 417.99 Tm (The repository includes a Django acceptance suite that exercises authentication, CRUD) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 402.09 Tm (resources, results filtering, all six analytics endpoints, runtime docs, and the static) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 386.19 Tm (frontend entrypoint.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 360.29 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 360.29 Tm (The acceptance script copies f1_analytics.db into a temporary SQLite database so local data is) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 345.59 Tm (not mutated.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 328.89 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 328.89 Tm (manage.py check and the shared OpenAPI export both run cleanly with the current Django) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 314.19 Tm (settings.) Tj ET
+BT /F2 11.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 297.49 Tm (-) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 297.49 Tm (The browser-facing page, /static/app.js, /docs, /redoc, /openapi.json, and /health are verified) Tj ET
+BT /F1 10.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 282.79 Tm (before API flows.) Tj ET
+BT /F2 9.50 Tf 0.370 0.420 0.500 rg 1 0 0 1 66.00 252.09 Tm (Verification) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 234.09 Tm (source venv/bin/activate) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 220.59 Tm (python manage.py check) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 207.09 Tm (python scripts/django_openapi.py --file /tmp/f1_openapi.json) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 193.59 Tm (python scripts/verify_django_acceptance.py) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 180.09 Tm () Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 166.59 Tm (# Current verified result:) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 153.09 Tm (# Django acceptance verification passed) Tj ET
+BT /F3 9.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 66.00 139.59 Tm () Tj ET
+endstream
+endobj
+46 0 obj
+<< /Type /Page /Parent 47 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 45 0 R >>
+endobj
+47 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R 26 0 R 28 0 R 30 0 R 32 0 R 34 0 R 36 0 R 38 0 R 40 0 R 42 0 R 44 0 R 46 0 R] /Count 21 >>
+endobj
+48 0 obj
+<< /Type /Catalog /Pages 47 0 R >>
+endobj
+xref
+0 49
+0000000000 65535 f 
+0000000015 00000 n 
+0000000112 00000 n 
+0000000214 00000 n 
+0000000309 00000 n 
+0000000409 00000 n 
+0000003350 00000 n 
+0000003513 00000 n 
+0000010262 00000 n 
+0000010425 00000 n 
+0000016215 00000 n 
+0000016379 00000 n 
+0000022309 00000 n 
+0000022474 00000 n 
+0000028368 00000 n 
+0000028533 00000 n 
+0000034178 00000 n 
+0000034343 00000 n 
+0000040297 00000 n 
+0000040462 00000 n 
+0000046135 00000 n 
+0000046300 00000 n 
+0000052673 00000 n 
+0000052838 00000 n 
+0000058827 00000 n 
+0000058992 00000 n 
+0000064615 00000 n 
+0000064780 00000 n 
+0000070724 00000 n 
+0000070889 00000 n 
+0000076590 00000 n 
+0000076755 00000 n 
+0000083252 00000 n 
+0000083417 00000 n 
+0000089834 00000 n 
+0000089999 00000 n 
+0000096173 00000 n 
+0000096338 00000 n 
+0000101520 00000 n 
+0000101685 00000 n 
+0000107582 00000 n 
+0000107747 00000 n 
+0000114049 00000 n 
+0000114214 00000 n 
+0000119522 00000 n 
+0000119687 00000 n 
+0000124902 00000 n 
+0000125067 00000 n 
+0000125265 00000 n 
+trailer
+<< /Size 49 /Root 48 0 R >>
+startxref
+125316
+%%EOF
