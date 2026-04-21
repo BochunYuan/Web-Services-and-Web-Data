@@ -1,0 +1,885 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 2822 >>
+stream
+0.035 0.039 0.055 rg 0.00 0.00 960.00 540.00 re f
+0.045 0.047 0.067 rg 0.00 0.00 960.00 540.00 re f
+0.882 0.024 0.000 rg 0.00 0.00 12.00 540.00 re f
+0.080 0.030 0.035 rg 760.00 360.00 200.00 180.00 re f
+0.230 0.250 0.310 RG 1.00 w 48.00 52.00 m 912.00 52.00 l S
+0.090 0.098 0.130 rg 72.00 164.00 142.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 72.00 164.00 142.00 82.00 re S
+0.090 0.098 0.130 rg 232.00 164.00 142.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 232.00 164.00 142.00 82.00 re S
+0.090 0.098 0.130 rg 392.00 164.00 142.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 392.00 164.00 142.00 82.00 re S
+0.090 0.098 0.130 rg 552.00 164.00 142.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 552.00 164.00 142.00 82.00 re S
+0.090 0.098 0.130 rg 712.00 164.00 142.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 712.00 164.00 142.00 82.00 re S
+0.090 0.098 0.130 rg 710.00 276.00 160.00 128.00 re f
+0.230 0.250 0.310 RG 1.00 w 710.00 276.00 160.00 128.00 re S
+BT /F2 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 24.00 Tm (F1 Analytics API) Tj ET
+BT /F1 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 840.00 24.00 Tm (01) Tj ET
+BT /F2 42.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 72.00 382.00 Tm (F1 Analytics API) Tj ET
+BT /F2 25.00 Tf 0.882 0.024 0.000 rg 1 0 0 1 72.00 338.00 Tm (Presentation Slides) Tj ET
+BT /F1 15.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 72.00 300.00 Tm (A RESTful Formula 1 data platform with a single FastAPI core, plus a thin Django) Tj ET
+BT /F1 15.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 72.00 279.00 Tm (adapter for WSGI deployment, static frontend parity, and coursework-ready) Tj ET
+BT /F1 15.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 72.00 258.00 Tm (documentation.) Tj ET
+BT /F2 20.50 Tf 0.882 0.024 0.000 rg 1 0 0 1 126.39 213.20 Tm (861) Tj ET
+BT /F1 11.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 121.83 191.06 Tm (Drivers) Tj ET
+BT /F2 20.50 Tf 0.960 0.640 0.140 rg 1 0 0 1 286.39 213.20 Tm (212) Tj ET
+BT /F1 11.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 287.88 191.06 Tm (Teams) Tj ET
+BT /F2 19.00 Tf 0.140 0.760 0.380 rg 1 0 0 1 432.22 213.20 Tm (26,759) Tj ET
+BT /F1 11.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 441.83 191.06 Tm (Results) Tj ET
+BT /F2 20.50 Tf 0.150 0.700 0.820 rg 1 0 0 1 611.93 213.20 Tm (33) Tj ET
+BT /F1 11.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 589.74 191.06 Tm (OpenAPI ops) Tj ET
+BT /F2 20.50 Tf 0.440 0.330 0.820 rg 1 0 0 1 777.47 213.20 Tm (6) Tj ET
+BT /F1 11.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 755.78 191.06 Tm (Analytics) Tj ET
+BT /F2 13.80 Tf 0.950 0.960 0.980 rg 1 0 0 1 771.37 374.00 Tm (Stack) Tj ET
+BT /F1 11.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 732.00 344.00 Tm (Django 5.2) Tj ET
+BT /F1 9.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 732.00 322.00 Tm (FastAPI + Pydantic) Tj ET
+BT /F1 11.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 732.00 300.00 Tm (JWT + bcrypt) Tj ET
+BT /F1 11.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 732.00 278.00 Tm (collectstatic) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 27 0 R /MediaBox [0 0 960.00 540.00] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 4636 >>
+stream
+0.035 0.039 0.055 rg 0.00 0.00 960.00 540.00 re f
+0.045 0.047 0.067 rg 0.00 0.00 960.00 540.00 re f
+0.882 0.024 0.000 rg 0.00 0.00 12.00 540.00 re f
+0.080 0.030 0.035 rg 760.00 360.00 200.00 180.00 re f
+0.230 0.250 0.310 RG 1.00 w 48.00 52.00 m 912.00 52.00 l S
+0.882 0.024 0.000 RG 3.00 w 48.00 452.00 m 180.00 452.00 l S
+0.090 0.098 0.130 rg 64.00 330.00 250.00 95.00 re f
+0.230 0.250 0.310 RG 1.00 w 64.00 330.00 250.00 95.00 re S
+0.882 0.024 0.000 rg 64.00 420.00 250.00 5.00 re f
+0.090 0.098 0.130 rg 354.00 330.00 250.00 95.00 re f
+0.230 0.250 0.310 RG 1.00 w 354.00 330.00 250.00 95.00 re S
+0.960 0.640 0.140 rg 354.00 420.00 250.00 5.00 re f
+0.090 0.098 0.130 rg 644.00 330.00 250.00 95.00 re f
+0.230 0.250 0.310 RG 1.00 w 644.00 330.00 250.00 95.00 re S
+0.140 0.760 0.380 rg 644.00 420.00 250.00 5.00 re f
+0.090 0.098 0.130 rg 64.00 190.00 250.00 95.00 re f
+0.230 0.250 0.310 RG 1.00 w 64.00 190.00 250.00 95.00 re S
+0.150 0.700 0.820 rg 64.00 280.00 250.00 5.00 re f
+0.090 0.098 0.130 rg 354.00 190.00 250.00 95.00 re f
+0.230 0.250 0.310 RG 1.00 w 354.00 190.00 250.00 95.00 re S
+0.440 0.330 0.820 rg 354.00 280.00 250.00 5.00 re f
+0.090 0.098 0.130 rg 644.00 190.00 250.00 95.00 re f
+0.230 0.250 0.310 RG 1.00 w 644.00 190.00 250.00 95.00 re S
+0.220 0.500 0.900 rg 644.00 280.00 250.00 5.00 re f
+BT /F2 28.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 48.00 492.00 Tm (Submission Snapshot) Tj ET
+BT /F1 12.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 468.00 Tm (What the current codebase now delivers) Tj ET
+BT /F2 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 24.00 Tm (F1 Analytics API) Tj ET
+BT /F1 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 840.00 24.00 Tm (02) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 80.00 400.00 Tm (Single API core) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 80.00 377.00 Tm (FastAPI owns auth, CRUD, results,) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 80.00 361.80 Tm (analytics, OpenAPI generation, and cache) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 80.00 346.60 Tm (invalidation as the single source of truth.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 370.00 400.00 Tm (Django adapter) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 370.00 377.00 Tm (Django serves root, docs, health, static) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 370.00 361.80 Tm (assets, and proxies API requests) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 370.00 346.60 Tm (in-process without duplicating business) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 370.00 331.40 Tm (logic.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 660.00 400.00 Tm (Domain coverage) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 660.00 377.00 Tm (Drivers, teams, circuits, and races support) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 660.00 361.80 Tm (authenticated CRUD; results stay) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 660.00 346.60 Tm (read-only because they are historical) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 660.00 331.40 Tm (source data.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 80.00 260.00 Tm (Analytics depth) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 80.00 237.00 Tm (Six endpoints compute season highlights,) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 80.00 221.80 Tm (team standings, circuit history, driver) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 80.00 206.60 Tm (comparison, and head-to-head performance.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 370.00 260.00 Tm (Security baseline) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 370.00 237.00 Tm (JWT access and refresh tokens, bcrypt) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 370.00 221.80 Tm (hashing, active-user guards, explicit CORS,) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 370.00 206.60 Tm (and per-IP rate limiting.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 660.00 260.00 Tm (Artifacts) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 660.00 237.00 Tm (Swagger UI, ReDoc, OpenAPI JSON,) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 660.00 221.80 Tm (frontend dashboard, PDF documentation,) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 660.00 206.60 Tm (technical report, and this regenerated) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 660.00 191.40 Tm (PPTX.) Tj ET
+BT /F1 13.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 70.00 116.00 Tm (Design focus: a coursework-sized system that stays layered, testable, and submission-ready while removing the earlier duplicate-stack) Tj ET
+BT /F1 13.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 70.00 98.00 Tm (maintenance risk.) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 27 0 R /MediaBox [0 0 960.00 540.00] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 4246 >>
+stream
+0.035 0.039 0.055 rg 0.00 0.00 960.00 540.00 re f
+0.045 0.047 0.067 rg 0.00 0.00 960.00 540.00 re f
+0.882 0.024 0.000 rg 0.00 0.00 12.00 540.00 re f
+0.080 0.030 0.035 rg 760.00 360.00 200.00 180.00 re f
+0.230 0.250 0.310 RG 1.00 w 48.00 52.00 m 912.00 52.00 l S
+0.882 0.024 0.000 RG 3.00 w 48.00 452.00 m 180.00 452.00 l S
+0.090 0.098 0.130 rg 72.00 330.00 170.00 84.00 re f
+0.230 0.250 0.310 RG 1.00 w 72.00 330.00 170.00 84.00 re S
+0.090 0.098 0.130 rg 266.00 330.00 170.00 84.00 re f
+0.230 0.250 0.310 RG 1.00 w 266.00 330.00 170.00 84.00 re S
+0.090 0.098 0.130 rg 460.00 330.00 170.00 84.00 re f
+0.230 0.250 0.310 RG 1.00 w 460.00 330.00 170.00 84.00 re S
+0.090 0.098 0.130 rg 654.00 330.00 170.00 84.00 re f
+0.230 0.250 0.310 RG 1.00 w 654.00 330.00 170.00 84.00 re S
+0.090 0.098 0.130 rg 72.00 136.00 378.00 144.00 re f
+0.230 0.250 0.310 RG 1.00 w 72.00 136.00 378.00 144.00 re S
+0.090 0.098 0.130 rg 510.00 136.00 378.00 144.00 re f
+0.230 0.250 0.310 RG 1.00 w 510.00 136.00 378.00 144.00 re S
+BT /F2 28.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 48.00 492.00 Tm (Code Quality Refactor) Tj ET
+BT /F1 12.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 468.00 Tm (How the current implementation removed the earlier maintainability deductions) Tj ET
+BT /F2 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 24.00 Tm (F1 Analytics API) Tj ET
+BT /F1 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 840.00 24.00 Tm (03) Tj ET
+BT /F2 25.00 Tf 0.882 0.024 0.000 rg 1 0 0 1 150.25 380.40 Tm (1) Tj ET
+BT /F1 11.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 131.51 357.72 Tm (API core) Tj ET
+BT /F2 24.00 Tf 0.960 0.640 0.140 rg 1 0 0 1 338.04 380.40 Tm (33) Tj ET
+BT /F1 11.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 315.95 357.72 Tm (OpenAPI ops) Tj ET
+BT /F2 24.00 Tf 0.140 0.760 0.380 rg 1 0 0 1 525.56 380.40 Tm (187) Tj ET
+BT /F1 11.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 509.95 357.72 Tm (Proxy lines) Tj ET
+BT /F2 24.00 Tf 0.150 0.700 0.820 rg 1 0 0 1 719.56 380.40 Tm (181) Tj ET
+BT /F1 11.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 691.21 357.72 Tm (Automated tests) Tj ET
+BT /F2 15.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 94.00 246.00 Tm (Removed Risks) Tj ET
+BT /F2 12.80 Tf 0.882 0.024 0.000 rg 1 0 0 1 94.00 218.00 Tm (-) Tj ET
+BT /F1 10.80 Tf 0.950 0.960 0.980 rg 1 0 0 1 114.00 218.00 Tm (No second Django business stack to drift away from the) Tj ET
+BT /F1 10.80 Tf 0.950 0.960 0.980 rg 1 0 0 1 114.00 202.20 Tm (FastAPI implementation.) Tj ET
+BT /F2 12.80 Tf 0.882 0.024 0.000 rg 1 0 0 1 94.00 181.40 Tm (-) Tj ET
+BT /F1 10.80 Tf 0.950 0.960 0.980 rg 1 0 0 1 114.00 181.40 Tm (No large duplicated CRUD/auth view layer in) Tj ET
+BT /F1 10.80 Tf 0.950 0.960 0.980 rg 1 0 0 1 114.00 165.60 Tm (django_api/views.py.) Tj ET
+BT /F2 12.80 Tf 0.882 0.024 0.000 rg 1 0 0 1 94.00 144.80 Tm (-) Tj ET
+BT /F1 10.80 Tf 0.950 0.960 0.980 rg 1 0 0 1 114.00 144.80 Tm (No separate schema/documentation path that can fall out of) Tj ET
+BT /F1 10.80 Tf 0.950 0.960 0.980 rg 1 0 0 1 114.00 129.00 Tm (sync with runtime behaviour.) Tj ET
+BT /F2 15.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 532.00 246.00 Tm (Current Shape) Tj ET
+BT /F2 12.80 Tf 0.882 0.024 0.000 rg 1 0 0 1 532.00 218.00 Tm (-) Tj ET
+BT /F1 10.80 Tf 0.950 0.960 0.980 rg 1 0 0 1 552.00 218.00 Tm (django_api/views.py is now a thin in-process proxy to) Tj ET
+BT /F1 10.80 Tf 0.950 0.960 0.980 rg 1 0 0 1 552.00 202.20 Tm (app.main:app.) Tj ET
+BT /F2 12.80 Tf 0.882 0.024 0.000 rg 1 0 0 1 532.00 181.40 Tm (-) Tj ET
+BT /F1 10.80 Tf 0.950 0.960 0.980 rg 1 0 0 1 552.00 181.40 Tm (Django and FastAPI share DATABASE_URL normalization) Tj ET
+BT /F1 10.80 Tf 0.950 0.960 0.980 rg 1 0 0 1 552.00 165.60 Tm (and the same OpenAPI schema source.) Tj ET
+BT /F2 12.80 Tf 0.882 0.024 0.000 rg 1 0 0 1 532.00 144.80 Tm (-) Tj ET
+BT /F1 10.80 Tf 0.950 0.960 0.980 rg 1 0 0 1 552.00 144.80 Tm (Docs, acceptance checks, README, report, and slides now all) Tj ET
+BT /F1 10.80 Tf 0.950 0.960 0.980 rg 1 0 0 1 552.00 129.00 Tm (describe the same architecture.) Tj ET
+BT /F1 12.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 74.00 106.00 Tm (Core message: the refactor did not just tidy naming. It removed duplicated runtime responsibilities and made the deployed behaviour easier to) Tj ET
+BT /F1 12.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 74.00 88.50 Tm (reason about, document, and verify.) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 27 0 R /MediaBox [0 0 960.00 540.00] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 7951 >>
+stream
+0.035 0.039 0.055 rg 0.00 0.00 960.00 540.00 re f
+0.045 0.047 0.067 rg 0.00 0.00 960.00 540.00 re f
+0.882 0.024 0.000 rg 0.00 0.00 12.00 540.00 re f
+0.080 0.030 0.035 rg 760.00 360.00 200.00 180.00 re f
+0.882 0.024 0.000 rg 300.00 380.00 m 288.00 386.00 l 288.00 374.00 l h f
+0.882 0.024 0.000 rg 300.00 280.00 m 288.00 286.00 l 288.00 274.00 l h f
+0.882 0.024 0.000 rg 300.00 180.00 m 288.00 186.00 l 288.00 174.00 l h f
+0.150 0.700 0.820 rg 560.00 400.00 m 548.00 406.00 l 548.00 394.00 l h f
+0.150 0.700 0.820 rg 560.00 290.00 m 548.00 296.00 l 548.00 284.00 l h f
+0.150 0.700 0.820 rg 560.00 180.00 m 548.00 186.00 l 548.00 174.00 l h f
+0.960 0.640 0.140 rg 790.00 340.00 m 778.00 346.00 l 778.00 334.00 l h f
+0.960 0.640 0.140 rg 790.00 240.00 m 778.00 246.00 l 778.00 234.00 l h f
+0.440 0.330 0.820 rg 645.00 115.00 m 639.00 127.00 l 651.00 127.00 l h f
+0.230 0.250 0.310 RG 1.00 w 48.00 52.00 m 912.00 52.00 l S
+0.882 0.024 0.000 RG 3.00 w 48.00 452.00 m 180.00 452.00 l S
+0.882 0.024 0.000 RG 2.00 w 230.00 380.00 m 300.00 380.00 l S
+0.882 0.024 0.000 RG 2.00 w 230.00 280.00 m 300.00 280.00 l S
+0.882 0.024 0.000 RG 2.00 w 230.00 180.00 m 300.00 180.00 l S
+0.150 0.700 0.820 RG 2.00 w 490.00 400.00 m 560.00 400.00 l S
+0.150 0.700 0.820 RG 2.00 w 490.00 290.00 m 560.00 290.00 l S
+0.150 0.700 0.820 RG 2.00 w 490.00 180.00 m 560.00 180.00 l S
+0.960 0.640 0.140 RG 2.00 w 730.00 290.00 m 790.00 340.00 l S
+0.960 0.640 0.140 RG 2.00 w 730.00 290.00 m 790.00 240.00 l S
+0.440 0.330 0.820 RG 2.00 w 645.00 140.00 m 645.00 115.00 l S
+0.090 0.098 0.130 rg 60.00 345.00 170.00 70.00 re f
+0.230 0.250 0.310 RG 1.00 w 60.00 345.00 170.00 70.00 re S
+0.882 0.024 0.000 rg 60.00 410.00 170.00 5.00 re f
+0.090 0.098 0.130 rg 60.00 245.00 170.00 70.00 re f
+0.230 0.250 0.310 RG 1.00 w 60.00 245.00 170.00 70.00 re S
+0.960 0.640 0.140 rg 60.00 310.00 170.00 5.00 re f
+0.090 0.098 0.130 rg 60.00 145.00 170.00 70.00 re f
+0.230 0.250 0.310 RG 1.00 w 60.00 145.00 170.00 70.00 re S
+0.440 0.330 0.820 rg 60.00 210.00 170.00 5.00 re f
+0.090 0.098 0.130 rg 300.00 360.00 190.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 300.00 360.00 190.00 82.00 re S
+0.150 0.700 0.820 rg 300.00 437.00 190.00 5.00 re f
+0.090 0.098 0.130 rg 300.00 250.00 190.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 300.00 250.00 190.00 82.00 re S
+0.220 0.500 0.900 rg 300.00 327.00 190.00 5.00 re f
+0.090 0.098 0.130 rg 300.00 140.00 190.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 300.00 140.00 190.00 82.00 re S
+0.140 0.760 0.380 rg 300.00 217.00 190.00 5.00 re f
+0.090 0.098 0.130 rg 560.00 360.00 170.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 560.00 360.00 170.00 82.00 re S
+0.882 0.024 0.000 rg 560.00 437.00 170.00 5.00 re f
+0.090 0.098 0.130 rg 560.00 250.00 170.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 560.00 250.00 170.00 82.00 re S
+0.960 0.640 0.140 rg 560.00 327.00 170.00 5.00 re f
+0.090 0.098 0.130 rg 560.00 140.00 170.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 560.00 140.00 170.00 82.00 re S
+0.440 0.330 0.820 rg 560.00 217.00 170.00 5.00 re f
+0.090 0.098 0.130 rg 790.00 305.00 120.00 72.00 re f
+0.230 0.250 0.310 RG 1.00 w 790.00 305.00 120.00 72.00 re S
+0.140 0.760 0.380 rg 790.00 372.00 120.00 5.00 re f
+0.090 0.098 0.130 rg 790.00 205.00 120.00 72.00 re f
+0.230 0.250 0.310 RG 1.00 w 790.00 205.00 120.00 72.00 re S
+0.220 0.500 0.900 rg 790.00 272.00 120.00 5.00 re f
+BT /F2 28.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 48.00 492.00 Tm (Architecture Diagram) Tj ET
+BT /F1 12.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 468.00 Tm (Single FastAPI core with a thin Django deployment adapter) Tj ET
+BT /F2 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 24.00 Tm (F1 Analytics API) Tj ET
+BT /F1 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 840.00 24.00 Tm (04) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 76.00 390.00 Tm (Frontend UI) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 76.00 367.00 Tm (Static HTML/CSS/JS) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 76.00 351.80 Tm (dashboard served from) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 76.00 336.60 Tm (/static.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 76.00 290.00 Tm (Docs surface) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 76.00 267.00 Tm (Swagger UI, ReDoc, and) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 76.00 251.80 Tm (OpenAPI JSON.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 76.00 190.00 Tm (Direct ASGI dev) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 76.00 167.00 Tm (uvicorn app.main:app) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 76.00 151.80 Tm (--reload uses the same) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 76.00 136.60 Tm (API core directly.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 316.00 417.00 Tm (Django adapter) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 316.00 394.00 Tm (f1_django/settings.py and) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 316.00 378.80 Tm (urls.py expose WSGI hosting,) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 316.00 363.60 Tm (static files, docs, health, and) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 316.00 348.40 Tm (API prefix routing.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 316.00 307.00 Tm (Proxy layer) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 316.00 284.00 Tm (django_api/views.py forwards) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 316.00 268.80 Tm (Django requests in-process to) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 316.00 253.60 Tm (app.main:app.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 316.00 197.00 Tm (FastAPI routers) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 316.00 174.00 Tm (auth, drivers, teams, circuits,) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 316.00 158.80 Tm (races, results, and analytics) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 316.00 143.60 Tm (live in one implementation.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 576.00 417.00 Tm (Services) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 576.00 394.00 Tm (auth_service,) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 576.00 378.80 Tm (analytics_service, and) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 576.00 363.60 Tm (cache_service centralise) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 576.00 348.40 Tm (behaviour behind the) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 576.00 333.20 Tm (routers.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 576.00 307.00 Tm (Schemas + models) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 576.00 284.00 Tm (Pydantic schemas and) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 576.00 268.80 Tm (SQLAlchemy models define) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 576.00 253.60 Tm (contracts and persistence) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 576.00 238.40 Tm (once.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 576.00 197.00 Tm (Runtime guarantees) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 576.00 174.00 Tm (OpenAPI, auth flow, and) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 576.00 158.80 Tm (CRUD semantics come from) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 576.00 143.60 Tm (the same FastAPI core in) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 576.00 128.40 Tm (every mode.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 806.00 352.00 Tm (SQLite verified) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 806.00 329.00 Tm (Local and) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 806.00 313.80 Tm (acceptance DB) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 806.00 252.00 Tm (Portable DB URL) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 806.00 229.00 Tm (Future SQL) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 806.00 213.80 Tm (backend path) Tj ET
+BT /F1 9.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 560.00 98.00 Tm (Same FastAPI behaviour through direct ASGI use or the Django WSGI adapter) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 27 0 R /MediaBox [0 0 960.00 540.00] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 6331 >>
+stream
+0.035 0.039 0.055 rg 0.00 0.00 960.00 540.00 re f
+0.045 0.047 0.067 rg 0.00 0.00 960.00 540.00 re f
+0.882 0.024 0.000 rg 0.00 0.00 12.00 540.00 re f
+0.080 0.030 0.035 rg 760.00 360.00 200.00 180.00 re f
+0.220 0.500 0.900 rg 388.00 315.00 m 376.00 321.00 l 376.00 309.00 l h f
+0.440 0.330 0.820 rg 388.00 260.00 m 376.00 266.00 l 376.00 254.00 l h f
+0.140 0.760 0.380 rg 578.00 315.00 m 590.00 321.00 l 590.00 309.00 l h f
+0.960 0.640 0.140 rg 790.00 255.00 m 784.00 267.00 l 796.00 267.00 l h f
+0.230 0.250 0.310 RG 1.00 w 48.00 52.00 m 912.00 52.00 l S
+0.882 0.024 0.000 RG 3.00 w 48.00 452.00 m 180.00 452.00 l S
+0.220 0.500 0.900 RG 2.00 w 262.00 370.00 m 388.00 315.00 l S
+0.440 0.330 0.820 RG 2.00 w 262.00 190.00 m 388.00 260.00 l S
+0.140 0.760 0.380 RG 2.00 w 700.00 370.00 m 578.00 315.00 l S
+0.960 0.640 0.140 RG 2.00 w 790.00 315.00 m 790.00 255.00 l S
+0.090 0.098 0.130 rg 388.00 212.00 190.00 182.00 re f
+0.230 0.250 0.310 RG 1.00 w 388.00 212.00 190.00 182.00 re S
+0.882 0.024 0.000 rg 388.00 362.00 190.00 32.00 re f
+0.090 0.098 0.130 rg 82.00 315.00 180.00 130.00 re f
+0.230 0.250 0.310 RG 1.00 w 82.00 315.00 180.00 130.00 re S
+0.220 0.500 0.900 rg 82.00 413.00 180.00 32.00 re f
+0.090 0.098 0.130 rg 82.00 125.00 180.00 130.00 re f
+0.230 0.250 0.310 RG 1.00 w 82.00 125.00 180.00 130.00 re S
+0.440 0.330 0.820 rg 82.00 223.00 180.00 32.00 re f
+0.090 0.098 0.130 rg 700.00 315.00 180.00 130.00 re f
+0.230 0.250 0.310 RG 1.00 w 700.00 315.00 180.00 130.00 re S
+0.140 0.760 0.380 rg 700.00 413.00 180.00 32.00 re f
+0.090 0.098 0.130 rg 700.00 125.00 180.00 130.00 re f
+0.230 0.250 0.310 RG 1.00 w 700.00 125.00 180.00 130.00 re S
+0.960 0.640 0.140 rg 700.00 223.00 180.00 32.00 re f
+0.090 0.098 0.130 rg 388.00 70.00 190.00 110.00 re f
+0.230 0.250 0.310 RG 1.00 w 388.00 70.00 190.00 110.00 re S
+0.150 0.700 0.820 rg 388.00 148.00 190.00 32.00 re f
+0.035 0.039 0.055 rg 296.00 358.00 94.00 24.00 re f
+0.035 0.039 0.055 rg 296.00 178.00 92.00 24.00 re f
+0.035 0.039 0.055 rg 588.00 358.00 90.00 24.00 re f
+0.035 0.039 0.055 rg 805.00 280.00 82.00 34.00 re f
+BT /F2 28.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 48.00 492.00 Tm (Database Diagram) Tj ET
+BT /F1 12.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 468.00 Tm (Star-schema style analytics around the results fact table) Tj ET
+BT /F2 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 24.00 Tm (F1 Analytics API) Tj ET
+BT /F1 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 840.00 24.00 Tm (05) Tj ET
+BT /F2 13.50 Tf 1.000 1.000 1.000 rg 1 0 0 1 402.00 372.00 Tm (results) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 402.00 346.00 Tm (id PK) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 402.00 331.50 Tm (race_id FK) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 402.00 317.00 Tm (driver_id FK) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 402.00 302.50 Tm (constructor_id FK) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 402.00 288.00 Tm (position) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 402.00 273.50 Tm (position_order) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 402.00 259.00 Tm (points) Tj ET
+BT /F2 13.50 Tf 1.000 1.000 1.000 rg 1 0 0 1 96.00 423.00 Tm (drivers) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 96.00 397.00 Tm (id PK) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 96.00 382.50 Tm (driver_ref UNIQUE) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 96.00 368.00 Tm (forename) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 96.00 353.50 Tm (surname INDEX) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 96.00 339.00 Tm (nationality INDEX) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 96.00 324.50 Tm (code) Tj ET
+BT /F2 13.50 Tf 1.000 1.000 1.000 rg 1 0 0 1 96.00 233.00 Tm (teams) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 96.00 207.00 Tm (id PK) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 96.00 192.50 Tm (constructor_ref UNIQUE) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 96.00 178.00 Tm (name INDEX) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 96.00 163.50 Tm (nationality) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 96.00 149.00 Tm (url) Tj ET
+BT /F2 13.50 Tf 1.000 1.000 1.000 rg 1 0 0 1 714.00 423.00 Tm (races) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 714.00 397.00 Tm (id PK) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 714.00 382.50 Tm (year INDEX) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 714.00 368.00 Tm (round) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 714.00 353.50 Tm (circuit_id FK) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 714.00 339.00 Tm (name) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 714.00 324.50 Tm (date) Tj ET
+BT /F2 13.50 Tf 1.000 1.000 1.000 rg 1 0 0 1 714.00 233.00 Tm (circuits) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 714.00 207.00 Tm (id PK) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 714.00 192.50 Tm (circuit_ref UNIQUE) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 714.00 178.00 Tm (name) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 714.00 163.50 Tm (location) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 714.00 149.00 Tm (country INDEX) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 714.00 134.50 Tm (lat / lng) Tj ET
+BT /F2 13.50 Tf 1.000 1.000 1.000 rg 1 0 0 1 402.00 158.00 Tm (users) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 402.00 132.00 Tm (id PK) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 402.00 117.50 Tm (username UNIQUE) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 402.00 103.00 Tm (email UNIQUE) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 402.00 88.50 Tm (hashed_password) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 402.00 74.00 Tm (is_active) Tj ET
+BT /F1 8.90 Tf 0.650 0.680 0.740 rg 1 0 0 1 304.55 366.00 Tm (1 driver -> many) Tj ET
+BT /F1 8.90 Tf 0.650 0.680 0.740 rg 1 0 0 1 308.36 186.00 Tm (1 team -> many) Tj ET
+BT /F1 8.90 Tf 0.650 0.680 0.740 rg 1 0 0 1 599.36 366.00 Tm (1 race -> many) Tj ET
+BT /F1 8.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 824.62 296.00 Tm (1 circuit) Tj ET
+BT /F1 8.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 815.11 284.00 Tm (-> many races) Tj ET
+BT /F1 10.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 82.00 96.00 Tm (Analytics joins through results to calculate points, wins,) Tj ET
+BT /F1 10.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 82.00 80.80 Tm (DNFs, champions and head-to-head outcomes.) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 27 0 R /MediaBox [0 0 960.00 540.00] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 4803 >>
+stream
+0.035 0.039 0.055 rg 0.00 0.00 960.00 540.00 re f
+0.045 0.047 0.067 rg 0.00 0.00 960.00 540.00 re f
+0.882 0.024 0.000 rg 0.00 0.00 12.00 540.00 re f
+0.080 0.030 0.035 rg 760.00 360.00 200.00 180.00 re f
+0.882 0.024 0.000 rg 305.00 380.00 m 293.00 386.00 l 293.00 374.00 l h f
+0.882 0.024 0.000 rg 540.00 380.00 m 528.00 386.00 l 528.00 374.00 l h f
+0.140 0.760 0.380 rg 635.00 285.00 m 629.00 297.00 l 641.00 297.00 l h f
+0.150 0.700 0.820 rg 495.00 245.00 m 507.00 251.00 l 507.00 239.00 l h f
+0.150 0.700 0.820 rg 260.00 245.00 m 272.00 251.00 l 272.00 239.00 l h f
+0.230 0.250 0.310 RG 1.00 w 48.00 52.00 m 912.00 52.00 l S
+0.882 0.024 0.000 RG 3.00 w 48.00 452.00 m 180.00 452.00 l S
+0.882 0.024 0.000 RG 2.00 w 260.00 380.00 m 305.00 380.00 l S
+0.882 0.024 0.000 RG 2.00 w 495.00 380.00 m 540.00 380.00 l S
+0.140 0.760 0.380 RG 2.00 w 635.00 340.00 m 635.00 285.00 l S
+0.150 0.700 0.820 RG 2.00 w 540.00 245.00 m 495.00 245.00 l S
+0.150 0.700 0.820 RG 2.00 w 305.00 245.00 m 260.00 245.00 l S
+0.090 0.098 0.130 rg 70.00 338.00 190.00 88.00 re f
+0.230 0.250 0.310 RG 1.00 w 70.00 338.00 190.00 88.00 re S
+0.882 0.024 0.000 rg 70.00 421.00 190.00 5.00 re f
+0.090 0.098 0.130 rg 305.00 338.00 190.00 88.00 re f
+0.230 0.250 0.310 RG 1.00 w 305.00 338.00 190.00 88.00 re S
+0.960 0.640 0.140 rg 305.00 421.00 190.00 5.00 re f
+0.090 0.098 0.130 rg 540.00 338.00 190.00 88.00 re f
+0.230 0.250 0.310 RG 1.00 w 540.00 338.00 190.00 88.00 re S
+0.140 0.760 0.380 rg 540.00 421.00 190.00 5.00 re f
+0.090 0.098 0.130 rg 305.00 196.00 190.00 88.00 re f
+0.230 0.250 0.310 RG 1.00 w 305.00 196.00 190.00 88.00 re S
+0.150 0.700 0.820 rg 305.00 279.00 190.00 5.00 re f
+0.090 0.098 0.130 rg 540.00 196.00 190.00 88.00 re f
+0.230 0.250 0.310 RG 1.00 w 540.00 196.00 190.00 88.00 re S
+0.440 0.330 0.820 rg 540.00 279.00 190.00 5.00 re f
+0.090 0.098 0.130 rg 70.00 196.00 190.00 88.00 re f
+0.230 0.250 0.310 RG 1.00 w 70.00 196.00 190.00 88.00 re S
+0.220 0.500 0.900 rg 70.00 279.00 190.00 5.00 re f
+0.090 0.098 0.130 rg 770.00 182.00 120.00 238.00 re f
+0.230 0.250 0.310 RG 1.00 w 770.00 182.00 120.00 238.00 re S
+BT /F2 28.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 48.00 492.00 Tm (Security And Request Flow) Tj ET
+BT /F1 12.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 468.00 Tm (JWT auth, validation, rate limiting and safe password storage) Tj ET
+BT /F2 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 24.00 Tm (F1 Analytics API) Tj ET
+BT /F1 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 840.00 24.00 Tm (06) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 86.00 401.00 Tm (Register/login) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 86.00 378.00 Tm (Validate credentials, then issue) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 86.00 363.30 Tm (tokens through auth_service.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 321.00 401.00 Tm (bcrypt hash) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 321.00 378.00 Tm (Passwords are stored as bcrypt) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 321.00 363.30 Tm (hashes, never plain text.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 556.00 401.00 Tm (Token pair) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 556.00 378.00 Tm (Access token: 30 minutes.) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 556.00 363.30 Tm (Refresh token: 7 days.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 321.00 259.00 Tm (Protected writes) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 321.00 236.00 Tm (POST, PUT and DELETE require) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 321.00 221.30 Tm (an active authenticated user.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 556.00 259.00 Tm (Rate limit) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 556.00 236.00 Tm (Sliding-window per-IP limiter) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 556.00 221.30 Tm (returns 429 with Retry-After.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 86.00 259.00 Tm (CORS) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 86.00 236.00 Tm (Explicit allowed origins, not) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 86.00 221.30 Tm (wildcard browser access.) Tj ET
+BT /F2 13.60 Tf 0.950 0.960 0.980 rg 1 0 0 1 785.94 390.00 Tm (Status codes) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 798.63 356.00 Tm (401 invalid) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 795.78 332.00 Tm (403 inactive) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 795.78 308.00 Tm (409 conflict) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 790.07 284.00 Tm (422 validation) Tj ET
+BT /F3 9.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 790.07 260.00 Tm (429 rate limit) Tj ET
+BT /F1 12.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 72.00 126.00 Tm (Important detail: dummy bcrypt hashing reduces username-enumeration timing risk during login.) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 27 0 R /MediaBox [0 0 960.00 540.00] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 15 0 R >>
+endobj
+17 0 obj
+<< /Length 4864 >>
+stream
+0.035 0.039 0.055 rg 0.00 0.00 960.00 540.00 re f
+0.045 0.047 0.067 rg 0.00 0.00 960.00 540.00 re f
+0.882 0.024 0.000 rg 0.00 0.00 12.00 540.00 re f
+0.080 0.030 0.035 rg 760.00 360.00 200.00 180.00 re f
+0.230 0.250 0.310 RG 1.00 w 48.00 52.00 m 912.00 52.00 l S
+0.882 0.024 0.000 RG 3.00 w 48.00 452.00 m 180.00 452.00 l S
+0.090 0.098 0.130 rg 62.00 105.00 398.00 330.00 re f
+0.230 0.250 0.310 RG 1.00 w 62.00 105.00 398.00 330.00 re S
+0.120 0.130 0.170 rg 62.00 401.00 398.00 34.00 re f
+0.882 0.024 0.000 rg 76.00 413.00 8.00 8.00 re f
+0.960 0.640 0.140 rg 92.00 413.00 8.00 8.00 re f
+0.140 0.760 0.380 rg 108.00 413.00 8.00 8.00 re f
+0.055 0.059 0.080 rg 134.00 410.00 306.00 14.00 re f
+0.230 0.250 0.310 RG 0.50 w 134.00 410.00 306.00 14.00 re S
+0.040 0.042 0.058 rg 62.00 105.00 398.00 296.00 re f
+0.090 0.098 0.130 rg 92.00 250.00 300.00 38.00 re f
+0.230 0.250 0.310 RG 1.00 w 92.00 250.00 300.00 38.00 re S
+0.120 0.130 0.170 rg 92.00 172.00 90.00 56.00 re f
+0.230 0.250 0.310 RG 1.00 w 92.00 172.00 90.00 56.00 re S
+0.120 0.130 0.170 rg 196.00 172.00 90.00 56.00 re f
+0.230 0.250 0.310 RG 1.00 w 196.00 172.00 90.00 56.00 re S
+0.120 0.130 0.170 rg 300.00 172.00 90.00 56.00 re f
+0.230 0.250 0.310 RG 1.00 w 300.00 172.00 90.00 56.00 re S
+0.090 0.098 0.130 rg 500.00 105.00 398.00 330.00 re f
+0.230 0.250 0.310 RG 1.00 w 500.00 105.00 398.00 330.00 re S
+0.120 0.130 0.170 rg 500.00 401.00 398.00 34.00 re f
+0.882 0.024 0.000 rg 514.00 413.00 8.00 8.00 re f
+0.960 0.640 0.140 rg 530.00 413.00 8.00 8.00 re f
+0.140 0.760 0.380 rg 546.00 413.00 8.00 8.00 re f
+0.055 0.059 0.080 rg 572.00 410.00 306.00 14.00 re f
+0.230 0.250 0.310 RG 0.50 w 572.00 410.00 306.00 14.00 re S
+0.040 0.042 0.058 rg 500.00 105.00 398.00 296.00 re f
+0.090 0.098 0.130 rg 530.00 320.00 280.00 32.00 re f
+0.230 0.250 0.310 RG 1.00 w 530.00 320.00 280.00 32.00 re S
+0.120 0.130 0.170 rg 530.00 245.00 150.00 58.00 re f
+0.882 0.024 0.000 RG 1.00 w 530.00 245.00 150.00 58.00 re S
+0.120 0.130 0.170 rg 700.00 245.00 150.00 58.00 re f
+0.230 0.250 0.310 RG 1.00 w 700.00 245.00 150.00 58.00 re S
+0.090 0.098 0.130 rg 530.00 160.00 320.00 54.00 re f
+0.230 0.250 0.310 RG 1.00 w 530.00 160.00 320.00 54.00 re S
+BT /F2 28.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 48.00 492.00 Tm (Docs And Frontend) Tj ET
+BT /F1 12.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 468.00 Tm (User-facing entrypoints served through the current adapter architecture) Tj ET
+BT /F2 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 24.00 Tm (F1 Analytics API) Tj ET
+BT /F1 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 840.00 24.00 Tm (07) Tj ET
+BT /F3 7.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 144.00 413.00 Tm (http://127.0.0.1:8000/) Tj ET
+BT /F2 27.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 92.00 365.00 Tm (F1 Analytics API) Tj ET
+BT /F2 18.00 Tf 0.882 0.024 0.000 rg 1 0 0 1 92.00 333.00 Tm (Formula 1 Analytics API) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 92.00 304.00 Tm (Query race results, driver careers, team championships and) Tj ET
+BT /F1 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 92.00 290.00 Tm (head-to-head records across Formula 1 history.) Tj ET
+BT /F1 10.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 110.00 264.00 Tm (Search a driver - Hamilton) Tj ET
+BT /F2 15.50 Tf 0.882 0.024 0.000 rg 1 0 0 1 110.00 203.00 Tm (861) Tj ET
+BT /F1 8.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 110.00 185.00 Tm (Drivers) Tj ET
+BT /F2 15.50 Tf 0.960 0.640 0.140 rg 1 0 0 1 214.00 203.00 Tm (212) Tj ET
+BT /F1 8.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 214.00 185.00 Tm (Teams) Tj ET
+BT /F2 15.50 Tf 0.140 0.760 0.380 rg 1 0 0 1 318.00 203.00 Tm (77) Tj ET
+BT /F1 8.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 318.00 185.00 Tm (Circuits) Tj ET
+BT /F3 7.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 582.00 413.00 Tm (http://127.0.0.1:8000/#explore) Tj ET
+BT /F2 24.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 530.00 365.00 Tm (Explore the Data) Tj ET
+BT /F1 10.50 Tf 0.950 0.960 0.980 rg 1 0 0 1 548.00 332.00 Tm (Hamilton) Tj ET
+BT /F4 9.50 Tf 0.882 0.024 0.000 rg 1 0 0 1 546.00 282.00 Tm (HAM) Tj ET
+BT /F2 12.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 546.00 262.00 Tm (Lewis Hamilton) Tj ET
+BT /F1 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 546.00 246.00 Tm (British  #44) Tj ET
+BT /F4 9.50 Tf 0.882 0.024 0.000 rg 1 0 0 1 716.00 282.00 Tm (VER) Tj ET
+BT /F2 12.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 716.00 262.00 Tm (Max Verstappen) Tj ET
+BT /F1 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 716.00 246.00 Tm (Dutch  #33) Tj ET
+BT /F2 12.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 548.00 195.00 Tm (Driver detail panel) Tj ET
+BT /F1 10.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 548.00 174.00 Tm (wins, podiums, points, races, seasons) Tj ET
+BT /F1 11.60 Tf 0.650 0.680 0.740 rg 1 0 0 1 64.00 88.00 Tm (The Django root page injects API_V1_PREFIX into the browser, so the static dashboard and the proxied API stay aligned under deployment-specific) Tj ET
+BT /F1 11.60 Tf 0.650 0.680 0.740 rg 1 0 0 1 64.00 71.40 Tm (route prefixes.) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 27 0 R /MediaBox [0 0 960.00 540.00] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 17 0 R >>
+endobj
+19 0 obj
+<< /Length 4567 >>
+stream
+0.035 0.039 0.055 rg 0.00 0.00 960.00 540.00 re f
+0.045 0.047 0.067 rg 0.00 0.00 960.00 540.00 re f
+0.882 0.024 0.000 rg 0.00 0.00 12.00 540.00 re f
+0.080 0.030 0.035 rg 760.00 360.00 200.00 180.00 re f
+0.230 0.250 0.310 RG 1.00 w 48.00 52.00 m 912.00 52.00 l S
+0.882 0.024 0.000 RG 3.00 w 48.00 452.00 m 180.00 452.00 l S
+0.090 0.098 0.130 rg 62.00 86.00 398.00 350.00 re f
+0.230 0.250 0.310 RG 1.00 w 62.00 86.00 398.00 350.00 re S
+0.120 0.130 0.170 rg 62.00 402.00 398.00 34.00 re f
+0.882 0.024 0.000 rg 76.00 414.00 8.00 8.00 re f
+0.960 0.640 0.140 rg 92.00 414.00 8.00 8.00 re f
+0.140 0.760 0.380 rg 108.00 414.00 8.00 8.00 re f
+0.055 0.059 0.080 rg 134.00 411.00 306.00 14.00 re f
+0.230 0.250 0.310 RG 0.50 w 134.00 411.00 306.00 14.00 re S
+1.000 1.000 1.000 rg 62.00 86.00 398.00 316.00 re f
+0.930 0.950 0.970 rg 86.00 300.00 330.00 34.00 re f
+0.820 0.850 0.880 RG 0.80 w 86.00 300.00 330.00 34.00 re S
+0.140 0.760 0.380 rg 98.00 308.00 46.00 18.00 re f
+0.930 0.950 0.970 rg 86.00 252.00 330.00 34.00 re f
+0.820 0.850 0.880 RG 0.80 w 86.00 252.00 330.00 34.00 re S
+0.220 0.500 0.900 rg 98.00 260.00 46.00 18.00 re f
+0.930 0.950 0.970 rg 86.00 204.00 330.00 34.00 re f
+0.820 0.850 0.880 RG 0.80 w 86.00 204.00 330.00 34.00 re S
+0.140 0.760 0.380 rg 98.00 212.00 46.00 18.00 re f
+0.930 0.950 0.970 rg 86.00 156.00 330.00 34.00 re f
+0.820 0.850 0.880 RG 0.80 w 86.00 156.00 330.00 34.00 re S
+0.140 0.760 0.380 rg 98.00 164.00 46.00 18.00 re f
+0.090 0.098 0.130 rg 500.00 86.00 398.00 350.00 re f
+0.230 0.250 0.310 RG 1.00 w 500.00 86.00 398.00 350.00 re S
+0.120 0.130 0.170 rg 500.00 402.00 398.00 34.00 re f
+0.882 0.024 0.000 rg 514.00 414.00 8.00 8.00 re f
+0.960 0.640 0.140 rg 530.00 414.00 8.00 8.00 re f
+0.140 0.760 0.380 rg 546.00 414.00 8.00 8.00 re f
+0.055 0.059 0.080 rg 572.00 411.00 306.00 14.00 re f
+0.230 0.250 0.310 RG 0.50 w 572.00 411.00 306.00 14.00 re S
+0.025 0.028 0.040 rg 500.00 86.00 398.00 316.00 re f
+BT /F2 28.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 48.00 492.00 Tm (API Surface) Tj ET
+BT /F1 12.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 468.00 Tm (OpenAPI docs and typed analytics responses from the shared FastAPI core) Tj ET
+BT /F2 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 24.00 Tm (F1 Analytics API) Tj ET
+BT /F1 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 840.00 24.00 Tm (08) Tj ET
+BT /F3 7.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 144.00 414.00 Tm (http://127.0.0.1:8000/docs) Tj ET
+BT /F2 19.00 Tf 0.090 0.110 0.140 rg 1 0 0 1 86.00 370.00 Tm (F1 Analytics API) Tj ET
+BT /F1 10.50 Tf 0.350 0.370 0.410 rg 1 0 0 1 86.00 342.00 Tm (Swagger UI - OpenAPI 3.1) Tj ET
+BT /F2 7.50 Tf 1.000 1.000 1.000 rg 1 0 0 1 108.00 314.00 Tm (GET) Tj ET
+BT /F3 8.50 Tf 0.100 0.130 0.160 rg 1 0 0 1 154.00 313.00 Tm (/api/v1/drivers) Tj ET
+BT /F2 7.50 Tf 1.000 1.000 1.000 rg 1 0 0 1 108.00 266.00 Tm (POST) Tj ET
+BT /F3 8.50 Tf 0.100 0.130 0.160 rg 1 0 0 1 154.00 265.00 Tm (/api/v1/auth/login) Tj ET
+BT /F2 7.50 Tf 1.000 1.000 1.000 rg 1 0 0 1 108.00 218.00 Tm (GET) Tj ET
+BT /F3 8.50 Tf 0.100 0.130 0.160 rg 1 0 0 1 154.00 217.00 Tm (/api/v1/analytics/seasons/{year}/highlights) Tj ET
+BT /F2 7.50 Tf 1.000 1.000 1.000 rg 1 0 0 1 108.00 170.00 Tm (GET) Tj ET
+BT /F3 8.50 Tf 0.100 0.130 0.160 rg 1 0 0 1 154.00 169.00 Tm (/api/v1/analytics/drivers/{id}/head-to-head/{rival}) Tj ET
+BT /F3 7.80 Tf 0.650 0.680 0.740 rg 1 0 0 1 582.00 414.00 Tm (GET /api/v1/analytics/seasons/2023/highlights) Tj ET
+BT /F4 10.50 Tf 0.140 0.760 0.380 rg 1 0 0 1 526.00 370.00 Tm (200 OK) Tj ET
+BT /F3 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 526.00 342.00 Tm ({) Tj ET
+BT /F3 8.90 Tf 0.950 0.960 0.980 rg 1 0 0 1 542.00 320.00 Tm ("season": 2023,) Tj ET
+BT /F3 8.90 Tf 0.950 0.960 0.980 rg 1 0 0 1 542.00 300.00 Tm ("total_races": 22,) Tj ET
+BT /F3 8.90 Tf 0.950 0.960 0.980 rg 1 0 0 1 542.00 280.00 Tm ("champion_driver": {) Tj ET
+BT /F3 8.90 Tf 0.950 0.960 0.980 rg 1 0 0 1 542.00 260.00 Tm ("name": "Max Verstappen",) Tj ET
+BT /F3 8.90 Tf 0.950 0.960 0.980 rg 1 0 0 1 542.00 240.00 Tm ("points": 575.0) Tj ET
+BT /F3 8.90 Tf 0.650 0.680 0.740 rg 1 0 0 1 542.00 220.00 Tm (},) Tj ET
+BT /F3 8.90 Tf 0.950 0.960 0.980 rg 1 0 0 1 542.00 200.00 Tm ("champion_constructor": {) Tj ET
+BT /F3 8.90 Tf 0.950 0.960 0.980 rg 1 0 0 1 542.00 180.00 Tm ("name": "Red Bull",) Tj ET
+BT /F3 8.90 Tf 0.950 0.960 0.980 rg 1 0 0 1 542.00 160.00 Tm ("points": 860.0) Tj ET
+BT /F3 8.90 Tf 0.650 0.680 0.740 rg 1 0 0 1 542.00 140.00 Tm (},) Tj ET
+BT /F3 8.90 Tf 0.950 0.960 0.980 rg 1 0 0 1 542.00 120.00 Tm ("unique_race_winners": 3) Tj ET
+BT /F3 10.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 526.00 100.00 Tm (}) Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 27 0 R /MediaBox [0 0 960.00 540.00] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 19 0 R >>
+endobj
+21 0 obj
+<< /Length 4557 >>
+stream
+0.035 0.039 0.055 rg 0.00 0.00 960.00 540.00 re f
+0.045 0.047 0.067 rg 0.00 0.00 960.00 540.00 re f
+0.882 0.024 0.000 rg 0.00 0.00 12.00 540.00 re f
+0.080 0.030 0.035 rg 760.00 360.00 200.00 180.00 re f
+0.230 0.250 0.310 RG 1.00 w 48.00 52.00 m 912.00 52.00 l S
+0.882 0.024 0.000 RG 3.00 w 48.00 452.00 m 180.00 452.00 l S
+0.090 0.098 0.130 rg 56.00 330.00 150.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 56.00 330.00 150.00 82.00 re S
+0.090 0.098 0.130 rg 224.00 330.00 150.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 224.00 330.00 150.00 82.00 re S
+0.090 0.098 0.130 rg 392.00 330.00 150.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 392.00 330.00 150.00 82.00 re S
+0.090 0.098 0.130 rg 560.00 330.00 150.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 560.00 330.00 150.00 82.00 re S
+0.090 0.098 0.130 rg 728.00 330.00 104.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 728.00 330.00 104.00 82.00 re S
+0.090 0.098 0.130 rg 848.00 330.00 64.00 82.00 re f
+0.230 0.250 0.310 RG 1.00 w 848.00 330.00 64.00 82.00 re S
+0.090 0.098 0.130 rg 72.00 150.00 430.00 140.00 re f
+0.230 0.250 0.310 RG 1.00 w 72.00 150.00 430.00 140.00 re S
+0.090 0.098 0.130 rg 542.00 144.00 350.00 162.00 re f
+0.230 0.250 0.310 RG 1.00 w 542.00 144.00 350.00 162.00 re S
+BT /F2 28.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 48.00 492.00 Tm (Testing And Verification) Tj ET
+BT /F1 12.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 468.00 Tm (Repository-wide evidence for the current architecture) Tj ET
+BT /F2 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 24.00 Tm (F1 Analytics API) Tj ET
+BT /F1 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 840.00 24.00 Tm (09) Tj ET
+BT /F2 20.50 Tf 0.150 0.700 0.820 rg 1 0 0 1 119.93 379.20 Tm (13) Tj ET
+BT /F1 11.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 118.90 357.06 Tm (Auth) Tj ET
+BT /F2 20.50 Tf 0.882 0.024 0.000 rg 1 0 0 1 287.93 379.20 Tm (27) Tj ET
+BT /F1 11.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 271.78 357.06 Tm (Analytics) Tj ET
+BT /F2 20.50 Tf 0.960 0.640 0.140 rg 1 0 0 1 455.93 379.20 Tm (72) Tj ET
+BT /F1 11.20 Tf 0.650 0.680 0.740 rg 1 0 0 1 430.71 357.06 Tm (Resource API) Tj ET
+BT /F2 20.50 Tf 0.140 0.760 0.380 rg 1 0 0 1 623.93 379.20 Tm (36) Tj ET
+BT /F1 10.90 Tf 0.650 0.680 0.740 rg 1 0 0 1 599.68 357.06 Tm (Infra+Import) Tj ET
+BT /F2 20.50 Tf 0.220 0.500 0.900 rg 1 0 0 1 768.93 379.20 Tm (13) Tj ET
+BT /F1 10.90 Tf 0.650 0.680 0.740 rg 1 0 0 1 756.46 357.06 Tm (Platform) Tj ET
+BT /F2 17.00 Tf 0.440 0.330 0.820 rg 1 0 0 1 866.23 379.20 Tm (181) Tj ET
+BT /F1 10.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 871.90 357.06 Tm (All) Tj ET
+BT /F2 14.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 94.00 256.00 Tm (Latest checks) Tj ET
+BT /F4 10.40 Tf 0.950 0.960 0.980 rg 1 0 0 1 94.00 228.00 Tm ($ pytest -q) Tj ET
+BT /F2 19.50 Tf 0.140 0.760 0.380 rg 1 0 0 1 94.00 208.00 Tm (181 passed) Tj ET
+BT /F4 10.40 Tf 0.950 0.960 0.980 rg 1 0 0 1 94.00 180.00 Tm ($ python manage.py check) Tj ET
+BT /F4 9.30 Tf 0.950 0.960 0.980 rg 1 0 0 1 94.00 162.00 Tm ($ python scripts/django_openapi.py --file /tmp/f1_openapi.json) Tj ET
+BT /F2 14.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 566.00 274.00 Tm (Acceptance coverage) Tj ET
+BT /F2 12.10 Tf 0.882 0.024 0.000 rg 1 0 0 1 566.00 246.00 Tm (-) Tj ET
+BT /F1 10.10 Tf 0.950 0.960 0.980 rg 1 0 0 1 586.00 246.00 Tm (Django Client exercises the adapter path: root, docs,) Tj ET
+BT /F1 10.10 Tf 0.950 0.960 0.980 rg 1 0 0 1 586.00 230.90 Tm (OpenAPI, static assets, and health.) Tj ET
+BT /F2 12.10 Tf 0.882 0.024 0.000 rg 1 0 0 1 566.00 210.80 Tm (-) Tj ET
+BT /F1 10.10 Tf 0.950 0.960 0.980 rg 1 0 0 1 586.00 210.80 Tm (Register, form login, JSON login, refresh, auth/me, and) Tj ET
+BT /F1 10.10 Tf 0.950 0.960 0.980 rg 1 0 0 1 586.00 195.70 Tm (protected writes all pass.) Tj ET
+BT /F2 12.10 Tf 0.882 0.024 0.000 rg 1 0 0 1 566.00 175.60 Tm (-) Tj ET
+BT /F1 10.10 Tf 0.950 0.960 0.980 rg 1 0 0 1 586.00 175.60 Tm (Drivers, teams, circuits, races, results, and all six analytics) Tj ET
+BT /F1 10.10 Tf 0.950 0.960 0.980 rg 1 0 0 1 586.00 160.50 Tm (endpoints are covered.) Tj ET
+BT /F2 12.10 Tf 0.882 0.024 0.000 rg 1 0 0 1 566.00 140.40 Tm (-) Tj ET
+BT /F1 10.10 Tf 0.950 0.960 0.980 rg 1 0 0 1 586.00 140.40 Tm (A temporary SQLite copy is used so verification never) Tj ET
+BT /F1 10.10 Tf 0.950 0.960 0.980 rg 1 0 0 1 586.00 125.30 Tm (mutates the main local database.) Tj ET
+BT /F1 12.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 72.00 106.00 Tm (Testing now demonstrates both dimensions of the submission: direct code quality through pytest and deployment behaviour through the Django) Tj ET
+BT /F1 12.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 72.00 89.00 Tm (acceptance suite.) Tj ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 27 0 R /MediaBox [0 0 960.00 540.00] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 21 0 R >>
+endobj
+23 0 obj
+<< /Length 6503 >>
+stream
+0.035 0.039 0.055 rg 0.00 0.00 960.00 540.00 re f
+0.045 0.047 0.067 rg 0.00 0.00 960.00 540.00 re f
+0.882 0.024 0.000 rg 0.00 0.00 12.00 540.00 re f
+0.080 0.030 0.035 rg 760.00 360.00 200.00 180.00 re f
+0.882 0.024 0.000 rg 270.00 354.00 m 258.00 360.00 l 258.00 348.00 l h f
+0.960 0.640 0.140 rg 470.00 354.00 m 458.00 360.00 l 458.00 348.00 l h f
+0.440 0.330 0.820 rg 670.00 354.00 m 658.00 360.00 l 658.00 348.00 l h f
+0.440 0.330 0.820 rg 350.00 243.00 m 344.00 255.00 l 356.00 255.00 l h f
+0.140 0.760 0.380 rg 550.00 243.00 m 544.00 255.00 l 556.00 255.00 l h f
+0.150 0.700 0.820 rg 760.00 243.00 m 754.00 255.00 l 766.00 255.00 l h f
+0.230 0.250 0.310 RG 1.00 w 48.00 52.00 m 912.00 52.00 l S
+0.882 0.024 0.000 RG 3.00 w 48.00 452.00 m 180.00 452.00 l S
+0.882 0.024 0.000 RG 2.00 w 230.00 354.00 m 270.00 354.00 l S
+0.960 0.640 0.140 RG 2.00 w 430.00 354.00 m 470.00 354.00 l S
+0.440 0.330 0.820 RG 2.00 w 630.00 354.00 m 670.00 354.00 l S
+0.440 0.330 0.820 RG 2.00 w 350.00 315.00 m 350.00 243.00 l S
+0.140 0.760 0.380 RG 2.00 w 550.00 315.00 m 550.00 243.00 l S
+0.150 0.700 0.820 RG 2.00 w 755.00 315.00 m 760.00 243.00 l S
+0.090 0.098 0.130 rg 70.00 315.00 160.00 78.00 re f
+0.230 0.250 0.310 RG 1.00 w 70.00 315.00 160.00 78.00 re S
+0.882 0.024 0.000 rg 70.00 388.00 160.00 5.00 re f
+0.090 0.098 0.130 rg 270.00 315.00 160.00 78.00 re f
+0.230 0.250 0.310 RG 1.00 w 270.00 315.00 160.00 78.00 re S
+0.960 0.640 0.140 rg 270.00 388.00 160.00 5.00 re f
+0.090 0.098 0.130 rg 470.00 315.00 160.00 78.00 re f
+0.230 0.250 0.310 RG 1.00 w 470.00 315.00 160.00 78.00 re S
+0.960 0.640 0.140 rg 470.00 388.00 160.00 5.00 re f
+0.090 0.098 0.130 rg 670.00 315.00 170.00 78.00 re f
+0.230 0.250 0.310 RG 1.00 w 670.00 315.00 170.00 78.00 re S
+0.440 0.330 0.820 rg 670.00 388.00 170.00 5.00 re f
+0.090 0.098 0.130 rg 270.00 165.00 160.00 78.00 re f
+0.230 0.250 0.310 RG 1.00 w 270.00 165.00 160.00 78.00 re S
+0.440 0.330 0.820 rg 270.00 238.00 160.00 5.00 re f
+0.090 0.098 0.130 rg 470.00 165.00 170.00 78.00 re f
+0.230 0.250 0.310 RG 1.00 w 470.00 165.00 170.00 78.00 re S
+0.140 0.760 0.380 rg 470.00 238.00 170.00 5.00 re f
+0.090 0.098 0.130 rg 680.00 165.00 160.00 78.00 re f
+0.230 0.250 0.310 RG 1.00 w 680.00 165.00 160.00 78.00 re S
+0.440 0.330 0.820 rg 680.00 238.00 160.00 5.00 re f
+0.090 0.098 0.130 rg 72.00 108.00 362.00 128.00 re f
+0.230 0.250 0.310 RG 1.00 w 72.00 108.00 362.00 128.00 re S
+BT /F2 28.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 48.00 492.00 Tm (Runtime Modes) Tj ET
+BT /F1 12.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 468.00 Tm (Direct ASGI development and Django WSGI deployment share the same API core) Tj ET
+BT /F2 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 24.00 Tm (F1 Analytics API) Tj ET
+BT /F1 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 840.00 24.00 Tm (10) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 86.00 368.00 Tm (Configure .env) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 86.00 345.00 Tm (DATABASE_URL,) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 86.00 329.80 Tm (SECRET_KEY, hosts,) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 86.00 314.60 Tm (and API_V1_PREFIX) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 286.00 368.00 Tm (Shared schema) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 286.00 345.00 Tm (scripts/django_openapi.) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 286.00 329.80 Tm (py exports the FastAPI) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 286.00 314.60 Tm (schema used at runtime) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 486.00 368.00 Tm (Direct ASGI) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 486.00 345.00 Tm (uvicorn app.main:app) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 486.00 329.80 Tm (--reload for local API) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 486.00 314.60 Tm (development) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 686.00 368.00 Tm (Django adapter) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 686.00 345.00 Tm (manage.py migrate) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 686.00 329.80 Tm (--fake-initial plus) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 686.00 314.60 Tm (collectstatic for WSGI) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 686.00 299.40 Tm (hosting) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 286.00 218.00 Tm (WSGI entrypoint) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 286.00 195.00 Tm (f1_django.wsgi for) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 286.00 179.80 Tm (PythonAnywhere-style) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 286.00 164.60 Tm (deployment) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 486.00 218.00 Tm (Prefix-aware UI) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 486.00 195.00 Tm (root_index injects) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 486.00 179.80 Tm (API_V1_PREFIX into the) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 486.00 164.60 Tm (static frontend) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 696.00 218.00 Tm (Same behaviour) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 696.00 195.00 Tm (Docs, auth, CRUD,) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 696.00 179.80 Tm (analytics, and OpenAPI) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 696.00 164.60 Tm (stay aligned) Tj ET
+BT /F1 10.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 612.00 120.00 Tm (Development and deployment are different shells around the same FastAPI implementation) Tj ET
+BT /F2 13.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 94.00 210.00 Tm (Operational notes) Tj ET
+BT /F2 12.00 Tf 0.882 0.024 0.000 rg 1 0 0 1 94.00 186.00 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 114.00 186.00 Tm (Django deployment adopts existing tables with migrate) Tj ET
+BT /F1 10.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 114.00 171.00 Tm (--fake-initial rather than re-implementing schema logic.) Tj ET
+BT /F2 12.00 Tf 0.882 0.024 0.000 rg 1 0 0 1 94.00 151.00 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 114.00 151.00 Tm (The shared importer and direct FastAPI path continue to use) Tj ET
+BT /F1 10.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 114.00 136.00 Tm (the same SQLAlchemy models and services.) Tj ET
+BT /F2 12.00 Tf 0.882 0.024 0.000 rg 1 0 0 1 94.00 116.00 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 114.00 116.00 Tm (STATIC_ROOT and API_V1_PREFIX keep the browser) Tj ET
+BT /F1 10.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 114.00 101.00 Tm (experience aligned with the adapter route layout.) Tj ET
+endstream
+endobj
+24 0 obj
+<< /Type /Page /Parent 27 0 R /MediaBox [0 0 960.00 540.00] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 23 0 R >>
+endobj
+25 0 obj
+<< /Length 4321 >>
+stream
+0.035 0.039 0.055 rg 0.00 0.00 960.00 540.00 re f
+0.045 0.047 0.067 rg 0.00 0.00 960.00 540.00 re f
+0.882 0.024 0.000 rg 0.00 0.00 12.00 540.00 re f
+0.080 0.030 0.035 rg 760.00 360.00 200.00 180.00 re f
+0.230 0.250 0.310 RG 1.00 w 48.00 52.00 m 912.00 52.00 l S
+0.882 0.024 0.000 RG 3.00 w 48.00 452.00 m 180.00 452.00 l S
+0.090 0.098 0.130 rg 72.00 332.00 250.00 95.00 re f
+0.230 0.250 0.310 RG 1.00 w 72.00 332.00 250.00 95.00 re S
+0.150 0.700 0.820 rg 72.00 422.00 250.00 5.00 re f
+0.090 0.098 0.130 rg 356.00 332.00 250.00 95.00 re f
+0.230 0.250 0.310 RG 1.00 w 356.00 332.00 250.00 95.00 re S
+0.882 0.024 0.000 rg 356.00 422.00 250.00 5.00 re f
+0.090 0.098 0.130 rg 640.00 332.00 250.00 95.00 re f
+0.230 0.250 0.310 RG 1.00 w 640.00 332.00 250.00 95.00 re S
+0.960 0.640 0.140 rg 640.00 422.00 250.00 5.00 re f
+0.090 0.098 0.130 rg 72.00 186.00 250.00 95.00 re f
+0.230 0.250 0.310 RG 1.00 w 72.00 186.00 250.00 95.00 re S
+0.140 0.760 0.380 rg 72.00 276.00 250.00 5.00 re f
+0.090 0.098 0.130 rg 356.00 186.00 250.00 95.00 re f
+0.230 0.250 0.310 RG 1.00 w 356.00 186.00 250.00 95.00 re S
+0.440 0.330 0.820 rg 356.00 276.00 250.00 5.00 re f
+0.090 0.098 0.130 rg 640.00 186.00 250.00 95.00 re f
+0.230 0.250 0.310 RG 1.00 w 640.00 186.00 250.00 95.00 re S
+0.220 0.500 0.900 rg 640.00 276.00 250.00 5.00 re f
+BT /F2 28.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 48.00 492.00 Tm (Takeaways) Tj ET
+BT /F1 12.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 468.00 Tm (Why the regenerated deck matches the latest code more faithfully) Tj ET
+BT /F2 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 48.00 24.00 Tm (F1 Analytics API) Tj ET
+BT /F1 9.50 Tf 0.650 0.680 0.740 rg 1 0 0 1 840.00 24.00 Tm (11) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 88.00 402.00 Tm (One implementation) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 88.00 379.00 Tm (FastAPI is the single API core for) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 88.00 363.80 Tm (routes, validation, OpenAPI, auth, and) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 88.00 348.60 Tm (analytics behaviour.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 372.00 402.00 Tm (Cleaner codebase) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 372.00 379.00 Tm (The Django layer is now a small adapter) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 372.00 363.80 Tm (instead of a second parallel CRUD/auth) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 372.00 348.60 Tm (stack.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 656.00 402.00 Tm (Verified behaviour) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 656.00 379.00 Tm (pytest, schema export, and Django) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 656.00 363.80 Tm (acceptance checks all support the current) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 656.00 348.60 Tm (architecture claims.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 88.00 256.00 Tm (Analytical depth) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 88.00 233.00 Tm (Season, team, circuit, and driver endpoints) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 88.00 217.80 Tm (go beyond baseline CRUD and show) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 88.00 202.60 Tm (meaningful data modelling.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 372.00 256.00 Tm (Deployment clarity) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 372.00 233.00 Tm (Direct ASGI and Django WSGI modes are) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 372.00 217.80 Tm (explained as two shells around the same) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 372.00 202.60 Tm (core.) Tj ET
+BT /F2 14.20 Tf 0.950 0.960 0.980 rg 1 0 0 1 656.00 256.00 Tm (Honest limits) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 656.00 233.00 Tm (State is still in-memory and SQLite remains) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 656.00 217.80 Tm (the verified database for this coursework) Tj ET
+BT /F1 11.00 Tf 0.650 0.680 0.740 rg 1 0 0 1 656.00 202.60 Tm (build.) Tj ET
+BT /F1 15.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 78.00 112.00 Tm (Core message: this is not just a CRUD API. It is a refactored, documented, tested, and deployment-aware) Tj ET
+BT /F1 15.00 Tf 0.950 0.960 0.980 rg 1 0 0 1 78.00 92.00 Tm (analytics service whose slides now match the code that actually runs.) Tj ET
+endstream
+endobj
+26 0 obj
+<< /Type /Page /Parent 27 0 R /MediaBox [0 0 960.00 540.00] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 25 0 R >>
+endobj
+27 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R 26 0 R] /Count 11 >>
+endobj
+28 0 obj
+<< /Type /Catalog /Pages 27 0 R >>
+endobj
+xref
+0 29
+0000000000 65535 f 
+0000000015 00000 n 
+0000000112 00000 n 
+0000000214 00000 n 
+0000000309 00000 n 
+0000000409 00000 n 
+0000003283 00000 n 
+0000003446 00000 n 
+0000008134 00000 n 
+0000008297 00000 n 
+0000012595 00000 n 
+0000012759 00000 n 
+0000020763 00000 n 
+0000020928 00000 n 
+0000027312 00000 n 
+0000027477 00000 n 
+0000032333 00000 n 
+0000032498 00000 n 
+0000037415 00000 n 
+0000037580 00000 n 
+0000042200 00000 n 
+0000042365 00000 n 
+0000046975 00000 n 
+0000047140 00000 n 
+0000053696 00000 n 
+0000053861 00000 n 
+0000058235 00000 n 
+0000058400 00000 n 
+0000058528 00000 n 
+trailer
+<< /Size 29 /Root 28 0 R >>
+startxref
+58579
+%%EOF

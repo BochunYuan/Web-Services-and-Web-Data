@@ -1,0 +1,40 @@
+# Web Framework
+fastapi==0.115.12
+uvicorn[standard]==0.34.0
+django==5.2.1
+dj-database-url==2.3.0
+
+# Database
+sqlalchemy==2.0.40
+aiosqlite==0.21.0          # SQLite async driver (development)
+greenlet==3.2.1            # Required by SQLAlchemy async engine
+pymysql==1.1.1             # MySQL driver (PythonAnywhere production)
+alembic==1.15.2            # Database migrations
+
+# Authentication & Security
+python-jose[cryptography]==3.3.0   # JWT token generation/validation
+passlib[bcrypt]==1.7.4             # Password hashing with bcrypt
+bcrypt==4.0.1                      # Pinned: passlib 1.7.4 incompatible with bcrypt>=4.1
+python-multipart==0.0.20           # Required for OAuth2 form data
+
+# Data validation (built into FastAPI, explicit version lock)
+pydantic[email]==2.11.2
+pydantic-settings==2.8.1           # Settings management with .env support
+
+# Caching
+cachetools==5.5.2
+
+# Data Import
+pandas==2.2.3              # CSV reading and manipulation
+tqdm==4.67.1               # Progress bar for import script
+
+# Testing
+pytest==8.3.5
+pytest-asyncio==0.26.0
+httpx==0.28.1              # Async HTTP client for FastAPI testing
+
+# MCP Server
+fastmcp==2.3.4
+
+# Development utilities
+python-dotenv==1.1.0       # Load .env file

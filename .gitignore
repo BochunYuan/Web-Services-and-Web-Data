@@ -1,0 +1,49 @@
+# Environment variables - NEVER commit secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Database files - ignore local scratch DBs, but keep the bundled demo DB
+*.db
+*.sqlite
+*.sqlite3
+!f1_analytics.db
+
+# Raw dataset CSVs - too large for git, download separately
+data/*.csv
+data/*.zip
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test / coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Django generated static files
+staticfiles/

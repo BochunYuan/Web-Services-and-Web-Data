@@ -1,0 +1,246 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 1543 >>
+stream
+0.870 0.920 0.980 rg 54.00 527.89 487.28 228.00 re f
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 346.28 807.89 Tm (GenAI Appendix / Supplementary Material) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from repository state on 2026-04-20 19:02) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 1) Tj ET
+BT /F2 24.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 84.00 691.89 Tm (GenAI Declaration,) Tj ET
+BT /F2 24.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 84.00 661.89 Tm (Analysis, and Conversation Logs) Tj ET
+BT /F2 18.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 84.00 633.89 Tm (Supplementary Appendix) Tj ET
+BT /F1 11.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 84.00 599.89 Tm (This document accompanies the technical report and responds to the brief) Tj ET
+BT /F1 11.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 84.00 584.89 Tm (requirement to declare GenAI use, analyse that use, and attach examples of) Tj ET
+BT /F1 11.40 Tf 0.110 0.160 0.240 rg 1 0 0 1 84.00 569.89 Tm (exported conversation logs as supplementary material.) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 88.00 Tm (Module: XJCO3011 Web Services and Web Data    Project: F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 68.00 Tm (Status: supplementary submission-ready appendix generated from repository evidence) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 5877 >>
+stream
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 753.89 m 174.00 753.89 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 565.89 m 174.00 565.89 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 364.19 m 174.00 364.19 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 209.59 m 174.00 209.59 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 346.28 807.89 Tm (GenAI Appendix / Supplementary Material) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from repository state on 2026-04-20 19:02) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 2) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 763.89 Tm (Brief Alignment) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 731.89 Tm (The coursework brief states that GenAI use must be declared and that examples of) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 715.99 Tm (exported conversation logs should be attached as supplementary material.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 690.09 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 690.09 Tm (Page 1: the brief permits GenAI as a primary tool but requires all tools and purposes to be declared.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 673.89 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 673.89 Tm (Page 6: some examples of exported conversation logs must be attached as supplementary material.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 657.69 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 657.69 Tm (Page 18: the submission requirements explicitly list GenAI declaration, analysis, and conversation) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 643.49 Tm (logs as an appendix.) Tj ET
+BT /F1 10.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 627.29 Tm (This appendix is therefore structured to satisfy all three elements: declaration, analysis, and) Tj ET
+BT /F1 10.30 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 612.59 Tm (conversation-log evidence.) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 575.89 Tm (Academic Integrity Note) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 543.89 Tm (Transparency requires a clear distinction between curated evidence and raw platform) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 527.99 Tm (exports.) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 502.09 Tm (This appendix is a curated and structured record of GenAI use. It does not claim to be a complete) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 487.59 Tm (platform-native transcript export. Instead, it organises representative prompt themes, implementation) Tj ET
+BT /F1 10.10 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 473.09 Tm (outcomes, and verification steps in a form suitable for submission and oral defence.) Tj ET
+BT /F2 10.90 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 456.59 Tm (-) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 456.59 Tm (If raw exported chat files are available, they should be submitted alongside this appendix.) Tj ET
+BT /F2 10.90 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 440.49 Tm (-) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 440.49 Tm (This document should not be misrepresented as an unedited full transcript if it is not one.) Tj ET
+BT /F2 10.90 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 424.39 Tm (-) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 424.39 Tm (Its role is to support honest disclosure and make the author's use of GenAI intelligible to the) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 410.29 Tm (marker.) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 374.19 Tm (Tool Declaration) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 342.19 Tm (Only one GenAI tool is evidenced in the repository declaration, and its purposes are specific) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 326.29 Tm (rather than vague.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 300.39 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 300.39 Tm (Claude \(Anthropic, claude-sonnet-4.6\): architecture exploration, implementation guidance, debugging,) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 286.19 Tm (and documentation support.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 269.99 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 269.99 Tm (GenAI was used throughout the assessment in a declared manner, consistent with the Green Light) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 255.79 Tm (brief policy.) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 219.59 Tm (Method of Use) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 187.59 Tm (The project used GenAI as a technical collaborator rather than as a replacement for) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 171.69 Tm (judgment.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 145.79 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 145.79 Tm (Ask for alternatives or explanations.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 129.59 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 129.59 Tm (Compare the answer with project constraints and coursework goals.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 113.39 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 113.39 Tm (Implement an adapted solution rather than copying blindly.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 97.19 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 97.19 Tm (Verify with tests, runtime checks, or documentation review.) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 5692 >>
+stream
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 739.89 m 174.00 739.89 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 416.89 m 174.00 416.89 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 346.28 807.89 Tm (GenAI Appendix / Supplementary Material) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from repository state on 2026-04-20 19:02) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 3) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 749.89 Tm (Conversation Log Register) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 717.89 Tm (Representative conversations are grouped by engineering purpose so the evidence is easier) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 701.99 Tm (to audit.) Tj ET
+BT /F2 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 676.09 Tm (CL-01 Framework choice) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 676.09 Tm (FastAPI vs Django for an API with auto-generated) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 662.29 Tm (documentation.) Tj ET
+BT /F2 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 645.49 Tm (CL-02 Async database design) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 645.49 Tm (SQLAlchemy async vs sync and event-loop implications.) Tj ET
+BT /F2 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 628.69 Tm (CL-03 Schema modelling) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 628.69 Tm (Star-schema suitability for race results analytics.) Tj ET
+BT /F2 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 611.89 Tm (CL-04 Authentication) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 611.89 Tm (Why dual JWT tokens are preferable to one long-lived token.) Tj ET
+BT /F2 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 595.09 Tm (CL-05 Defensive security) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 595.09 Tm (Timing attacks and dummy-hash mitigation for login.) Tj ET
+BT /F2 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 578.29 Tm (CL-06 Aggregation logic) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 578.29 Tm (Conditional aggregation for wins and grouped metrics.) Tj ET
+BT /F2 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 561.49 Tm (CL-07 Self-join analytics) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 561.49 Tm (Using aliased\(\) for head-to-head driver comparison.) Tj ET
+BT /F2 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 544.69 Tm (CL-08 DNF handling) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 544.69 Tm (Why position_order is better than nullable position.) Tj ET
+BT /F2 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 527.89 Tm (CL-09 Test strategy) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 527.89 Tm (Dependency overrides and fixture scope choices in FastAPI) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 514.09 Tm (tests.) Tj ET
+BT /F2 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 497.29 Tm (CL-10 MCP design) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 497.29 Tm (How tool descriptions should guide an LLM effectively.) Tj ET
+BT /F2 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 480.49 Tm (CL-11 Dependency debugging) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 480.49 Tm (bcrypt/passlib compatibility diagnosis.) Tj ET
+BT /F2 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 463.69 Tm (CL-12 Import cleaning) Tj ET
+BT /F1 9.80 Tf 0.110 0.160 0.240 rg 1 0 0 1 230.00 463.69 Tm (Handling Ergast null markers such as \\N in CSV data.) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 426.89 Tm (Representative Extracts) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 394.89 Tm (These are thematic summaries of the kinds of conversations that shaped implementation) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 378.99 Tm (decisions.) Tj ET
+BT /F2 14.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 343.09 Tm (A. Architecture) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 319.09 Tm (GenAI was asked to compare FastAPI and Django in the context of an assessed REST API. The response) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 304.79 Tm (highlighted FastAPI's automatic OpenAPI generation and stronger fit for typed API development. The) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 290.49 Tm (author then selected FastAPI and built the project around its API-first workflow.) Tj ET
+BT /F2 14.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 264.19 Tm (B. Security) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 240.19 Tm (GenAI was used to reason about access and refresh token separation and to understand timing-attack) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 225.89 Tm (risks in login flows. The implementation adopted a dual-token JWT design and added dummy-hash checking for) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 211.59 Tm (unknown users after independent review.) Tj ET
+BT /F2 14.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 185.29 Tm (C. Analytics) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 161.29 Tm (For analytical endpoints, GenAI helped explain conditional aggregation and self-join patterns. Those) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 146.99 Tm (patterns were translated into SQLAlchemy queries and then checked against automated tests and expected) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 132.69 Tm (F1 semantics.) Tj ET
+BT /F2 14.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 106.39 Tm (D. Debugging) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 5351 >>
+stream
+0.860 0.890 0.930 RG 1.00 w 54.00 795.89 m 541.28 795.89 l S
+0.860 0.890 0.930 RG 1.00 w 54.00 38.00 m 541.28 38.00 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 694.99 m 174.00 694.99 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 494.49 m 174.00 494.49 l S
+0.100 0.270 0.510 RG 2.00 w 54.00 337.59 m 174.00 337.59 l S
+BT /F2 10.50 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 807.89 Tm (F1 Analytics API) Tj ET
+BT /F1 10.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 346.28 807.89 Tm (GenAI Appendix / Supplementary Material) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 54.00 22.00 Tm (Generated from repository state on 2026-04-20 19:02) Tj ET
+BT /F1 9.00 Tf 0.370 0.420 0.500 rg 1 0 0 1 489.28 22.00 Tm (Page 4) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 769.89 Tm (GenAI was also used to diagnose real implementation problems such as bcrypt version incompatibility and) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 755.59 Tm (dataset null cleaning. These were not accepted on trust alone; they were implemented, tested, and) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 741.29 Tm (documented.) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 704.99 Tm (Analysis of Quality of Use) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 672.99 Tm (The brief rewards thoughtful and creative use of GenAI, so the relevant question is not) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 657.09 Tm (only whether AI was used, but how.) Tj ET
+BT /F2 10.90 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 631.19 Tm (-) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 631.19 Tm (The prompts were often high-level and exploratory rather than limited to syntax completion.) Tj ET
+BT /F2 10.90 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 615.09 Tm (-) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 615.09 Tm (The repository reflects explanation-led use: architecture, security, analytics, testing, and debugging) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 600.99 Tm (all show traceable reasoning.) Tj ET
+BT /F2 10.90 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 584.89 Tm (-) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 584.89 Tm (The final implementation includes author-selected trade-offs such as F1 domain choice, in-process) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 570.79 Tm (caching, and discovery-first MCP tools.) Tj ET
+BT /F2 10.90 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 554.69 Tm (-) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 554.69 Tm (Use was declared openly rather than hidden, which is essential under the brief's academic misconduct) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 540.59 Tm (warning.) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 504.49 Tm (Author Judgment and Verification) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 472.49 Tm (Independent judgment remained necessary in both design and acceptance of suggestions.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 446.59 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 446.59 Tm (Choosing the F1 analytics domain and deciding which endpoints would show genuine analytical depth.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 430.39 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 430.39 Tm (Balancing architectural ambition with coursework practicality, for example using cachetools rather) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 416.19 Tm (than Redis.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 399.99 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 399.99 Tm (Designing compact but expressive seed data for tests.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 383.79 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 383.79 Tm (Running tests and local checks before accepting or documenting a change.) Tj ET
+BT /F2 20.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 347.59 Tm (Submission Guidance) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 315.59 Tm (This appendix is intended to be read together with the technical report and any raw) Tj ET
+BT /F1 11.50 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 299.69 Tm (exported chat files available to the student.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 273.79 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 273.79 Tm (Technical report: concise GenAI declaration and analysis inside the five-page limit.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 257.59 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 257.59 Tm (This appendix: expanded declaration, analysis, and representative conversation-log register.) Tj ET
+BT /F2 11.00 Tf 0.100 0.270 0.510 rg 1 0 0 1 54.00 241.39 Tm (-) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 241.39 Tm (Optional raw exports: platform-native chat exports, if available, to be attached as additional) Tj ET
+BT /F1 10.00 Tf 0.110 0.160 0.240 rg 1 0 0 1 68.00 227.19 Tm (supplementary evidence.) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 210.99 Tm (Repository locations: docs/genai_conversation_logs_appendix.md,) Tj ET
+BT /F1 9.90 Tf 0.110 0.160 0.240 rg 1 0 0 1 54.00 196.69 Tm (docs/genai_conversation_logs_appendix.pdf, docs/technical_report.pdf, and AGENTS.md.) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R] /Count 4 >>
+endobj
+14 0 obj
+<< /Type /Catalog /Pages 13 0 R >>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000015 00000 n 
+0000000112 00000 n 
+0000000214 00000 n 
+0000000309 00000 n 
+0000000409 00000 n 
+0000002004 00000 n 
+0000002167 00000 n 
+0000008096 00000 n 
+0000008259 00000 n 
+0000014003 00000 n 
+0000014167 00000 n 
+0000019571 00000 n 
+0000019736 00000 n 
+0000019814 00000 n 
+trailer
+<< /Size 15 /Root 14 0 R >>
+startxref
+19865
+%%EOF
