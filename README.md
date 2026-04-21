@@ -608,7 +608,7 @@ Regenerate it with `python scripts/generate_technical_report_pdf.py`.
 A presentation slide deck covering the architecture diagram, database diagram, demo screenshots, test result, and deployment workflow is available in [docs/presentation_slides.pdf](docs/presentation_slides.pdf).
 Regenerate it with `python scripts/generate_presentation_slides_pdf.py`.
 
-Enter the following terminal command to run：
+## Enter the following terminal command to run：
 cd /Users/bochunyuan/Downloads/CWK/Web_service_and_web_data/f1-analytics-api
 python3.11 -m venv venv
 source venv/bin/activate
