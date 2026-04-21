@@ -155,7 +155,7 @@ async def compare_drivers(db: AsyncSession, driver_ids: list[int]) -> dict:
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
                             detail="Maximum 5 drivers can be compared at once")
 
-    cache_key = f"driver_compare:{'_'.join(str(i) for i in sorted(driver_ids))}"
+    cache_key = f"driver_compare:{'_'.join(str(i) for i in driver_ids)}"
     cached = cache_service.get_analytics(cache_key)
     if cached is not None:
         return cached
@@ -568,7 +568,7 @@ async def get_head_to_head(db: AsyncSession, driver_id: int, rival_id: int) -> d
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
                             detail="Cannot compare a driver with themselves")
 
-    cache_key = f"h2h:{min(driver_id, rival_id)}:{max(driver_id, rival_id)}"
+    cache_key = f"h2h:{driver_id}:{rival_id}"
     cached = cache_service.get_analytics(cache_key)
     if cached is not None:
         return cached
